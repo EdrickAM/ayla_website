@@ -1,0 +1,198 @@
+/* Variáveis de Cores */
+:root {
+  --primary-color: #b42521;
+  --secondary-color: #3fc892;
+  --background-light: #f7f7d4;
+  --background-dark: #191919;
+  --white: #fff;
+  --gray-light: #ddd;
+  --black: #333;
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+  --button-bg: #3fc892;
+}
+
+/* Variáveis de Fontes */
+:root {
+  --font-primary: 'Roboto Slab', serif;
+  --font-secondary: 'Pacifico', cursive;
+  --font-tertiary: 'Bigola', sans-serif;
+}
+
+/* Estilos gerais */
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--black);
+  background-color: var(--background-light);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(180, 37, 33, 0.6); /* Transparência aplicada */
+  color: var(--white);
+  padding: 1rem 0;
+  backdrop-filter: blur(10px); /* Adicionando um efeito de desfoque no fundo */
+}
+
+.header .logo {
+  font-family: var(--font-secondary);
+  font-size: 2rem;
+  margin: 0;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1; /* Garantindo que o conteúdo da hero section esteja acima do fundo */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-bg);
+  z-index: 0;
+}
+
+.home .btn {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Serviços */
+.services {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.service-item {
+  background: var(--white);
+  padding: 1.5rem;
+  border: 1px solid var(--gray-light);
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-item .btn {
+  background-color: var(--primary-color);
+  color: var(--white);
+  margin-top: 1rem;
+}
+
+/* Blog */
+.blog {
+  background-color: var(--background-light);
+  padding: 3rem 0;
+}
+
+/* Quem Somos */
+.about {
+  padding: 3rem 0;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  text-align: center;
+}
+
+.values {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Contato */
+.contact {
+  padding: 3rem 0;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .nav ul {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .hero {
+      padding: 2rem 0;
+  }
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid var(--gray-light);
+  border-radius: 5px;
+}
+
+form .btn {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  margin-top: 1rem;
+}
