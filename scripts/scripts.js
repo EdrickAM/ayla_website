@@ -30,3 +30,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });  
+
+// Funções para controlar a rolagem dos destinos
+function scrollLeft() {
+  document.querySelector('.destinos-container').scrollBy({
+    left: -500, // A quantidade de pixels para rolar para a esquerda
+    behavior: 'smooth'
+  });
+}
+
+function scrollRight() {
+  document.querySelector('.destinos-container').scrollBy({
+    left: 500, // A quantidade de pixels para rolar para a direita
+    behavior: 'smooth'
+  });
+}
