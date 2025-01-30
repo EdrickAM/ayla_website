@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="A Ayla oferece viagens culturais autênticas, experiências transformadoras e consultoria personalizada para viajantes.">
+  <meta property="og:title" content="Ayla - Viagens Autênticas">
+  <meta property="og:description" content="Explore o mundo com sofisticação. Viagens exclusivas e experiências autênticas.">
+  <meta property="og:image" content="https://seusite.com/assets/images/og-image.jpg">
   <title>Ayla - Viagens Autênticas</title>
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Bigola:wght@400;700&family=Noka+Bold&family=Pacifico&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
@@ -13,7 +16,7 @@
   <header class="header">
     <div class="container">
       <div class="logo">
-        <img src="assets/logos/logo.svg" alt="Logo"/>
+        <img src="assets/logos/logo.svg" alt="Logo da Ayla"/>
       </div> 
       <nav class="nav">
         <ul>
@@ -29,7 +32,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="hero">
+  <section id="home" class="hero" style="padding-top: 80px;"> <!-- Adicionado padding-top -->
     <video class="video-background" autoplay loop muted>
       <source src="assets/videos/video.mp4" type="video/mp4">
       <source src="assets/videos/video.webm" type="video/webm">
@@ -37,14 +40,14 @@
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h2 style="font-size: 3rem; font-weight: bold; margin-bottom: 1rem;">Explore o mundo com sofisticação</h2>
-      <p style="font-size: 1.5rem; margin-bottom: 2rem;">Viagens exclusivas e experiências autênticas.</p>
-      <a href="#servicos" class="btn" style="padding: 1rem 2rem; background-color: #b42521; color: white; font-size: 1.2rem; text-transform: uppercase; text-decoration: none; border-radius: 50px;">Conheça nossos serviços</a>
+      <h2>Explore o mundo com sofisticação</h2>
+      <p>Viagens exclusivas e experiências autênticas.</p>
+      <a href="#servicos" class="btn">Conheça nossos serviços</a>
     </div>
   </section>
-
+  
   <!-- Serviços Section -->
-  <section class="services">
+  <section id="servicos" class="services">
     <div class="service-item">
       <img src="assets/images/servico1.jpg" alt="Serviço 1">
       <div class="content">
@@ -79,7 +82,8 @@
     </div>
   </section>
 
-  <section class="destinos">
+  <!-- Destinos Section -->
+  <section id="destinos" class="destinos">
     <div class="title">Destinos Imperdíveis</div>
     <div class="destinos-container">
       <div class="destino-item">
@@ -112,9 +116,7 @@
           <h3>Destino 5</h3>
         </div>
       </div>
-      <!-- Adicione mais destinos conforme necessário -->
     </div>
-  
     <div class="destinos-buttons">
       <button class="btn" onclick="scrollLeft()">&lt;</button>
       <button class="btn" onclick="scrollRight()">&gt;</button>
@@ -122,7 +124,7 @@
   </section>
 
   <!-- Blog Section -->
-  <section id="blog" class="blog-section" style="padding: 4rem 0;">
+  <section id="blog" class="blog-section">
     <div class="container">
       <div class="container-left">
         <h2 class="section-title">Blog da Ayla</h2>
@@ -131,71 +133,79 @@
           <a href="#" class="btn">Ver mais posts</a>
         </div>  
       </div>
-
       <div class="blog-posts">
         <div class="post-item">
           <img src="assets/images/post1.jpg" alt="Post 1" class="post-image">
           <div class="post-content">
+            <h4 class="post-sub-title">Sub Título</h4>
             <h3 class="post-title">Descubra o charme da Toscana</h3>
             <p class="post-excerpt">A Toscana oferece uma combinação única de vinhos, gastronomia e paisagens deslumbrantes. Saiba mais sobre as experiências exclusivas...</p>
-            <a href="#" class="btn">Leia mais</a>
           </div>
         </div>
-        
         <div class="post-item">
           <img src="assets/images/post2.jpg" alt="Post 2" class="post-image">
           <div class="post-content">
+            <h4 class="post-sub-title">Sub Título</h4>
             <h3 class="post-title">O que fazer nas Ilhas Maldivas</h3>
             <p class="post-excerpt">As Ilhas Maldivas são sinônimo de luxo e tranquilidade. Descubra as melhores atividades para uma viagem inesquecível...</p>
-            <a href="#" class="btn">Leia mais</a>
           </div>
         </div>
-        
         <div class="post-item">
           <img src="assets/images/post3.jpg" alt="Post 3" class="post-image">
           <div class="post-content">
+            <h4 class="post-sub-title">Sub Título</h4>
             <h3 class="post-title">Experiência única no Japão</h3>
             <p class="post-excerpt">Explore a cultura vibrante do Japão com uma experiência de viagem exclusiva e personalizada. Não perca as dicas...</p>
-            <a href="#" class="btn">Leia mais</a>
           </div>
         </div>
-        
       </div>
     </div>
   </section>
 
   <!-- Quem Somos Section -->
-  <section id="quem-somos" style="padding: 4rem 0; background-color: #3fc892; color: white; text-align: center;">
-    <div class="container">
-      <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Quem Somos</h2>
-      <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">A Ayla nasceu para oferecer experiências de viagem autênticas, conectando pessoas ao mundo de maneira única e transformadora.</p>
+  <section id="quem-somos" class="about-us">
+    <div class="container-left">
+      <img src="assets/images/post3.jpg" alt="Sobre Nós" class="about-us-image">
+    </div>
+    <div class="container-right">
+      <h2>Quem Somos</h2>
+      <p>A Ayla nasceu para oferecer experiências de viagem autênticas, conectando pessoas ao mundo de maneira única e transformadora.</p>
     </div>
   </section>
 
   <!-- Contato Section -->
-  <section id="contato" style="padding: 4rem 0; background-color: #f7f7f7;">
+  <section id="contato" class="contact">
     <div class="container">
-      <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">Entre em Contato</h2>
-      <form style="max-width: 600px; margin: 0 auto;">
-        <label for="name" style="display: block; margin-bottom: 0.5rem;">Nome</label>
-        <input type="text" id="name" name="name" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border-radius: 5px; border: 1px solid #ddd;">
-
-        <label for="email" style="display: block; margin-bottom: 0.5rem;">E-mail</label>
-        <input type="email" id="email" name="email" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border-radius: 5px; border: 1px solid #ddd;">
-
-        <label for="message" style="display: block; margin-bottom: 0.5rem;">Mensagem</label>
-        <textarea id="message" name="message" rows="5" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border-radius: 5px; border: 1px solid #ddd;"></textarea>
-
-        <button type="submit" style="display: block; width: 100%; padding: 1rem; background-color: #b42521; color: white; border: none; border-radius: 5px; font-size: 1rem;">Enviar</button>
+      <h2>Fale Conosco</h2>
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefone</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Mensagem</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn">Enviar Mensagem</button>
       </form>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer style="background-color: #191919; color: white; text-align: center; padding: 2rem 0;">
+  <footer>
     <div class="container">
       <p>&copy; 2025 Ayla Mundo. Todos os direitos reservados.</p>
     </div>
   </footer>
+
+  <script src="scripts/scripts.js"></script>
 </body>
 </html>

@@ -69,48 +69,67 @@ body::-webkit-scrollbar {
 
 /* Header */
 .header {
-  display: flex; /* Flexbox para alinhar horizontalmente */
-  justify-content: space-between; /* Isso vai manter o logo à esquerda e o menu à direita */
-  align-items: center; /* Alinha verticalmente no centro */
-  position: absolute;
-  width: 100%;
-  top: 0;
-  padding: 1rem 0rem; /* Ajuste do padding */
-  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; /* Fixo no topo */
+  top: 0; /* Colado no topo */
+  width: 100%; /* Largura total */
+  padding: 0.5rem 0;
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+  background-color: transparent; /* Inicialmente transparente */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
+/* Header sólido quando o usuário rolar */
+.header.solid {
+  background-color: #b42521; /* Vermelho sólido */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+}
+
+/* Container do header */
+.header .container {
   margin: 0 auto;
-  display: flex; 
-  justify-content: space-between; /* Isso vai manter o logo à esquerda e o menu à direita */
-  align-items: center; /* Alinha verticalmente no centro */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem; /* Adiciona um pouco de padding nas laterais */
+  gap: 40rem;
 }
 
+/* Logo */
 .header .logo img {
-  width: 70px; /* Tamanho do logo */
+  width: 70px;
   height: auto;
+  transition: filter 0.3s ease; /* Transição suave para o logo */
 }
 
+/* Logo branco quando o header está sólido */
+.header.solid .logo img {
+  filter: brightness(0) invert(1); /* Transforma o logo em branco */
+}
+
+/* Menu */
 .nav ul {
   list-style: none;
-  display: flex; /* Exibe os itens do menu na mesma linha */
-  gap: 1rem; /* Espaçamento entre os itens */
+  display: flex;
+  gap: 1.5rem; /* Espaçamento entre os itens do menu */
   margin: 0;
   padding: 0;
   font-family: var(--font-tertiary);
-  font-weight: 700; /* Bold */
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .nav a {
   color: var(--white);
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease; /* Transição suave para os links */
 }
 
 .nav a:hover {
-  color: var(--secondary-color); /* Efeito de hover no menu */
+  color: var(--secondary-color); /* Cor ao passar o mouse */
 }
 
 /* Hero Section */
@@ -131,7 +150,7 @@ body::-webkit-scrollbar {
 }
 
 .hero-content h2 {
-  font-family: var(--font-tertiary); /* Corrigido aqui */
+  font-family: var(--font-tertiary);
 }
 
 .hero-overlay {
@@ -156,24 +175,24 @@ body::-webkit-scrollbar {
 
 /* Serviços */
 .services {
-  padding: 3rem 2rem; /* Espaçamento superior/inferior de 3rem e laterais de 2rem */
+  padding: 3rem 6rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Duas colunas */
-  gap: 1rem; /* Margem entre os quadrados */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
 .service-item {
-  height: 700px; /* Altura fixa para os quadrados */
-  position: relative; /* Necessário para posicionar o conteúdo sobre a imagem */
-  overflow: hidden; /* Garante que a imagem e conteúdo não saiam dos limites */
-  border: 1px solid var(--gray-light); /* Adiciona uma borda para dar mais definição ao quadrado */
-  border-radius: 0px; /* Remove as bordas arredondadas */
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--gray-light);
+  border-radius: 0px;
 }
 
 .service-item img {
   width: 100%;
-  height: 100%; /* Imagem ocupa 100% do quadrado */
-  object-fit: cover; /* Faz a imagem preencher o quadrado sem distorcer */
+  height: 100%;
+  object-fit: cover;
 }
 
 .service-item .content {
@@ -217,37 +236,37 @@ body::-webkit-scrollbar {
 
 .destinos .title {
   font-size: 2rem;
-  font-family: var(--font-tertiary); /* Fonte Noka usando variável */
-  font-weight: 700; /* Usando o peso bold da fonte */
+  font-family: var(--font-tertiary);
+  font-weight: 700;
   margin-bottom: 2rem;
-  text-align: left; /* Alinha o título à esquerda */
+  text-align: left;
 }
 
 .destinos-container {
   display: flex;
-  overflow-x: scroll; /* Permite rolar horizontalmente */
-  gap: 1rem; /* Espaçamento entre os quadrados */
-  scroll-behavior: smooth; /* Suaviza a rolagem */
-  -ms-overflow-style: none;  /* Oculta a barra de rolagem no Internet Explorer */
-  scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
+  overflow-x: scroll;
+  gap: 1rem;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .destinos-container::-webkit-scrollbar {
-  display: none; /* Oculta a barra de rolagem no Chrome, Safari e Opera */
+  display: none;
 }
 
 .destino-item {
-  width: 450px; /* Largura dos quadrados */
-  height: 600px; /* Altura dos quadrados */
+  width: 450px;
+  height: 550px;
   position: relative;
-  flex-shrink: 0; /* Impede que os itens encolham */
-  overflow: hidden; /* Garante que a imagem não saia do quadrado */
+  flex-shrink: 0;
+  overflow: hidden;
 }
 
 .destino-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Preenche o quadrado sem distorcer */
+  object-fit: cover;
 }
 
 .destino-item .content {
@@ -256,7 +275,7 @@ body::-webkit-scrollbar {
   left: 10px;
   right: 10px;
   color: var(--white);
-  background-color: transparent; /* Removido o efeito fosco */
+  background-color: transparent;
   padding: 0.5rem;
   text-align: left;
 }
@@ -275,16 +294,16 @@ body::-webkit-scrollbar {
   transform: translateX(-50%) translateY(-50%);
   display: flex;
   justify-content: space-between;
-  width: calc(100% - 6rem); /* Deixa as setas com distância das bordas */
-  padding: 0 2rem; /* Espaçamento nas laterais */
+  width: calc(100% - 6rem);
+  padding: 0 2rem;
 }
 
 .destinos-buttons .btn {
   background-color: var(--white);
   color: var(--black);
-  width: 40px; /* Define a largura fixa do botão */
-  height: 40px; /* Define a altura fixa do botão */
-  border-radius: 50%; /* Torna os botões redondos */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   font-size: 1.5rem;
   display: flex;
   align-items: center;
@@ -299,32 +318,40 @@ body::-webkit-scrollbar {
 }
 
 /* Blog */
+.blog-section {
+  padding: 4rem 0;
+}
+
 .blog-section .container {
-  width: 100%;
-  padding: 0 20px;
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-flow: row;
+  gap: 2rem;
 }
 
 .blog-section .container .container-left {
   flex: 1;
-  display: inline-block;  
+  display: inline-block;
+  align-items: flex-start;
+  flex-flow: column;
 }
 
 .blog-section .section-title {
+  flex: 1;
   font-size: 2.5rem;
-  text-align: left; /* Alinha o título à esquerda */
-  margin-bottom: 1rem; /* Espaçamento menor entre o título e a descrição */
+  text-align: left;
+  margin-bottom: 1rem;
   font-weight: bold;
   color: #333;
 }
 
 .blog-section .section-description {
+  flex: 1;
   font-size: 1.2rem;
-  text-align: left; /* Alinha a descrição à esquerda */
-  margin-bottom: 2rem; /* Espaçamento após a descrição */
+  text-align: left;
+  margin-bottom: 2rem;
   color: #777;
 }
 
@@ -343,19 +370,33 @@ body::-webkit-scrollbar {
 
 .post-image {
   width: 100%;
-  height: 400px;
+  height: 500px;
   object-fit: cover;
 }
 
 .post-content {
-  padding: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.post-sub-title {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  font-family: var(--font-tertiary);
 }
 
 .post-title {
   font-size: 1.8rem;
   font-weight: bold;
   color: #333;
-  margin-bottom: 1rem;
+  margin: 0;
+  font-family: var(--font-primary);
+}
+
+.post-content p {
+  width: 60%;
+  margin: 0;
 }
 
 .post-excerpt {
@@ -364,19 +405,7 @@ body::-webkit-scrollbar {
   margin-bottom: 1.5rem;
 }
 
-.post-content .btn {
-  padding: 0.8rem 1.5rem;
-  background-color: #b42521;
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  border-radius: 50px;
-  display: inline-block;
-}
-
 .view-more {
-  text-align: center;
   margin-top: 3rem;
 }
 
@@ -391,11 +420,34 @@ body::-webkit-scrollbar {
 }
 
 /* Quem Somos */
-.about {
-  padding: 3rem 0;
+.about-us {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   background-color: var(--secondary-color);
   color: var(--white);
-  text-align: center;
+  gap: 2rem;
+  height: 100%;
+  align-items: start;
+}
+
+.about-us .container-left {
+  min-height: 100%;
+  flex: 1;
+  display: flex;
+}
+
+.about-us .container-right {
+  min-height: 100%;
+  flex: 1;
+}
+
+.about-us-image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
 }
 
 .values {
@@ -407,8 +459,81 @@ body::-webkit-scrollbar {
 }
 
 /* Contato */
+/* Estilos gerais para a seção de contato */
 .contact {
-  padding: 3rem 0;
+  padding: 4rem 0;
+  background-color: #f9f9f9; /* Fundo claro */
+}
+
+.contact .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333; /* Cor do título */
+}
+
+/* Estilos para o formulário */
+.contact-form {
+  background-color: #fff; /* Fundo branco */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #555; /* Cor do texto do label */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ddd; /* Borda suave */
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #b42521; /* Cor da borda ao focar */
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+/* Estilos para o botão */
+.contact-form .btn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff; /* Texto branco */
+  background-color: #b42521; /* Vermelho */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form .btn:hover {
+  background-color: #9c1f1c; /* Vermelho mais escuro ao passar o mouse */
 }
 
 .video-background {
@@ -424,12 +549,12 @@ body::-webkit-scrollbar {
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
   .header {
-    flex-direction: column; /* Alinha logo e menu em coluna em telas pequenas */
-    padding: 1rem; /* Reduz o padding para telas menores */
+    flex-direction: column;
+    padding: 1rem;
   }
 
   .nav ul {
-    flex-direction: column; /* Empilha os itens do menu */
+    flex-direction: column;
     text-align: center;
     gap: 0.5rem;
   }
