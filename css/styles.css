@@ -177,19 +177,94 @@ body::-webkit-scrollbar {
 /* Serviços */
 /* Estilos para a seção de serviços */
 .services {
-  padding: 3rem 6rem;
+  padding: 4rem 6rem; /* Espaçamento interno */
   display: flex;
   flex-direction: column;
   gap: 2rem; /* Espaçamento entre os serviços */
-  background-color: var(--white);
 }
 
 .service-item {
   display: flex;
-  align-items: start;
-  height: 600px; /* Altura fixa para cada serviço */
-  border: 10px solid var(--primary-color);
+  align-items: center;
+  height: 500px; /* Altura fixa para cada serviço */
+  background-color: var(--white); /* Fundo branco */
+  border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.service-content {
+  flex: 1; /* A descrição ocupa metade do espaço */
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--white); /* Fundo branco para a descrição */
+}
+
+.service-content h3 {
+  font-size: 2rem;
+  font-family: var(--font-tertiary);
+  margin-bottom: 1rem;
+  color: var(--black); /* Cor do título */
+}
+
+.service-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--black); /* Cor do texto */
+}
+
+.service-content .btn {
+  align-self: flex-start; /* Alinha o botão à esquerda */
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.service-content .btn:hover {
+  background-color: var(--secondary-color); /* Cor ao passar o mouse */
+}
+
+.service-item-sub {
+  display: flex;
+  align-items: center;
+  height: 700px; /* Altura fixa para cada serviço */
+  overflow: hidden;
+  gap: 2rem;
+}
+
+.service-item-sub-2 {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  height: 600px; /* Altura fixa para cada serviço */
+  background-color: var(--white); /* Fundo branco */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.service-item-sub-3 {
+  flex: 1;
+  height: 600px; /* Altura fixa para cada serviço */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white); /* Fundo branco */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+
+.service-item-sub-3 .service-content {
+  flex: 1; /* A descrição ocupa metade do espaço */
+  padding: 1rem;
 }
 
 /* Alternar a posição da foto e da descrição */
@@ -201,34 +276,16 @@ body::-webkit-scrollbar {
   flex-direction: row-reverse; /* Foto na direita, descrição na esquerda */
 }
 
-.service-item img {
-  width: 50%; /* A imagem ocupa metade do espaço */
+.service-item-img {
+  flex: 3; 
   height: 100%;
   object-fit: cover;
 }
 
-.service-item .content {
-  width: 50%; /* A descrição ocupa metade do espaço */
-  padding: 2rem;
-  color: var(--black); /* Cor do texto */
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-}
-
-.service-item .content h3 {
-  font-size: 1.8rem;
-  font-family: var(--font-tertiary);
-  margin-bottom: 1rem;
-}
-
-.service-item .content p {
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.service-item .content .btn {
-  align-self: flex-start; /* Alinha o botão à esquerda */
+.service-item-img-v {
+  flex: 2; 
+  width: 100%; /* A imagem ocupa metade do espaço */
+  object-fit: cover;
 }
 
 /* Destinos */
