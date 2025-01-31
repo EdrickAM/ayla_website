@@ -141,7 +141,9 @@
             <h3 class="post-title">Descubra o charme da Toscana</h3>
             <p class="post-excerpt">A Toscana oferece uma combinação única de vinhos, gastronomia e paisagens deslumbrantes. Saiba mais sobre as experiências exclusivas...</p>
           </div>
+          <hr class="solid">
         </div>
+        
         <div class="post-item">
           <img src="assets/images/post2.jpg" alt="Post 2" class="post-image">
           <div class="post-content">
@@ -149,7 +151,9 @@
             <h3 class="post-title">O que fazer nas Ilhas Maldivas</h3>
             <p class="post-excerpt">As Ilhas Maldivas são sinônimo de luxo e tranquilidade. Descubra as melhores atividades para uma viagem inesquecível...</p>
           </div>
+          <hr class="solid">
         </div>
+        
         <div class="post-item">
           <img src="assets/images/post3.jpg" alt="Post 3" class="post-image">
           <div class="post-content">
@@ -157,17 +161,24 @@
             <h3 class="post-title">Experiência única no Japão</h3>
             <p class="post-excerpt">Explore a cultura vibrante do Japão com uma experiência de viagem exclusiva e personalizada. Não perca as dicas...</p>
           </div>
+          <hr class="solid">
         </div>
       </div>
     </div>
   </section>
 
+  <svg width="100%" height="20" viewBox="0 0 700 20" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,10 Q 50 0, 100 10 T 200 10 T 300 10 T 400 10 T 500 10 T 600 10 T 700 10" 
+          fill="transparent" stroke="rgba(180, 37, 33, 0.5)" stroke-width="2"/>
+  </svg>
+
   <!-- Quem Somos Section -->
   <section id="quem-somos" class="about-us">
-    <div class="container-left">
-      <img src="assets/images/post3.jpg" alt="Sobre Nós" class="about-us-image">
+    <div class="about-us-image-container">
+      <img src="assets/images/sobrenos.jpg" alt="Sobre Nós" class="about-us-image">
+      <div class="fade-overlay"></div> <!-- Div para o efeito de fade -->
     </div>
-    <div class="container-right">
+    <div class="about-us-content">
       <h2>Quem Somos</h2>
       <p>A Ayla nasceu para oferecer experiências de viagem autênticas, conectando pessoas ao mundo de maneira única e transformadora.</p>
     </div>
@@ -176,26 +187,34 @@
   <!-- Contato Section -->
   <section id="contato" class="contact">
     <div class="container">
-      <h2>Fale Conosco</h2>
-      <form class="contact-form">
-        <div class="form-group">
-          <label for="name">Nome</label>
-          <input type="text" id="name" name="name" required>
+      <div class="contact-content">
+        <div class="contact-form">
+          <h2>Fale Conosco</h2>
+          <form>
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefone</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn">Enviar Mensagem</button>
+          </form>
         </div>
-        <div class="form-group">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" required>
+        <div class="contact-image">
+          <img src="assets/images/contato.jpg" alt="Imagem de contato" class="contact-image-fade">
+          <div class="fade-overlay-left"></div>
         </div>
-        <div class="form-group">
-          <label for="phone">Telefone</label>
-          <input type="tel" id="phone" name="phone" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Mensagem</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn">Enviar Mensagem</button>
-      </form>
+      </div>
     </div>
   </section>
 
