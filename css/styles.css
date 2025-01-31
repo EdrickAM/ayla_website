@@ -39,7 +39,7 @@
 :root {
   --primary-color: #b42521;
   --primary-color-extra-light: rgb(240, 204, 202);
-  --secondary-color: #3fc892;
+  --secondary-color: rgb(63, 200, 146);
   --background-light: #f7f7d4;
   --background-extra-light: #ffffdb;
   --background-dark: #191919;
@@ -180,7 +180,6 @@ body::-webkit-scrollbar {
   padding: 4rem 6rem; /* Espaçamento interno */
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* Espaçamento entre os serviços */
 }
 
 .service-item {
@@ -188,7 +187,6 @@ body::-webkit-scrollbar {
   align-items: center;
   height: 500px; /* Altura fixa para cada serviço */
   background-color: var(--white); /* Fundo branco */
-  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
@@ -245,7 +243,6 @@ body::-webkit-scrollbar {
   align-items: center;
   height: 600px; /* Altura fixa para cada serviço */
   background-color: var(--white); /* Fundo branco */
-  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
@@ -256,7 +253,6 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   background-color: var(--white); /* Fundo branco */
-  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
@@ -290,17 +286,31 @@ body::-webkit-scrollbar {
 
 /* Destinos */
 .destinos {
-  padding: 3rem 2rem;
+  width: 100%;
+  height: 100vh;
   position: relative;
-  text-align: center;
+}
+
+.destinos-image {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  /* Aplica um efeito de fade diretamente na imagem */
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%);
+
 }
 
 .destinos .title {
-  font-size: 2rem;
+  font-size: 3rem;
   font-family: var(--font-tertiary);
   font-weight: 700;
-  margin-bottom: 2rem;
-  text-align: left;
+  margin: 2rem 0rem;
+  text-align: center;
+  color: #3fc892;
 }
 
 .destinos-container {
@@ -310,7 +320,7 @@ body::-webkit-scrollbar {
   scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  padding: 2rem 0rem;
+  padding: 2rem 3rem;
 }
 
 .destinos-container::-webkit-scrollbar {
@@ -324,8 +334,6 @@ body::-webkit-scrollbar {
   position: relative;
   flex-shrink: 0;
   overflow: hidden;
-  background-color: var(--white); /* Fundo branco para a parte inferior */
-  border: 10px solid var(--white); /* Borda branca para simular a polaroid */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
   display: flex;
   flex-direction: column;
@@ -334,26 +342,33 @@ body::-webkit-scrollbar {
 
 .destino-item img {
   width: 100%;
-  height: 80%; /* A imagem ocupa 80% do espaço, deixando 20% para a descrição */
+  height: 100%; /* A imagem ocupa 80% do espaço, deixando 20% para a descrição */
   object-fit: cover;
 }
 
 .destino-item .content {
-  position: relative;
-  padding: 1rem;
-  text-align: center;
-  background-color: var(--white); /* Fundo branco para a descrição */
-  color: var(--black); /* Cor do texto */
-  height: 20%; /* A descrição ocupa 20% do espaço */
+  bottom: 0px;
+  width: 450px;
+  height: 30%;
+  position: absolute;
+  padding: 1rem 0rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-flow: column;
+  text-align: center;
 }
 
 .destino-item .content h3 {
   margin: 0;
+  color: #f9f9f9;
   font-size: 1.5rem;
   font-family: var(--font-tertiary);
+  font-weight: 600;
+}
+
+.destino-item .content p {
+  margin: 0;
+  color: #ddd;
+  font-family: var(--font-primary);
   font-weight: 600;
 }
 
@@ -415,7 +430,8 @@ body::-webkit-scrollbar {
   text-align: left;
   margin-bottom: 1rem;
   font-weight: bold;
-  color: #333;
+  color: #9c1f1c;
+  font-family: var(--font-tertiary);
 }
 
 .blog-section .section-description {
@@ -454,20 +470,21 @@ body::-webkit-scrollbar {
   font-weight: bold;
   color: #333;
   margin: 0;
-  font-family: var(--font-tertiary);
+  font-family: var(--font-primary);
 }
 
 .post-title {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #333;
+  color: #b42521;
   margin: 0;
-  font-family: var(--font-primary);
+  font-family: var(--font-tertiary);
 }
 
 .post-content p {
   width: 60%;
   margin: 0;
+  font-family: var(--font-primary);
 }
 
 .post-excerpt {
@@ -510,6 +527,7 @@ hr {
   justify-content: center;
   color: var(--primary-color);
   overflow: hidden;
+  padding: 2rem;
 }
 
 .about-us-image-container {
@@ -550,19 +568,21 @@ hr {
 .about-us-content {
   position: relative;
   z-index: 1; /* Garante que o texto fique sobre a imagem */
-  padding: 2rem;
-  max-width: 800px;
-  text-align: left;
+  width: 100%;
+  text-align: center;
 }
 
 .about-us-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  margin: 2rem 0rem;
 }
 
 .about-us-content p {
   font-size: 1.2rem;
   line-height: 1.6;
+  width: 50%;
+  text-align: center;
+  padding-left: 25%;
 }
 
 .values {
@@ -574,33 +594,6 @@ hr {
 }
 
 /* Contato */
-/* Estilos gerais para a seção de contato */
-.contact {
-  background-color: #f9f9f9; /* Fundo claro */
-}
-
-.contact .container {
-  margin: 0 auto;
-}
-
-.contact h2 {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #333; /* Cor do título */
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: #555; /* Cor do texto do label */
-}
-
 .form-group input,
 .form-group textarea {
   width: 100%;
@@ -623,26 +616,34 @@ hr {
 
 /* Estilos gerais para a seção de contato */
 .contact {
+  width: 100%;
+  height: 120vh;
   background-color: rgb(240, 204, 202); /* Fundo claro */
 }
 
 /* Container flexível para imagem e formulário */
 .contact-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center; /* Alinha verticalmente */
+  text-align: center;
+  justify-content: center;
 }
 
 /* Estilos para o formulário */
 .contact-form {
   flex: 2; /* Ocupa o espaço disponível */
-  padding: 0 2rem;
+  padding: 0rem 2rem;
 }
 
 .contact-form h2 {
   font-size: 2.5rem;
   text-align: left;
   margin-bottom: 2rem;
-  color: #333; /* Cor do título */
+  color: #9c1f1c; /* Cor do título */
+  font-family: var(--font-tertiary);
 }
 
 /* Estilos para os inputs e textarea */
@@ -655,6 +656,8 @@ hr {
   font-size: 1rem;
   margin-bottom: 0.5rem;
   color: #555; /* Cor do texto do label */
+  font-family: var(--font-primary);
+  font-weight: 600;
 }
 
 .form-group input,
@@ -703,6 +706,7 @@ hr {
   width: 60%; /* Mantém a imagem ocupando metade da tela */
   height: 100%;
   overflow: hidden;
+  text-align: center;
 }
 
 .contact-image-fade {
@@ -710,6 +714,7 @@ hr {
   height: 100%;
   object-fit: cover;
   display: block;
+  object-position: bottom;
 }
 
 .fade-overlay-left {
