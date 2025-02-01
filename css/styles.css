@@ -46,7 +46,7 @@
   --white: #fff;
   --gray-light: #ddd;
   --black: #333;
-  --overlay-bg: rgba(0, 0, 0, 0.5);
+  --overlay-bg: rgba(0, 0, 0, 0.3);
   --button-bg: #3fc892;
 
   /* Variáveis de Fontes */
@@ -70,79 +70,80 @@ body::-webkit-scrollbar {
 
 /* Header */
 .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 6rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  position: fixed; /* Fixo no topo */
-  top: 0; /* Colado no topo */
-  width: 100%; /* Largura total */
-  padding: 0.5rem 0;
-  z-index: 1000; /* Garante que fique acima de outros elementos */
-  background-color: transparent; /* Inicialmente transparente */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
 }
 
-/* Header sólido quando o usuário rolar */
 .header.solid {
-  background-color: #b42521; /* Vermelho sólido */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Container do header */
 .header .container {
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Alinha o logo à esquerda e o menu à direita */
   align-items: center;
-  padding: 0 2rem; /* Adiciona um pouco de padding nas laterais */
-  gap: 40rem;
+  padding: 0 2rem;
 }
 
-/* Logo */
-.header .logo img {
-  width: 70px;
-  height: auto;
-  transition: filter 0.3s ease; /* Transição suave para o logo */
-}
-
-/* Logo branco quando o header está sólido */
 .header.solid .logo img {
   filter: brightness(0) invert(1); /* Transforma o logo em branco */
 }
 
+/* Logo */
+.header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.header .logo img {
+  height: 50px; /* Ajuste a altura conforme necessário */
+}
+
 /* Menu */
+.nav {
+  display: flex;
+  justify-content: flex-end; /* Alinha o menu à direita */
+}
+
 .nav ul {
-  list-style: none;
   display: flex;
   gap: 1.5rem; /* Espaçamento entre os itens do menu */
+  list-style: none;
   margin: 0;
   padding: 0;
-  font-family: var(--font-tertiary);
-  font-weight: 500;
-  font-size: 14px;
 }
 
 .nav a {
-  color: var(--white);
   text-decoration: none;
+  color: var(--white);
   font-weight: bold;
-  transition: color 0.3s ease; /* Transição suave para os links */
+  transition: color 0.3s ease;
 }
 
 .nav a:hover {
-  color: var(--secondary-color); /* Cor ao passar o mouse */
+  color: var(--primary-color-extra-light); /* Cor ao passar o mouse */
 }
 
 /* Hero Section */
 .hero {
   position: relative;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: left;
+  text-align: left;
   color: var(--white);
   overflow: hidden;
+  padding: 6rem;
 }
 
 .hero-content {
@@ -151,7 +152,16 @@ body::-webkit-scrollbar {
 }
 
 .hero-content h2 {
+  font-size: 4rem;
   font-family: var(--font-tertiary);
+  width: 50%;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  font-family: var(--font-primary);
+  width: 50%;
 }
 
 .hero-overlay {
@@ -180,11 +190,19 @@ body::-webkit-scrollbar {
   padding: 4rem 6rem; /* Espaçamento interno */
   display: flex;
   flex-direction: column;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 3rem;
+  margin: 0rem 0rem 2rem 0rem;
+  font-family: var(--font-tertiary);
 }
 
 .service-item {
   display: flex;
   align-items: center;
+  text-align: left;
   height: 500px; /* Altura fixa para cada serviço */
   background-color: var(--white); /* Fundo branco */
   overflow: hidden;
@@ -235,6 +253,7 @@ body::-webkit-scrollbar {
   height: 700px; /* Altura fixa para cada serviço */
   overflow: hidden;
   gap: 2rem;
+  text-align: left;
 }
 
 .service-item-sub-2 {
@@ -273,7 +292,7 @@ body::-webkit-scrollbar {
 }
 
 .service-item-img {
-  flex: 3; 
+  flex: 2; 
   height: 100%;
   object-fit: cover;
 }
@@ -289,6 +308,10 @@ body::-webkit-scrollbar {
   width: 100%;
   height: 100vh;
   position: relative;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  object-position: top;
 }
 
 .destinos-image {
@@ -443,7 +466,7 @@ body::-webkit-scrollbar {
 }
 
 .blog-posts {
-  flex: 2;
+  flex: 3;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -453,6 +476,9 @@ body::-webkit-scrollbar {
 .post-item {
   overflow: hidden;
   flex: content;
+  background-color: var(--white); /* Fundo branco */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 .post-image {
@@ -462,7 +488,7 @@ body::-webkit-scrollbar {
 }
 
 .post-content {
-  padding: 1.5rem 0;
+  padding: 1.5rem;
 }
 
 .post-sub-title {
@@ -575,6 +601,7 @@ hr {
 .about-us-content h2 {
   font-size: 3rem;
   margin: 2rem 0rem;
+  font-family: var(--font-tertiary);
 }
 
 .about-us-content p {
