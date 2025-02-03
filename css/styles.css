@@ -40,8 +40,8 @@
   --primary-color: #b42521;
   --primary-color-extra-light: rgb(240, 204, 202);
   --secondary-color: rgb(63, 200, 146);
-  --background-light: #f7f7d4;
-  --background-extra-light: #ffffdb;
+  --background-light: #f1f1c0;
+  --background-extra-light: rgb(253, 253, 243);
   --background-dark: #191919;
   --white: #fff;
   --gray-light: #ddd;
@@ -113,12 +113,13 @@ body::-webkit-scrollbar {
 /* Menu */
 .nav {
   display: flex;
-  justify-content: flex-end; /* Alinha o menu à direita */
+  align-items: center; /* Garante que os itens do menu e os ícones fiquem alinhados */
+  justify-content: space-between;
 }
 
 .nav ul {
   display: flex;
-  gap: 1.5rem; /* Espaçamento entre os itens do menu */
+  gap: 1.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -135,33 +136,60 @@ body::-webkit-scrollbar {
   color: var(--primary-color-extra-light); /* Cor ao passar o mouse */
 }
 
+.social-icons {
+  display: flex;
+  align-items: center; /* Mantém os ícones alinhados verticalmente */
+  gap: 10px; /* Espaçamento entre os ícones */
+  margin-left: 20px; /* Ajusta a distância dos ícones em relação ao menu */
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1); /* Torna os ícones brancos */
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+}
+
 /* Hero Section */
 .hero {
   position: relative;
   height: 100vh;
-  justify-content: left;
-  text-align: left;
   color: var(--white);
   overflow: hidden;
   padding: 6rem;
 }
 
 .hero-content {
+  width: 100%;
+  height: 100%;
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+  justify-content: center;
+  text-align: center;
 }
 
 .hero-content h2 {
   font-size: 4rem;
   font-family: var(--font-tertiary);
-  width: 50%;
   line-height: 1.2;
+  margin-bottom: 0;
 }
 
 .hero-content p {
   font-size: 1.3rem;
   font-family: var(--font-primary);
-  width: 50%;
 }
 
 .hero-overlay {
@@ -175,255 +203,179 @@ body::-webkit-scrollbar {
 }
 
 .home .btn {
-  background-color: var(--secondary-color);
+  background-color: var(--background-extra-light);
   color: var(--white);
   padding: 0.8rem 1.5rem;
   text-decoration: none;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 50px;
   display: inline-block;
 }
 
+.cta-hero {
+  margin-top: 1.5rem;
+}
+
+.cta-hero .btn {
+  background-color: transparent;
+  color: var(--white); /* Cor do texto e da borda */
+  border: 4px solid var(--primary-color);
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-hero .btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
 /* Serviços */
-/* Estilos para a seção de serviços */
 .services {
-  padding: 4rem 6rem; /* Espaçamento interno */
+  padding: 4rem 6rem;
   display: flex;
   flex-direction: column;
   text-align: center;
-}
-
-.services h2 {
-  font-size: 3rem;
-  margin: 0rem 0rem 2rem 0rem;
-  font-family: var(--font-tertiary);
+  background-color: var(--background-extra-light);
+  gap: 2rem;
 }
 
 .service-item {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
-  text-align: left;
-  height: 500px; /* Altura fixa para cada serviço */
-  background-color: var(--white); /* Fundo branco */
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  justify-content: center;
 }
 
+.service-item.full {
+  width: 100%;
+  height: 500px;
+}
+
+.services-row {
+  display: flex;
+  gap: 2rem;
+}
+
+.service-item.half {
+  width: calc(50% - 1rem);
+  height: 400px;
+}
+
+.service-item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.service-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.service-item.full::before { background-image: url('assets/images/servico1.jpg'); }
+.service-item.half:nth-child(1)::before { background-image: url('assets/images/servico2.jpg'); }
+.service-item.half:nth-child(2)::before { background-image: url('assets/images/servico3.jpg'); }
+.service-item.full:last-child::before { background-image: url('assets/images/servico4.jpg'); }
+
 .service-content {
-  flex: 1; /* A descrição ocupa metade do espaço */
-  padding: 3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--white); /* Fundo branco para a descrição */
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .service-content h3 {
   font-size: 2rem;
-  font-family: var(--font-tertiary);
   margin-bottom: 1rem;
-  color: var(--black); /* Cor do título */
+  max-width: 90%;
 }
 
 .service-content p {
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  color: var(--black); /* Cor do texto */
+  max-width: 80%;
+  word-wrap: break-word;
 }
 
 .service-content .btn {
-  align-self: flex-start; /* Alinha o botão à esquerda */
   background-color: var(--primary-color);
   color: var(--white);
   padding: 0.8rem 2rem;
   text-decoration: none;
   font-size: 1rem;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.service-content .btn:hover {
-  background-color: var(--secondary-color); /* Cor ao passar o mouse */
-}
-
-.service-item-sub {
-  display: flex;
-  align-items: center;
-  height: 700px; /* Altura fixa para cada serviço */
-  overflow: hidden;
-  gap: 2rem;
-  text-align: left;
-}
-
-.service-item-sub-2 {
-  flex: 3;
-  display: flex;
-  align-items: center;
-  height: 600px; /* Altura fixa para cada serviço */
-  background-color: var(--white); /* Fundo branco */
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-.service-item-sub-3 {
-  flex: 1;
-  height: 600px; /* Altura fixa para cada serviço */
-  display: flex;
-  flex-direction: column;
-  background-color: var(--white); /* Fundo branco */
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-
-.service-item-sub-3 .service-content {
-  flex: 1; /* A descrição ocupa metade do espaço */
-  padding: 1rem;
-}
-
-/* Alternar a posição da foto e da descrição */
-.service-item:nth-child(odd) {
-  flex-direction: row; /* Foto na esquerda, descrição na direita */
-}
-
-.service-item:nth-child(even) {
-  flex-direction: row-reverse; /* Foto na direita, descrição na esquerda */
-}
-
-.service-item-img {
-  flex: 2; 
-  height: 100%;
-  object-fit: cover;
-}
-
-.service-item-img-v {
-  flex: 2; 
-  width: 100%; /* A imagem ocupa metade do espaço */
-  object-fit: cover;
+  border-radius: 50px;
 }
 
 /* Destinos */
 .destinos {
   width: 100%;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  object-position: top;
-}
-
-.destinos-image {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  
-  /* Aplica um efeito de fade diretamente na imagem */
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%);
-
-}
-
-.destinos .title {
-  font-size: 3rem;
-  font-family: var(--font-tertiary);
-  font-weight: 700;
-  margin: 2rem 0rem;
-  text-align: center;
-  color: #3fc892;
-}
-
-.destinos-container {
-  display: flex;
-  overflow-x: scroll;
-  gap: 1rem;
-  scroll-behavior: smooth;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  padding: 2rem 3rem;
-}
-
-.destinos-container::-webkit-scrollbar {
-  display: none;
-}
-
-/* Estilo para o efeito polaroid */
-.destino-item {
-  width: 450px;
-  height: 550px;
-  position: relative;
-  flex-shrink: 0;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.destino-item img {
-  width: 100%;
-  height: 100%; /* A imagem ocupa 80% do espaço, deixando 20% para a descrição */
-  object-fit: cover;
-}
-
-.destino-item .content {
-  bottom: 0px;
-  width: 450px;
-  height: 30%;
-  position: absolute;
-  padding: 1rem 0rem;
-  display: flex;
-  flex-flow: column;
   text-align: center;
+  background-color: #3fc892;
 }
 
-.destino-item .content h3 {
-  margin: 0;
-  color: #f9f9f9;
-  font-size: 1.5rem;
+.destinos-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--white);
+  margin: 1rem;
   font-family: var(--font-tertiary);
-  font-weight: 600;
 }
 
-.destino-item .content p {
-  margin: 0;
-  color: #ddd;
-  font-family: var(--font-primary);
-  font-weight: 600;
+.destino-item {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
 }
 
-/* Estilo para as setas de navegação sobre as imagens */
-.destinos-buttons {
+.destino-content {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 20px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  width: calc(100% - 6rem);
-  padding: 0 2rem;
+  top: 20px;
+  left: 20px;
+  max-width: 40%;
 }
 
-.destinos-buttons .btn {
-  background-color: var(--white);
-  color: var(--black);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border: none;
-  transition: background-color 0.3s;
+.destino-content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-.destinos-buttons .btn:hover {
-  background-color: var(--secondary-color);
+.destino-content p {
+  font-size: 1.2rem;
+  line-height: 1.5;
 }
 
 /* Blog */
@@ -471,6 +423,32 @@ body::-webkit-scrollbar {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
+}
+
+.blog-image {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  
+  /* Aplica um efeito de fade diretamente na imagem */
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%);
+}
+
+.fade-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(
+    to bottom,
+    rgba(253, 253, 243, 1) 0%,  /* Cor sólida do fundo */
+    rgba(253, 253, 243, 0.8) 30%, 
+    rgba(253, 253, 243, 0) 100%  /* Transparente na transição */
+  );
 }
 
 .post-item {
@@ -585,9 +563,9 @@ hr {
   height: 30%;
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 219, 1) 0%,  /* Cor sólida do fundo */
-    rgba(255, 255, 219, 0.8) 30%, 
-    rgba(255, 255, 219, 0) 100%  /* Transparente na transição */
+    rgba(253, 253, 243, 1) 0%,  /* Cor sólida do fundo */
+    rgba(253, 253, 243, 0.8) 30%, 
+    rgba(253, 253, 243, 0) 100%  /* Transparente na transição */
   );
 }
 

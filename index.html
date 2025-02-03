@@ -27,6 +27,17 @@
           <li><a href="#quem-somos">Quem Somos</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/ayla.mundo" target="_blank">
+            <img src="assets/icons/instagram.svg" alt="Instagram">
+          </a>
+          <a href="https://www.facebook.com/ayla.mundo" target="_blank">
+            <img src="assets/icons/facebook.svg" alt="Facebook">
+          </a>
+          <a href="https://wa.me/5521974746036" target="_blank">
+            <img src="assets/icons/whatsapp.svg" alt="WhatsApp">
+          </a>
+        </div>
       </nav>
     </div>
   </header>
@@ -42,84 +53,76 @@
     <div class="hero-content">
       <h2>Explore o mundo com sofisticação</h2>
       <p>Viagens exclusivas e experiências autênticas.</p>
+      <div class="cta-hero">
+        <a href="#" class="btn">Fale conosco</a>
+      </div>
     </div>
   </section>
   
   <!-- Serviços Section -->
   <section id="servicos" class="services">
-    <h2 class="section-title">O mundão é nosso!</h2>
-    <div class="service-item">
+    <!-- Primeiro Serviço - Ocupa toda a linha -->
+    <div class="service-item full">
       <img src="assets/images/servico1.jpg" class="service-item-img" alt="Serviço 1">
-      <div class="service-content">
+      <div class="service-content overlay">
         <h3>Viagens Personalizadas</h3>
         <p>Crie a viagem dos seus sonhos com roteiros exclusivos e sob medida para você. Explore destinos únicos com todo o conforto e sofisticação.</p>
         <a href="#" class="btn">Saiba Mais</a>
       </div>
     </div>
-    <div class="service-item-sub">
-      <div class="service-item-sub-2">
+    
+    <!-- Segundo e Terceiro Serviço - Ocupam metade da tela cada -->
+    <div class="services-row">
+      <div class="service-item half">
         <img src="assets/images/servico2.jpg" class="service-item-img" alt="Serviço 2">
-        <div class="service-content">
+        <div class="service-content overlay">
           <h3>Luxo e Conforto</h3>
           <p>Desfrute de hospedagens em hotéis de luxo, resorts exclusivos e experiências premium que garantem o máximo de conforto e bem-estar.</p>
           <a href="#" class="btn">Saiba Mais</a>
         </div>
       </div>
-      <div class="service-item-sub-3">
-        <img src="assets/images/servico3.jpg" class="service-item-img-v" alt="Serviço 3">
-        <div class="service-content">
+      <div class="service-item half">
+        <img src="assets/images/servico3.jpg" class="service-item-img" alt="Serviço 3">
+        <div class="service-content overlay">
           <h3>Aventuras Únicas</h3>
           <p>Viva experiências inesquecíveis com aventuras emocionantes, como safáris, trilhas e mergulhos em destinos exóticos ao redor do mundo.</p>
           <a href="#" class="btn">Saiba Mais</a>
         </div>
       </div>
     </div>
-    <div class="service-item">
+    
+    <!-- Último Serviço - Ocupa toda a linha -->
+    <div class="service-item full">
       <img src="assets/images/servico4.jpg" class="service-item-img" alt="Serviço 4">
-      <div class="service-content">
+      <div class="service-content overlay">
         <h3>Cultura e História</h3>
         <p>Conheça a riqueza cultural e histórica de destinos incríveis, com guias especializados e roteiros que valorizam a autenticidade local.</p>
         <a href="#" class="btn">Saiba Mais</a>
       </div>
     </div>
   </section>
-
-  <svg width="100%" height="20" viewBox="0 0 700 20" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,10 Q 50 0, 100 10 T 200 10 T 300 10 T 400 10 T 500 10 T 600 10 T 700 10" 
-          fill="transparent" stroke="rgba(63, 200, 146, 0.5)" stroke-width="2"/>
-  </svg>
-
+    
   <!-- Destinos Section -->
   <section id="destinos" class="destinos">
-    <div class="title">Destinos Imperdíveis</div>
-    <img src="assets/images/destinos.jpg" class="destinos-image">
-    <div class="destinos-container">
-      <div class="destino-item">
-        <img src="assets/images/destino1.jpg" alt="Destino 1">
-        <div class="content">
-          <h3>Destino 1</h3>
-          <p>Conheça a riqueza cultural e histórica de destinos incríveis, com guias especializados e roteiros que valorizam a autenticidade local.</p>
-        </div>
-      </div>
-      <div class="destino-item">
-        <img src="assets/images/destino2.jpg" alt="Destino 2">
-        <div class="content">
-          <h3>Destino 2</h3>
-          <p>Conheça a riqueza cultural e histórica de destinos incríveis, com guias especializados e roteiros que valorizam a autenticidade local.</p>
-        </div>
-      </div>
-      <div class="destino-item">
-        <img src="assets/images/destino3.jpg" alt="Destino 3">
-        <div class="content">
-          <h3>Destino 3</h3>
-          <p>Conheça a riqueza cultural e histórica de destinos incríveis, com guias especializados e roteiros que valorizam a autenticidade local.</p>
-        </div>
+    <h2 class="destinos-title">O mundão é nosso!</h2>
+    <div class="destino-item" style="background-image: url('assets/images/destino1.jpg');">
+      <div class="destino-content">
+        <h2>Destino 1</h2>
+        <p>Conheça a riqueza cultural e histórica de destinos incríveis, com guias especializados e roteiros autênticos.</p>
       </div>
     </div>
-    <!--div class="destinos-buttons">
-      <button class="btn" onclick="scrollLeft()">&lt;</button>
-      <button class="btn" onclick="scrollRight()">&gt;</button>
-    </div-->
+    <div class="destino-item" style="background-image: url('assets/images/destino2.jpg');">
+      <div class="destino-content">
+        <h2>Destino 2</h2>
+        <p>Viva experiências inesquecíveis com aventuras emocionantes e paisagens deslumbrantes.</p>
+      </div>
+    </div>
+    <div class="destino-item" style="background-image: url('assets/images/destino3.jpg');">
+      <div class="destino-content">
+        <h2>Destino 3</h2>
+        <p>Descubra locais paradisíacos e aproveite momentos de relaxamento e cultura.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Blog Section -->

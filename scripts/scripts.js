@@ -53,37 +53,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // Adiciona o listener de scroll
   window.addEventListener('scroll', toggleHeaderSolid);
 
-  // ==================================================
-  // 4. Funcionalidade de rolagem dos destinos
-  // ==================================================
-  function scrollLeft() {
-    document.querySelector('.destinos-container').scrollBy({
-      left: -500, // Rola 500px para a esquerda
-      behavior: 'smooth',
-    });
-  }
-
-  function scrollRight() {
-    document.querySelector('.destinos-container').scrollBy({
-      left: 500, // Rola 500px para a direita
-      behavior: 'smooth',
-    });
-  }
-
-  // Atualiza o estado dos botões de rolagem
-  function updateScrollButtons() {
-    const container = document.querySelector('.destinos-container');
-    const scrollLeftButton = document.querySelector('.destinos-buttons .btn:first-child');
-    const scrollRightButton = document.querySelector('.destinos-buttons .btn:last-child');
-
-    // Desabilita o botão de rolar para a esquerda se não houver mais conteúdo à esquerda
-    scrollLeftButton.disabled = container.scrollLeft === 0;
-
-    // Desabilita o botão de rolar para a direita se não houver mais conteúdo à direita
-    scrollRightButton.disabled = container.scrollLeft + container.clientWidth >= container.scrollWidth;
-  }
-
-  // Adiciona listeners para atualizar os botões de rolagem
-  document.querySelector('.destinos-container').addEventListener('scroll', updateScrollButtons);
   document.addEventListener('DOMContentLoaded', updateScrollButtons);
 });
