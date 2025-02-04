@@ -865,15 +865,19 @@ footer {
   padding: 2rem;
 }
 
-.footer-top {
+.footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   position: relative;
+  flex-flow: row;
+  gap: 2rem;
 }
 
-.footer-top .left {
+.footer .left {
   flex: 1;
+  display: flex;
+  flex-flow: column;
   text-align: left;
   font-family: var(--font-tertiary);
   color: var(--color-yellow-pastel);
@@ -881,58 +885,34 @@ footer {
   font-weight: 700;
 }
 
-.footer-top .center {
-  flex: 2;
-  text-align: center;
+.footer .center {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  text-align: left;
   color: var(--color-yellow-pastel);
   font-family: var(--font-primary);
   font-size: medium;
   font-weight: 500;
 }
 
-.footer-top .right {
+.footer .right {
   flex: 1;
+  display: flex;
+  flex-flow: column;
   text-align: right;
 }
 
-.footer-top .left, .footer-top .center, .footer-top .right {
-  z-index: 1; /* Garante que o logo da Ayla fique atrás do texto */
-}
-
-/* Logo atrás da frase 'be a local' */
-.footer-logo {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -1; /* Faz o logo aparecer atrás */
-}
-
-/* Informações e Newsletter */
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 20px;
-  align-items: center;
-  gap: 2rem;
-}
-
-.footer-info {
+.footer .left h4 {
   flex: 1;
+  margin: 0;
+}
+
+.footer .left .footer-info {
+  flex: 5;
   font-size: smaller;
   font-family: var(--font-primary);
   color: var(--color-red-dark);
-}
-
-.footer-newsletter {
-  flex: 3;
-  text-align: right;
-}
-
-.divider {
-  width: 4px;
-  background-color: var(--color-burgundy);
-  height: 100%;
-  margin: 0 20px;
 }
 
 /* Estilo do formulário de newsletter */
@@ -941,22 +921,22 @@ footer {
   display: flex;
   flex-direction: column; /* Organiza os elementos na vertical */
   align-items: flex-start; /* Alinha à esquerda */
-  padding: 2rem;
-  gap: 1rem;
 }
 
 .newsletter h2 {
-  margin: 0;
+  margin: 1rem 0 0 0;
   font-size: 2rem;
   font-family: var(--font-tertiary);
-  color: var(--color-burgundy);
+  color: var(--color-red-medium);
 }
 
 .newsletter .description {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: var(--font-primary);
   color: var(--color-soft-white);
   margin: 0;
+  width: 80%;
+  margin-bottom: 0.5rem;
 }
 
 .newsletter .email-input {
@@ -964,13 +944,14 @@ footer {
   max-width: 400px; /* Limita a largura máxima */
   padding: 1rem;
   font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .newsletter .submit-btn {
   width: 100%;
   max-width: 200px;
   padding: 1rem 2rem;
-  background-color: var(--color-burgundy);
+  background-color: var(--color-red-medium);
   color: white;
   border: none;
   border-radius: 50px;
