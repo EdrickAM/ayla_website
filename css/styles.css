@@ -739,96 +739,82 @@ hr {
 /* Estilos gerais para a seção de contato */
 .contact {
   width: 100%;
-  height: 120vh;
-  background-color: rgb(240, 204, 202); /* Fundo claro */
 }
 
-/* Container flexível para imagem e formulário */
+/* Estilizando a seção de contato */
 .contact-content {
-  position: relative;
-  width: 100%;
-  height: 100%;
   display: flex;
-  align-items: center; /* Alinha verticalmente */
-  text-align: center;
+  align-items: stretch;
   justify-content: center;
+  gap: 0;
+  width: 100%;
+  height: 100vh;
 }
 
-/* Estilos para o formulário */
 .contact-form {
-  flex: 2; /* Ocupa o espaço disponível */
-  padding: 0rem 2rem;
+  flex: 2;
+  padding: 2rem;
+  border: 2px solid var(--color-light-gray);
+  text-align: left;
+  background-color: var(--color-yellow-pastel);
 }
 
 .contact-form h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   text-align: left;
-  margin-bottom: 2rem;
-  color: var(--color-red-medium); /* Cor do título */
+  color: var(--color-red-medium);
   font-family: var(--font-tertiary);
-}
-
-/* Estilos para os inputs e textarea */
-.form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
 }
 
 .form-group label {
   display: block;
   font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: #555; /* Cor do texto do label */
+  color: #555;
   font-family: var(--font-primary);
   font-weight: 600;
+  text-align: left;
 }
 
 .form-group input,
 .form-group textarea {
+  width: 100%;
   padding: 0.8rem;
   font-size: 1rem;
-  border: 1px solid #ddd; /* Borda suave */
+  border: 1px solid var(--color-light-gray);
   border-radius: 5px;
   transition: border-color 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com 90% de transparência */
-  box-sizing: border-box; /* Garante que padding e borda sejam incluídos na largura */
+  box-sizing: border-box;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: var(--color-red-medium); /* Cor da borda ao focar */
-  outline: none;
-}
-
-.form-group textarea {
-  resize: vertical; /* Permite redimensionar verticalmente */
-}
-
-/* Estilos para o botão */
 .contact-form .btn {
   display: block;
   width: 100%;
   padding: 1rem;
   font-size: 1rem;
   font-weight: bold;
-  color: var(--color-soft-white); /* Texto branco */
-  background-color: var(--color-red-dark); /* Vermelho */
+  color: var(--color-soft-white);
+  background-color: var(--color-red-dark);
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .contact-form .btn:hover {
-  background-color: var(--color-red-medium); /* Vermelho mais escuro ao passar o mouse */
+  background-color: var(--color-red-medium);
 }
 
-/* Estilos para a imagem */
+/* Imagem ocupando todo o lado direito */
 .contact-image {
+  flex: 3;
   position: relative;
-  width: 60%; /* Mantém a imagem ocupando metade da tela */
+  width: 100%;
   height: 100%;
-  overflow: hidden;
-  text-align: center;
+}
+
+.contact-image img {
+  object-position: bottom;
 }
 
 .contact-image-fade {
@@ -836,17 +822,6 @@ hr {
   height: 100%;
   object-fit: cover;
   display: block;
-  object-position: bottom;
-}
-
-.fade-overlay-left {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20%; /* Controla a área do fade */
-  height: 100%;
-  background: linear-gradient(to right, rgba(240, 204, 202, 1) 0%, rgba(240, 204, 202, 0) 100%);
-  pointer-events: none;
 }
 
 .video-background {
@@ -868,9 +843,8 @@ footer {
 .footer {
   display: flex;
   justify-content: space-between;
-  align-items: start;
-  position: relative;
-  flex-flow: row;
+  align-items: center;
+  height: 100%;
   gap: 2rem;
 }
 
@@ -899,8 +873,15 @@ footer {
 .footer .right {
   flex: 1;
   display: flex;
-  flex-flow: column;
-  text-align: right;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  text-align: center;
+  height: 100%;
+}
+
+.footer .right img {
+  width: 250px;
+  display: block; 
 }
 
 .footer .left h4 {
@@ -913,6 +894,10 @@ footer {
   font-size: smaller;
   font-family: var(--font-primary);
   color: var(--color-red-dark);
+}
+
+.footer .center h4 {
+  margin: 0;
 }
 
 /* Estilo do formulário de newsletter */
@@ -942,9 +927,14 @@ footer {
 .newsletter .email-input {
   width: 100%;
   max-width: 400px; /* Limita a largura máxima */
-  padding: 1rem;
-  font-size: 1rem;
   margin-bottom: 0.5rem;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid var(--color-soft-white); /* Borda suave */
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com 90% de transparência */
+  box-sizing: border-box; /* Garante que padding e borda sejam incluídos na largura */
 }
 
 .newsletter .submit-btn {
