@@ -100,6 +100,10 @@ body::-webkit-scrollbar {
   filter: brightness(0) invert(1); /* Transforma o logo em branco */
 }
 
+.header.solid .nav a:hover {
+  color: var(--primary-color-extra-light); /* Cor ao passar o mouse */
+}
+
 /* Logo */
 .header .logo {
   display: flex;
@@ -107,7 +111,8 @@ body::-webkit-scrollbar {
 }
 
 .header .logo img {
-  height: 50px; /* Ajuste a altura conforme necessário */
+  height: 4rem; /* Ajuste a altura conforme necessário */
+  filter: brightness(0) invert(1); /* Transforma o logo em branco */
 }
 
 /* Menu */
@@ -133,7 +138,7 @@ body::-webkit-scrollbar {
 }
 
 .nav a:hover {
-  color: var(--primary-color-extra-light); /* Cor ao passar o mouse */
+  color: var(--primary-color); /* Cor ao passar o mouse */
 }
 
 .social-icons {
@@ -170,13 +175,12 @@ body::-webkit-scrollbar {
 
 .hero-content {
   width: 100%;
-  height: 100%;
+  height: 80%;
   position: relative;
   z-index: 1;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end; 
-  justify-content: center;
+  flex-direction: column; 
+  justify-content: end;
   text-align: center;
 }
 
@@ -202,34 +206,42 @@ body::-webkit-scrollbar {
   z-index: 0;
 }
 
-.home .btn {
-  background-color: var(--background-extra-light);
-  color: var(--white);
-  padding: 0.8rem 1.5rem;
-  text-decoration: none;
-  font-size: 1rem;
-  border-radius: 50px;
-  display: inline-block;
-}
-
+/* Ajustes para os botões da primeira seção */
+/* Ajustes para os botões da primeira seção */
 .cta-hero {
-  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* Espaçamento entre os botões */
+  width: 100%;
+  max-width: 500px; /* Define um limite para manter os botões centralizados */
+  margin: 0 auto; /* Centraliza a seção horizontalmente */
 }
 
 .cta-hero .btn {
+  flex: 1; /* Faz os botões ocuparem o mesmo espaço */
+  text-align: center;
   background-color: transparent;
-  color: var(--white); /* Cor do texto e da borda */
-  border: 4px solid var(--primary-color);
+  color: var(--white);
+  border: 4px solid var(--white);
   padding: 0.8rem 2rem;
   font-size: 1rem;
   border-radius: 50px;
   text-decoration: none;
+  max-width: 200px;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .cta-hero .btn:hover {
+  border: 4px solid var(--primary-color);
   background-color: var(--primary-color);
   color: white;
+}
+
+.cta-hero .divider {
+  width: 2px; /* Espessura da linha de divisão */
+  height: 40px; /* Ajuste a altura da linha */
+  background-color: var(--white); /* Cor da linha */
 }
 
 /* Serviços */
@@ -240,6 +252,22 @@ body::-webkit-scrollbar {
   text-align: center;
   background-color: var(--background-extra-light);
   gap: 2rem;
+}
+
+.services h2 {
+  color: var(--primary-color);
+  font-size: 3rem;
+  margin-bottom: 0px;
+  font-family: var(--font-tertiary);
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+.services p {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: -1rem;
+  font-family: var(--font-primary);
 }
 
 .service-item {
@@ -269,6 +297,7 @@ body::-webkit-scrollbar {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: bottom;
   position: absolute;
   top: 0;
   left: 0;
@@ -299,36 +328,61 @@ body::-webkit-scrollbar {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.5);
+  justify-content: end;
+  align-items: start;
+  background: rgba(0, 0, 0, 0.3);
   color: white;
   padding: 2rem;
-  text-align: center;
+  text-align: left;
   box-sizing: border-box;
 }
 
-.service-content h3 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  max-width: 90%;
+.service-content h4 {
+  color: var(--background-light);
+  margin-bottom: 0.2rem;
+  max-width: 100%;
 }
 
-.service-content p {
-  font-size: 1.1rem;
+.service-content h3 {
+  line-height: 1.2;
+  font-size: 2rem;
+  max-width: 100%;
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-item.full .service-content p {
+  font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  max-width: 80%;
+  max-width: 40%;
+  font-weight: 300;
+  word-wrap: break-word;
+}
+
+.service-item.half .service-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  width: 70% !important; /* Garantir que a largura seja de 70%, forçando a aplicação */
+  font-weight: 300;
   word-wrap: break-word;
 }
 
 .service-content .btn {
-  background-color: var(--primary-color);
-  color: var(--white);
+  border: 4px solid var(--background-light);
+  color: var(--background-light);
   padding: 0.8rem 2rem;
   text-decoration: none;
   font-size: 1rem;
   border-radius: 50px;
+  font-weight: 700;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.service-content .btn:hover {
+  background-color: var(--background-light);
+  color: var(--black);
 }
 
 /* Destinos */
@@ -339,43 +393,46 @@ body::-webkit-scrollbar {
   background-color: #3fc892;
 }
 
-.destinos-title {
-  font-size: 3rem;
-  font-weight: bold;
-  color: var(--white);
-  margin: 1rem;
-  font-family: var(--font-tertiary);
-}
-
 .destino-item {
   width: 100vw;
   height: 100vh;
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   position: relative;
 }
 
-.destino-content {
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  padding: 20px;
+.destino-item::before {
+  content: '';
   position: absolute;
-  top: 20px;
-  left: 20px;
-  max-width: 40%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Ajuste a opacidade conforme necessário */
+  z-index: 1; /* Coloca a sobreposição abaixo do conteúdo */
 }
 
-.destino-content h2 {
-  font-size: 2rem;
+.destino-content {
+  color: var(--white);
+  position: relative;
+  z-index: 2; /* Garante que o conteúdo esteja acima da sobreposição */
+  align-items: center;
+}
+
+.destino-content h1 {
+  font-size: 6rem;
   margin-bottom: 10px;
+  font-family: var(--font-tertiary);
 }
 
 .destino-content p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 1.5;
+  font-family: var(--font-primary);
+  margin-top: 0rem;
 }
 
 /* Blog */
@@ -523,71 +580,93 @@ hr {
 }
 
 /* Quem Somos */
+/* Ajustes para a seção "Quem Somos" */
 .about-us {
-  position: relative;
-  min-height: 140vh;
   display: flex;
-  align-items: flex-start;
   justify-content: center;
-  color: var(--primary-color);
-  overflow: hidden;
-  padding: 2rem;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #7a0000;
 }
 
-.about-us-image-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.about-us .container {
+  position: relative;
+  background-color: #f7f3dc;
+  width: 80%;
+  max-width: 900px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.about-us .image {
+  flex: 1;
+  object-fit: cover;
+}
+
+.about-us .image img {
+  position: relative;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  object-fit: cover; /* Garante que a imagem cubra toda a área da div sem distorção */
+  object-position: center; /* Garante que a imagem fique centralizada dentro da div */
 }
 
-.about-us-image {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 90%;
-  object-fit: cover;
-  
-  /* Aplica um efeito de fade diretamente na imagem */
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%);
+.about-us .content {
+  flex: 2;
+  padding: 20px;
 }
 
-.fade-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 30%;
-  background: linear-gradient(
-    to bottom,
-    rgba(253, 253, 243, 1) 0%,  /* Cor sólida do fundo */
-    rgba(253, 253, 243, 0.8) 30%, 
-    rgba(253, 253, 243, 0) 100%  /* Transparente na transição */
-  );
-}
-
-.about-us-content {
-  position: relative;
-  z-index: 1; /* Garante que o texto fique sobre a imagem */
-  width: 100%;
-  text-align: center;
-}
-
-.about-us-content h2 {
-  font-size: 3rem;
-  margin: 2rem 0rem;
+.about-us h1 {
+  color: #a02c2c;
   font-family: var(--font-tertiary);
+  font-size: 2rem;
+  margin: 0;
 }
 
-.about-us-content p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  width: 50%;
-  text-align: center;
-  padding-left: 25%;
+.about-us p {
+  font-family: var(--font-primary);
+  color: #333;
+  font-weight: 700;
+  width: 80%;
+}
+
+.about-us .quote {
+  color: #a02c2c;
+  position: absolute;
+  right: -2rem;
+  bottom: 8rem;
+  transform: rotate(-15deg);
+  z-index: 10;
+  width: 20rem;
+  height: auto;
+}
+
+.about-us .quote p {
+  font-family: var(--font-secondary);
+  color: #a02c2c;
+  position: absolute; /* Permite a sobreposição */
+  font-size: 2rem; /* Tamanho da fonte, ajuste conforme necessário */
+}
+
+/* Ajuste do ícone */
+.about-us .icon {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  background-color: #f7f3dc;
+  border: solid 20px var(--button-bg);
+  color: white;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 10px;
 }
 
 .values {
