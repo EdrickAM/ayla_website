@@ -480,6 +480,8 @@ body::-webkit-scrollbar {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
+  border: solid 20px var(--button-bg);
+  background-color: #f7f3dc;
 }
 
 .blog-image {
@@ -580,24 +582,41 @@ hr {
 }
 
 /* Quem Somos */
-/* Ajustes para a seção "Quem Somos" */
 .about-us {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 20px;
-  background-color: #7a0000;
+  position: relative;
+  padding: 5rem 10rem 5rem 26rem;
+  background-color: rgb(122, 0, 0);
+}
+
+.about-us .title {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  font-size: 5rem; /* Ajuste para destacar */
+  font-family: var(--font-tertiary);
+  color: rgba(255, 255, 255, 0.1); /* Torna o texto parte do fundo */
+  z-index: 0; /* Mantém atrás do conteúdo */
+  pointer-events: none; /* Evita interferência no clique */
+  transform: translateY(-50%); /* Centraliza verticalmente */
+  width: 30%;
 }
 
 .about-us .container {
   position: relative;
+  z-index: 1; /* Garante que o conteúdo fique sobreposto */
   background-color: #f7f3dc;
-  width: 80%;
-  max-width: 900px;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.about-us h2 {
+  color: var(--primary-color);
+  font-family: var(--font-tertiary);
+  font-size: 6rem;
+  line-height: 1.2;
+  display: inline-block;
 }
 
 .about-us .image {
@@ -625,18 +644,26 @@ hr {
   margin: 0;
 }
 
+.about-us h4 {
+  font-family: var(--font-tertiary);
+  color: #a02c2c;
+  font-weight: 700;
+  margin: 0;
+}
+
 .about-us p {
   font-family: var(--font-primary);
   color: #333;
   font-weight: 700;
   width: 80%;
+  margin-top: 0;
 }
 
 .about-us .quote {
   color: #a02c2c;
   position: absolute;
-  right: -2rem;
-  bottom: 8rem;
+  right: -4.5rem;
+  bottom: 5rem;
   transform: rotate(-15deg);
   z-index: 10;
   width: 20rem;
@@ -650,17 +677,20 @@ hr {
   font-size: 2rem; /* Tamanho da fonte, ajuste conforme necessário */
 }
 
-/* Ajuste do ícone */
-.about-us .icon {
+.about-us .container .content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-us .container .content .icon {
   position: absolute;
-  top: -30px;
-  right: -30px;
+  top: -60px;
+  right: -60px;
   width: 120px;
   height: 120px;
   background-color: #f7f3dc;
   border: solid 20px var(--button-bg);
-  color: white;
-  font-size: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -668,6 +698,7 @@ hr {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   padding: 10px;
 }
+
 
 .values {
   list-style: none;
