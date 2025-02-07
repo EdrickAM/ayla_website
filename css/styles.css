@@ -47,7 +47,7 @@
   --color-red-strong: #d83935;
   --color-coral: #ea4d49;
   --color-yellow-pastel: #f7f4d4;
-  --color-yellow-pastel-ligth: #f9f8ec;
+  --color-yellow-pastel-ligth: #f7f4e8;
 
   /* Variações de branco e preto harmoniosas */
   --color-soft-white: #f9f9f9;
@@ -58,6 +58,10 @@
   --font-primary: 'Roboto Slab', serif;
   --font-secondary: 'Pacifico', cursive;
   --font-tertiary: 'Noka', sans-serif; /* Fonte Noka para ser usada */
+}
+
+a, u {
+  text-decoration: none;
 }
 
 /* Estilos gerais */
@@ -255,7 +259,7 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: var(--color-soft-white);
+  background-color: var(--color-yellow-pastel-ligth);
   gap: 2rem;
 }
 
@@ -465,24 +469,19 @@ body::-webkit-scrollbar {
   flex-flow: column;
 }
 
-.blog-section .section-title {
-  flex: 1;
-  font-size: 2.5rem;
-  text-align: left;
-  margin-bottom: 1rem;
-  font-weight: bold;
-  color: var(--color-red-medium);
-  font-family: var(--font-tertiary);
+.blog-section .container .container-left .img {
+  margin-bottom: 2rem;
 }
 
 .blog-section .section-description {
   flex: 1;
   font-size: 1.2rem;
   text-align: left;
-  margin-bottom: 2rem;
-  color: var(--color-soft-black);
+  margin: 1.5rem;
+  color: var(--color-red-medium);
   font-weight: 700;
   margin: 0;
+  font-family: var(--font-tertiary);
 }
 
 .blog-posts {
@@ -979,10 +978,4 @@ form input, form textarea {
   margin-top: 0.5rem;
   border: 1px solid var(--gray-light);
   border-radius: 5px;
-}
-
-form .btn {
-  background-color: var(--secondary-color);
-  color: var(--white);
-  margin-top: 1rem;
 }
