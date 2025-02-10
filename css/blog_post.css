@@ -114,13 +114,39 @@ body {
 
 /* CONTEÚDO DO POST */
 .post-content .container {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1.5rem; /* Ajustado para evitar ultrapassar a lateral */
+  padding: 0 6rem; /* Ajustado para evitar ultrapassar a lateral */
+  display: flex;
+  flex-flow: column;
 }
 
 .post-content img {
   width: 100%;
   height: auto;
   margin: 1.5rem 0;
+}
+
+.post-content p {
+  width: 100%;  
+}
+
+.post-content .container .horizontal {
+  flex: 1;
+  display: flex;
+  flex-flow: row;
+  gap: 1.3rem;
+}
+
+.post-content .container .horizontal .horizontal-content-img {
+  flex: 2;
+}
+
+.post-content .container .horizontal img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.post-content .container .horizontal .horizontal-content {
+  flex: 3;
 }
