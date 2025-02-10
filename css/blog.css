@@ -3,29 +3,65 @@
 /* Estilos específicos para o Blog */
 
 body {
-  background-color: var(--color-soft-white);
+  background-color: var(--color-yellow-pastel-ligth);
+}
+
+.header .container {
+  max-width: 100%;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.header .container h3 {
+  font-family: var(--font-tertiary);
+  color: var(--color-coral);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons a {
+  text-decoration: none;
+}
+
+.social-icons .icon {
+  width: 24px; /* Ajuste o tamanho */
+  height: 24px;
+  fill: var(--color-coral); /* Define a cor vermelha */
+  transition: fill 0.3s ease-in-out;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover .icon {
+  fill: var(--color-red-medium); /* Cor mais escura ao passar o mouse */
+  transform: scale(1.1);
 }
 
 .blog-home {
   position: relative;
-  background-color: var(--color-yellow-pastel-ligth);
-  padding: 6rem 1rem;
+  padding: 7rem 1rem;
   margin: 0 auto;
+  display: flex;
+  flex-flow: row;
+  gap: 1rem;
 }
 
 .menu {
-  position: relative;
-  width: 100%;
+  flex: 2;
+  height: 100%;
   display: flex;
   flex-flow: column;
   align-content: center;
-  padding: 2rem 0rem;
 }
 
 .menu .container {
   flex: 5;
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 .menu img {
@@ -35,28 +71,8 @@ body {
   object-position: center;
 }
 
-.menu .items {
-  flex: 1;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  padding: 2rem 0;
-  font-size: 1rem;
-}
-
-.menu .items .nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem; /* Ajuste o espaçamento entre os itens conforme necessário */
-}
-
-.menu .items .nav a {
-  font-family: var(--font-tertiary);
-  color: var(--color-red-strong);
-}
-
 .featured-post {
+  flex: 4;
   position: relative;
   overflow: hidden;
   padding-bottom: 3rem;
@@ -77,7 +93,6 @@ body {
 
 .featured-content {
   position: relative;
-  max-width: 60%;
 }
 
 .featured-content h2 {
@@ -95,6 +110,7 @@ body {
 .blog-grid {
   display: flex;
   flex-flow: row;
+  padding: 1rem;
   gap: 1rem;
 }
 

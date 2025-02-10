@@ -35,6 +35,18 @@
   font-weight: 600; /* SemiBold */
 }
 
+@font-face {
+  font-family: 'Bigola';
+  src: url('../assets/fonts/Bigola-Regular.otf') format('opentype');
+  font-weight: 400; /* Redular */
+}
+
+@font-face {
+  font-family: 'Bigola';
+  src: url('../assets/fonts/Bigola-Italic.otf') format('opentype');
+  font-style: italic; /* Italic */
+}
+
 /* Variáveis de Cores e Fontes */
 :root {
   --color-green-dark: #0b4937;
@@ -58,6 +70,7 @@
   --font-primary: 'Roboto Slab', serif;
   --font-secondary: 'Pacifico', cursive;
   --font-tertiary: 'Noka', sans-serif; /* Fonte Noka para ser usada */
+  --font-logo: 'Bigola', cursive;
 }
 
 a, u {
@@ -118,10 +131,6 @@ body::-webkit-scrollbar {
   filter: none; /* Transforma o logo em branco */
 }
 
-.header.solid .nav a:hover {
-  color: var(--color-burgundy); /* Cor ao passar o mouse */
-}
-
 /* Logo */
 .header .logo {
   display: flex;
@@ -157,34 +166,41 @@ body::-webkit-scrollbar {
 }
 
 .header.solid.white .nav a {
-  color: var(--color-soft-black);
+  color: var(--color-coral);
 }
 
 .nav a:hover {
+  color: var(--color-coral); /* Cor ao passar o mouse */
+}
+
+.header.solid.white .nav a:hover {
   color: var(--color-red-medium); /* Cor ao passar o mouse */
 }
 
 .social-icons {
   display: flex;
-  align-items: center; /* Mantém os ícones alinhados verticalmente */
-  gap: 10px; /* Espaçamento entre os ícones */
   margin-left: 20px; /* Ajusta a distância dos ícones em relação ao menu */
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .social-icons a {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
-.social-icons img {
-  width: 24px;
+.social-icons .icon {
+  width: 24px; /* Ajuste o tamanho */
   height: 24px;
-  filter: invert(1); /* Torna os ícones brancos */
+  fill: var(--color-soft-white); /* Define a cor vermelha */
+  transition: fill 0.3s ease-in-out;
   transition: transform 0.3s;
 }
 
-.header.solid.white .social-icons img {
-  filter: none;
+.social-icons a:hover .icon {
+  transform: scale(1.1);
 }
 
 .social-icons a:hover img {
