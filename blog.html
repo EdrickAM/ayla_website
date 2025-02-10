@@ -1,33 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog - Ayla</title>
-  <link rel="stylesheet" href="css/blog.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Ayla oferece viagens culturais autênticas, experiências transformadoras e consultoria personalizada para viajantes.">
+    <meta property="og:title" content="Ayla - Viagens Autênticas">
+    <meta property="og:description" content="Explore o mundo com sofisticação. Viagens exclusivas e experiências autênticas.">
+    <meta property="og:image" content="https://seusite.com/assets/images/og-image.jpg">
+    <title>Ayla - Viagens Autênticas</title>
+    <link rel="stylesheet" href="css/blog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bigola:wght@400;700&family=Noka+Bold&family=Pacifico&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  </head>
 <body>
-  <header class="header">
+  <header class="header solid white">
     <div class="container">
       <div class="logo">
         <img src="assets/logos/logo.svg" alt="Logo da Ayla"/>
-      </div>
+      </div> 
       <nav class="nav">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#destinos">Destinos</a></li>
-          <li><a href="#cultura">Cultura</a></li>
-          <li><a href="#gastronomia">Gastronomia</a></li>
-          <li><a href="#aventura">Aventura</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#blog">Blog</a></li>
         </ul>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/ayla.mundo" target="_blank">
+            <img src="assets/icons/instagram.svg" alt="Instagram">
+          </a>
+          <a href="https://wa.me/5521974746036" target="_blank">
+            <img src="assets/icons/whatsapp.svg" alt="WhatsApp">
+          </a>
+          <a href="https://www.youtube.com/@aylamundo.travel" target="_blank">
+            <img src="assets/icons/youtube.svg" alt="Youtube">
+          </a>
+        </div>
       </nav>
     </div>
   </header>
 
   <main class="blog-home">
+    <div class="menu">
+      <div class="container">
+        <img src="assets/logos/be_a_local.svg" alt="Logo da Be a Local"/>
+      </div>
+      <div class="items">
+        <nav class="nav">
+          <ul>
+            <li><a href="#">Índia</a></li>
+            <li><a href="#">Tailândia</a></li>
+            <li><a href="#">Brasil</a></li>
+          </ul>  
+      </div>
+    </div>
     <section class="featured-post">
       <a href="blog-post.html?id=1">
-        <img src="https://unsplash.com/pt-br/fotografias/estatua-do-cristo-redentor-brasil-CErddu-JwKw" alt="Cristo Redentor">
+        <img src="assets/images/blog/post1/image1.jpg" alt="Cristo Redentor">
         <div class="featured-content">
           <h2>Viagem Cultural no Rio de Janeiro: Como Viver a Cidade Como um Carioca</h2>
           <p>Descubra os segredos do Rio além dos cartões-postais.</p>
@@ -38,29 +64,27 @@
     <section class="blog-grid">
       <article class="blog-item">
         <a href="blog-post.html?id=2">
-          <img src="https://unsplash.com/pt-br/fotografias/pessoas-jogando-volei-de-praia-saYBi5oQ4o0" alt="Praia e Vôlei">
+          <img src="assets/images/blog/post2/image1.jpg" alt="Praia e Vôlei">
           <h3>A Magia das Praias Cariocas</h3>
           <p>Saiba como aproveitar as praias do Rio como um local.</p>
         </a>
       </article>
-      <article class="blog-item">
+      <article class="blog-item-v">
         <a href="blog-post.html?id=3">
-          <img src="https://unsplash.com/pt-br/fotografias/uma-pessoa-esta-derramando-uma-bebida-em-um-copo-FwgRFkU8BAU" alt="Bebida sendo servida">
+          <img src="assets/images/blog/post3/image1.jpg" alt="Bebida sendo servida">
           <h3>Gastronomia Carioca</h3>
           <p>Experimente os sabores autênticos do Rio de Janeiro.</p>
         </a>
       </article>
-      <article class="blog-item">
+      <article class="blog-item-v">
         <a href="blog-post.html?id=4">
-          <img src="https://unsplash.com/pt-br/fotografias/fotografia-de-alto-angulo-do-teleferico-Q8KGwGdDsW8" alt="Bondinho de Santa Teresa">
+          <img src="assets/images/blog/post4/image1.jpg" alt="Bondinho de Santa Teresa">
           <h3>Santa Teresa e sua História</h3>
           <p>Explore o bairro mais artístico e boêmio do Rio.</p>
         </a>
       </article>
     </section>
   </main>
-
-
   <!-- Footer -->
   <footer>
     <div class="footer-container">
@@ -91,6 +115,5 @@
       </div>
     </div>
   </footer>
-
 </body>
 </html>

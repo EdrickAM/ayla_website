@@ -67,7 +67,6 @@ a, u {
 /* Estilos gerais */
 body {
   margin: 0;
-  font-family: var(--font-primary);
   line-height: 1.6;
   color: var(--color-soft-black);
   background-color: var(--color-soft-white);
@@ -95,6 +94,12 @@ body::-webkit-scrollbar {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.header.solid.white {
+  background-color: var(--color-yellow-pastel-ligth);
+  border-bottom: 2px solid rgba(234, 77, 73, 0.1);
+  box-shadow: none;
+}
+
 .header .container {
   max-width: 1200px;
   width: 100%;
@@ -107,6 +112,10 @@ body::-webkit-scrollbar {
 
 .header.solid .logo img {
   filter: brightness(0) invert(1); /* Transforma o logo em branco */
+}
+
+.header.solid.white .logo img {
+  filter: none; /* Transforma o logo em branco */
 }
 
 .header.solid .nav a:hover {
@@ -129,6 +138,7 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center; /* Garante que os itens do menu e os ícones fiquem alinhados */
   justify-content: space-between;
+  font-family: var(--font-primary);
 }
 
 .nav ul {
@@ -144,6 +154,10 @@ body::-webkit-scrollbar {
   color: var(--color-soft-white);
   font-weight: bold;
   transition: color 0.3s ease;
+}
+
+.header.solid.white .nav a {
+  color: var(--color-soft-black);
 }
 
 .nav a:hover {
@@ -167,6 +181,10 @@ body::-webkit-scrollbar {
   height: 24px;
   filter: invert(1); /* Torna os ícones brancos */
   transition: transform 0.3s;
+}
+
+.header.solid.white .social-icons img {
+  filter: none;
 }
 
 .social-icons a:hover img {
