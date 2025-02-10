@@ -1,0 +1,126 @@
+@import url("styles.css");
+
+/* Estilos específicos para o Blog */
+
+body {
+  background-color: var(--color-yellow-pastel-ligth);
+}
+
+.header .container {
+  max-width: 100%;
+  width: 100%;
+  padding: 0 5%;
+}
+
+.header .container h3 {
+  font-family: var(--font-tertiary);
+  color: var(--color-coral);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons a {
+  text-decoration: none;
+}
+
+.social-icons .icon {
+  width: 24px; /* Ajuste o tamanho */
+  height: 24px;
+  fill: var(--color-coral); /* Define a cor vermelha */
+  transition: fill 0.3s ease-in-out;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover .icon {
+  fill: var(--color-red-medium); /* Cor mais escura ao passar o mouse */
+  transform: scale(1.1);
+}
+
+/* SINGLE POST - Padding e alinhamento */
+.single-post {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo */
+  padding: 6rem 1.5rem; /* Ajustado para não ultrapassar a esquerda */
+  max-width: 90%; /* Mantém o conteúdo contido */
+  margin: 0 auto; /* Garante que fique centralizado */
+}
+
+/* CONTAINER DO HERO */
+.post-hero .container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Alinha verticalmente */
+  align-items: flex-start; /* Mantém alinhado à esquerda */
+  min-height: 350px;
+}
+
+/* TÍTULO DO POST */
+.post-title {
+  font-size: 2.5rem;
+  font-family: "Roboto Slab", serif;
+  color: var(--color-red-strong);
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+/* TÍTULO DO POST */
+.post-title {
+  font-size: 2.5rem;
+  font-family: "Roboto Slab", serif;
+  color: var(--color-red-strong);
+  margin-bottom: 0.5rem;
+  text-align: left; /* Mantém alinhado à esquerda */
+}
+
+/* LOGO E DATA */
+.post-meta {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Centraliza abaixo do título */
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.post-logo {
+  width: 50px;
+  height: auto;
+}
+
+.post-date {
+  font-size: 1rem;
+  font-family: "Roboto Slab", serif;
+  color: var(--color-soft-black);
+}
+
+/* IMAGEM DO POST HERO */
+.post-hero-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  margin-top: 1rem;
+}
+
+/* CONTEÚDO DO POST */
+.post-content .container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem; /* Ajustado para evitar ultrapassar a lateral */
+}
+
+.post-content img {
+  width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+}
