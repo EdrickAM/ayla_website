@@ -120,7 +120,7 @@ body::-webkit-scrollbar {
   display: flex;
   justify-content: space-between; /* Alinha o logo à esquerda e o menu à direita */
   align-items: center;
-  padding: 0 6rem;
+  padding: 0 2rem;
 }
 
 .header.solid .logo img {

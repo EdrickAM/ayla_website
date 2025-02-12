@@ -9,7 +9,7 @@ body {
 .header .container {
   max-width: 100%;
   width: 100%;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 .header .container h3 {
@@ -43,7 +43,7 @@ body {
 
 .blog-home {
   position: relative;
-  padding: 7rem 1.5rem;
+  padding: 7rem 2rem;
   margin: 0 auto;
   display: flex;
   flex-flow: row;
@@ -112,7 +112,7 @@ body {
 .blog-grid {
   display: flex;
   flex-flow: row;
-  padding: 1.5rem;
+  padding: 2rem;
   gap: 1.5rem;
 }
 

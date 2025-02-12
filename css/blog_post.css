@@ -9,7 +9,7 @@ body {
 .header .container {
   max-width: 100%;
   width: 100%;
-  padding: 0 5%;
+  padding: 0 2rem;
 }
 
 .header .container h3 {
@@ -82,7 +82,7 @@ body {
 .post-title {
   font-size: 3.5rem;
   font-family: var(--font-tertiary);
-  color: var(--color-red-strong);
+  color: var(--color-red-medium);
   margin-bottom: 0.5rem;
   text-align: left; /* Mantém alinhado à esquerda */
 }
@@ -103,7 +103,7 @@ body {
 
 .post-logo img {
   width: auto;
-  height: 90px;
+  height: 70px;
 }
 
 .post-logo-date {
@@ -139,28 +139,33 @@ body {
   flex-flow: column;
 }
 
+.post-content .container .section-divider {
+  width: 100%; /* Define a largura */
+}
+
 .post-content img {
   width: 100%;
   height: 500px;
-  margin: 1rem 0;
+  margin: 0rem 0rem 1rem;
   object-fit: cover;
   object-position: center;
 }
 
 .post-content h2 {
   width: 100%;  
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: var(--font-tertiary);
   color: var(--color-soft-black);
   margin-bottom: 0rem;
 }
 
 .post-content h3 {
-  width: 100%;  
+  width: 75%;
   font-size: 1.5rem;
   font-family: var(--font-tertiary);
   color: var(--color-soft-black);
   margin-bottom: 0rem;
+  margin-top: 0rem;
 }
 
 .post-content p {
@@ -168,6 +173,11 @@ body {
   color: var(--color-soft-black-ligth);
   font-weight: 400;
   margin: 1rem 0rem 0rem;
+  max-width: 850px;
+}
+
+.post-content .horizontal p {
+  width: 75%;
 }
 
 .post-content .container .horizontal {
@@ -175,6 +185,7 @@ body {
   display: flex;
   flex-flow: row;
   gap: 1.3rem;
+  margin: 2rem 0rem;
 }
 
 .post-content .container .horizontal .horizontal-content-img {
@@ -183,7 +194,7 @@ body {
 
 .post-content .container .horizontal img {
   width: 100%;
-  height: 500px;
+  height: 400px;
   object-fit: cover;
   object-position: center;
 }
@@ -194,7 +205,7 @@ body {
 
 .next-post {
   width: 100%;
-  height: 400px; /* Ajuste conforme necessário */
+  height: 500px; /* Ajuste conforme necessário */
   position: relative;
   display: flex;
   align-items: center;
