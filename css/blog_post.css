@@ -50,8 +50,12 @@ body {
   flex-direction: column;
   align-items: center; /* Centraliza o conteúdo */
   padding: 6rem 1.5rem; /* Ajustado para não ultrapassar a esquerda */
-  max-width: 90%; /* Mantém o conteúdo contido */
+  max-width: 80%; /* Mantém o conteúdo contido */
   margin: 0 auto; /* Garante que fique centralizado */
+}
+
+.post-hero {
+  width: 100%;
 }
 
 /* CONTAINER DO HERO */
@@ -76,8 +80,8 @@ body {
 
 /* TÍTULO DO POST */
 .post-title {
-  font-size: 2.5rem;
-  font-family: "Roboto Slab", serif;
+  font-size: 3.5rem;
+  font-family: var(--font-tertiary);
   color: var(--color-red-strong);
   margin-bottom: 0.5rem;
   text-align: left; /* Mantém alinhado à esquerda */
@@ -90,17 +94,34 @@ body {
   align-items: center; /* Centraliza abaixo do título */
   gap: 0.5rem;
   margin-top: 0.5rem;
+  width: 100%;
 }
 
 .post-logo {
-  width: 50px;
-  height: auto;
+  flex: 1;
 }
 
-.post-date {
+.post-logo img {
+  width: auto;
+  height: 90px;
+}
+
+.post-logo-date {
+  flex: 15;
   font-size: 1rem;
   font-family: "Roboto Slab", serif;
   color: var(--color-soft-black);
+}
+
+.post-logo-date img {
+  width: auto;
+  height: 30px;
+}
+
+.post-logo-date p {
+  margin: 0rem;
+  font-weight: 600;
+  color: var(--color-soft-black-ligth);
 }
 
 /* IMAGEM DO POST HERO */
@@ -109,7 +130,6 @@ body {
   height: 500px;
   object-fit: cover;
   object-position: center;
-  margin-top: 1rem;
 }
 
 /* CONTEÚDO DO POST */
@@ -121,12 +141,33 @@ body {
 
 .post-content img {
   width: 100%;
-  height: auto;
-  margin: 1.5rem 0;
+  height: 500px;
+  margin: 1rem 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.post-content h2 {
+  width: 100%;  
+  font-size: 2rem;
+  font-family: var(--font-tertiary);
+  color: var(--color-soft-black);
+  margin-bottom: 0rem;
+}
+
+.post-content h3 {
+  width: 100%;  
+  font-size: 1.5rem;
+  font-family: var(--font-tertiary);
+  color: var(--color-soft-black);
+  margin-bottom: 0rem;
 }
 
 .post-content p {
   width: 100%;  
+  color: var(--color-soft-black-ligth);
+  font-weight: 400;
+  margin: 1rem 0rem 0rem;
 }
 
 .post-content .container .horizontal {
@@ -142,11 +183,75 @@ body {
 
 .post-content .container .horizontal img {
   width: 100%;
-  height: auto;
+  height: 500px;
   object-fit: cover;
   object-position: center;
 }
 
 .post-content .container .horizontal .horizontal-content {
   flex: 3;
+}
+
+.next-post {
+  width: 100%;
+  height: 400px; /* Ajuste conforme necessário */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 5rem 0rem 0rem;
+}
+
+.next-post .container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.next-post-link {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-decoration: none;
+  color: white;
+}
+
+.next-post-image-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.next-post-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem preencha toda a área sem distorcer */
+  display: block;
+}
+
+.next-post-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4); /* Escurecimento para destacar o texto */
+  padding: 2rem;
+}
+
+.next-post-content h3 {
+  font-size: 2rem;
+  font-family: var(--font-tertiary);
+  margin-bottom: 0.5rem;
+}
+
+.next-post-content p {
+  font-size: 1.2rem;
 }
