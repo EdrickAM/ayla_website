@@ -154,7 +154,7 @@ body {
   display: flex;
   flex-flow: row;
   padding: 2rem;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .blog-item {
@@ -194,40 +194,54 @@ body {
   filter: brightness(1);
 }
 
+.blog-item h4 {
+  font-family: var(--font-primary);
+  color: var(--color-green-dark);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0.5rem 1rem;
+}
+
 .blog-item h3 {
   flex: 1;
   font-family: var(--font-tertiary);
   color: var(--color-red-strong);
-  padding: 15px 0px 0px;
-  margin: 1rem;
-  font-size: 2rem;
+  margin: 0.5rem 1rem 0rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.blog-item-v h4 {
+  font-family: var(--font-primary);
+  color: var(--color-green-dark);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0.5rem 1rem;
 }
 
 .blog-item-v h3 {
   flex: 1;
   font-family: var(--font-tertiary);
   color: var(--color-red-strong);
-  padding: 15px 0px 0px;
-  margin: 1rem;
-  font-size: 2rem;
+  margin: 0.5rem 1rem 0rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
 }
 
 .blog-item p {
   flex: 4;
   font-family: var(--font-primary);
-  color: var(--color-soft-black);
-  padding: 0 0px 15px;
-  font-size: 1.2rem;
-  margin: 0rem 1rem;
-  font-weight: 600;
+  color: var(--color-soft-black-ligth);
+  font-size: 1rem;
+  margin: 0.5rem 1rem 1rem;
+  font-weight: 500;
 }
 
 .blog-item-v p {
   flex: 4;
   font-family: var(--font-primary);
-  color: var(--color-soft-black);
-  padding: 0 0px 15px;
-  font-size: 1.2rem;
-  margin: 0rem 1rem;
-  font-weight: 600;
+  color: var(--color-soft-black-ligth);
+  font-size: 1rem;
+  margin: 0.5rem 1rem 1rem;
+  font-weight: 500;
 }
