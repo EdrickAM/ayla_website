@@ -396,6 +396,7 @@ body::-webkit-scrollbar {
   color: var(--color-yellow-pastel);
   margin-bottom: 0.2rem;
   max-width: 100%;
+  font-family: var(--font-primary);
 }
 
 .service-content h3 {
@@ -404,6 +405,7 @@ body::-webkit-scrollbar {
   max-width: 100%;
   margin-top: 0rem;
   margin-bottom: 1.5rem;
+  font-family: var(--font-tertiary);
 }
 
 .service-item.full .service-content p {
@@ -413,6 +415,7 @@ body::-webkit-scrollbar {
   max-width: 40%;
   font-weight: 300;
   word-wrap: break-word;
+  font-family: var(--font-primary);
 }
 
 .service-item.half .service-content p {
