@@ -185,7 +185,6 @@ body {
   display: flex;
   flex-flow: row;
   gap: 1.3rem;
-  margin: 2rem 0rem;
 }
 
 .post-content .container .horizontal.reverse {
