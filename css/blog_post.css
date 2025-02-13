@@ -188,6 +188,14 @@ body {
   margin: 2rem 0rem;
 }
 
+.post-content .container .horizontal.reverse {
+  flex-direction: row-reverse;
+}
+
+.post-content .horizontal.reverse p {
+  width: 90%;
+}
+
 .post-content .container .horizontal .horizontal-content-img {
   flex: 2;
 }
@@ -201,6 +209,10 @@ body {
 
 .post-content .container .horizontal .horizontal-content {
   flex: 3;
+}
+
+.post-content .container .horizontal.horizontal.reverse .horizontal-content {
+  flex: 2;
 }
 
 .next-post {
