@@ -1090,10 +1090,6 @@ form textarea {
   #menu-toggle:checked + .hamburger + .nav .social-icons {
     display: flex;
   }
-  /* Cada seção ocupa a tela inteira */
-  section {
-    min-height: 100vh;
-  }
   /* Ajustes de tipografia para melhor leitura */
   .hero-content {
     height: 95%;
@@ -1283,7 +1279,7 @@ form textarea {
     margin-bottom: 0;
   }
   .about-us {
-    padding: 0rem 1rem 1rem;
+    padding: 4rem 1rem 1rem 1rem;
   }
   .about-us h2 {
     top: 2rem;
@@ -1309,9 +1305,25 @@ form textarea {
     object-fit: cover;
     height: 350px;
   }
+  .about-us h1 {
+    font-size: 1.5rem;
+  }
   .about-us p {
     width: 100%;
-    font-size: 0.8;
+    font-size: 0.8rem;
+  }
+  .about-us .title {
+    display: none;
+  }
+  .about-us .container .content .icon {
+    top: -110%;                /* Posicionado no topo */
+    left: 50%;             /* Centralizado horizontalmente */
+    right: auto;
+    transform: translateX(-50%);  /* Centraliza o elemento */
+    width: 80px;           /* Tamanho reduzido */
+    height: 80px;
+    border: solid 10px var(--color-green-pastel); /* Borda menor */
+    padding: 5px;          /* Padding reduzido */
   }
   .destino-content p {
     width: 60%;
