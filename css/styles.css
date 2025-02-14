@@ -38,7 +38,7 @@
 @font-face {
   font-family: 'Bigola';
   src: url('../assets/fonts/Bigola-Regular.otf') format('opentype');
-  font-weight: 400; /* Redular */
+  font-weight: 400; /* Regular */
 }
 
 @font-face {
@@ -70,7 +70,7 @@
   /* Variáveis de Fontes */
   --font-primary: 'Roboto Slab', serif;
   --font-secondary: 'Pacifico', cursive;
-  --font-tertiary: 'Noka', sans-serif; /* Fonte Noka para ser usada */
+  --font-tertiary: 'Noka', sans-serif;
   --font-logo: 'Bigola', cursive;
 }
 
@@ -88,6 +88,31 @@ body {
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+/* =============================
+   HAMBURGER MENU – ESTILOS GLOBAIS
+   (Ficam ocultos na versão desktop)
+============================= */
+#menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--color-soft-white);
+  border-radius: 2px;
 }
 
 /* Header */
@@ -118,17 +143,17 @@ body::-webkit-scrollbar {
   width: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between; /* Alinha o logo à esquerda e o menu à direita */
+  justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
 }
 
 .header.solid .logo img {
-  filter: brightness(0) invert(1); /* Transforma o logo em branco */
+  filter: brightness(0) invert(1);
 }
 
 .header.solid.white .logo img {
-  filter: none; /* Transforma o logo em branco */
+  filter: none;
 }
 
 /* Logo */
@@ -138,14 +163,14 @@ body::-webkit-scrollbar {
 }
 
 .header .logo img {
-  height: 4rem; /* Ajuste a altura conforme necessário */
-  filter: brightness(0) invert(1); /* Transforma o logo em branco */
+  height: 4rem;
+  filter: brightness(0) invert(1);
 }
 
 /* Menu */
 .nav {
   display: flex;
-  align-items: center; /* Garante que os itens do menu e os ícones fiquem alinhados */
+  align-items: center;
   justify-content: space-between;
   font-family: var(--font-primary);
 }
@@ -170,16 +195,16 @@ body::-webkit-scrollbar {
 }
 
 .nav a:hover {
-  color: var(--color-coral); /* Cor ao passar o mouse */
+  color: var(--color-coral);
 }
 
 .header.solid.white .nav a:hover {
-  color: var(--color-red-medium); /* Cor ao passar o mouse */
+  color: var(--color-red-medium);
 }
 
 .social-icons {
   display: flex;
-  margin-left: 20px; /* Ajusta a distância dos ícones em relação ao menu */
+  margin-left: 20px;
   gap: 1rem;
   justify-content: center;
   align-items: center;
@@ -192,17 +217,13 @@ body::-webkit-scrollbar {
 }
 
 .social-icons .icon {
-  width: 24px; /* Ajuste o tamanho */
+  width: 24px;
   height: 24px;
-  fill: var(--color-soft-white); /* Define a cor vermelha */
-  transition: fill 0.3s ease-in-out;
-  transition: transform 0.3s;
+  fill: var(--color-soft-white);
+  transition: fill 0.3s ease-in-out, transform 0.3s;
 }
 
-.social-icons a:hover .icon {
-  transform: scale(1.1);
-}
-
+.social-icons a:hover .icon,
 .social-icons a:hover img {
   transform: scale(1.1);
 }
@@ -249,20 +270,19 @@ body::-webkit-scrollbar {
   z-index: 0;
 }
 
-/* Ajustes para os botões da primeira seção */
-/* Ajustes para os botões da primeira seção */
+/* Botões do Hero */
 .cta-hero {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem; /* Espaçamento entre os botões */
+  gap: 1rem;
   width: 100%;
-  max-width: 600px; /* Define um limite para manter os botões centralizados */
-  margin: 0 auto; /* Centraliza a seção horizontalmente */
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .cta-hero .btn {
-  flex: 1; /* Faz os botões ocuparem o mesmo espaço */
+  flex: 1;
   text-align: center;
   background-color: transparent;
   color: var(--color-soft-white);
@@ -284,9 +304,9 @@ body::-webkit-scrollbar {
 }
 
 .cta-hero .divider {
-  width: 2px; /* Espessura da linha de divisão */
-  height: 40px; /* Ajuste a altura da linha */
-  background-color: var(--color-soft-white); /* Cor da linha */
+  width: 2px;
+  height: 40px;
+  background-color: var(--color-soft-white);
 }
 
 /* Serviços */
@@ -302,10 +322,9 @@ body::-webkit-scrollbar {
 .services h2 {
   color: var(--color-red-dark);
   font-size: 3rem;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   font-family: var(--font-tertiary);
   line-height: 1.2;
-  margin-bottom: 0;
 }
 
 .services p {
@@ -403,7 +422,7 @@ body::-webkit-scrollbar {
   line-height: 1.2;
   font-size: 2rem;
   max-width: 100%;
-  margin-top: 0rem;
+  margin: 0;
   margin-bottom: 1.5rem;
   font-family: var(--font-tertiary);
 }
@@ -422,7 +441,7 @@ body::-webkit-scrollbar {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  width: 70% !important; /* Garantir que a largura seja de 70%, forçando a aplicação */
+  width: 70%;
   font-weight: 300;
   word-wrap: break-word;
 }
@@ -447,13 +466,16 @@ body::-webkit-scrollbar {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-
 /* Destinos */
 .destinos {
   width: 100%;
   overflow: hidden;
   text-align: center;
   background-color: var(--color-green-medium);
+}
+
+.destinos-titulo {
+  display: none;
 }
 
 .destino-item {
@@ -471,19 +493,19 @@ body::-webkit-scrollbar {
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Garante que a imagem cubra toda a área da div sem distorção */
-  object-position: center; /* Garante que a imagem fique centralizada dentro da div */
+  object-fit: cover;
+  object-position: center;
   transition: transform 10s;
-  filter: brightness(80%); 
+  filter: brightness(80%);
 }
 
 .destino-item img:hover { 
-  transform:scale(1.2) 
+  transform: scale(1.2);
 }
 
 .destino-content {
   position: relative;
-  z-index: 2; /* Garante que o conteúdo esteja acima da sobreposição */
+  z-index: 2;
   align-items: center;
 }
 
@@ -498,7 +520,7 @@ body::-webkit-scrollbar {
   font-size: 1.5rem;
   line-height: 1.5;
   font-family: var(--font-primary);
-  margin-top: 0rem;
+  margin-top: 0;
   color: var(--color-soft-white);
 }
 
@@ -532,7 +554,7 @@ body::-webkit-scrollbar {
   flex: 1;
   text-align: left;
   font-size: 1.5rem;
-  margin: 1rem 0rem;
+  margin: 1rem 0;
   color: var(--color-red-medium);
   font-weight: 700;
   font-family: var(--font-tertiary);
@@ -556,17 +578,15 @@ body::-webkit-scrollbar {
   height: 30%;
   background: linear-gradient(
     to bottom,
-    rgba(253, 253, 243, 1) 0%,  /* Cor sólida do fundo */
-    rgba(253, 253, 243, 0.8) 30%, 
-    rgba(253, 253, 243, 0) 100%  /* Transparente na transição */
+    rgba(253, 253, 243, 1) 0%,
+    rgba(253, 253, 243, 0.8) 30%,
+    rgba(253, 253, 243, 0) 100%
   );
 }
 
 .post-item {
   overflow: hidden;
-  flex: content;
-  background-color: var(--color-yellow-pastel); /* Fundo branco */
-  overflow: hidden;
+  background-color: var(--color-yellow-pastel);
 }
 
 .post-image {
@@ -600,7 +620,7 @@ body::-webkit-scrollbar {
   margin: 0;
   font-family: var(--font-primary);
   font-weight: 700;
-  color: var(--color-soft-black);
+  color: var(--color-soft-black-ligth);
 }
 
 .post-excerpt {
@@ -653,18 +673,18 @@ hr {
   position: absolute;
   top: 50%;
   left: 2rem;
-  font-size: 5rem; /* Ajuste para destacar */
+  font-size: 5rem;
   font-family: var(--font-tertiary);
-  color: rgba(255, 255, 255, 0.1); /* Torna o texto parte do fundo */
-  z-index: 0; /* Mantém atrás do conteúdo */
-  pointer-events: none; /* Evita interferência no clique */
-  transform: translateY(-50%); /* Centraliza verticalmente */
+  color: rgba(255, 255, 255, 0.1);
+  z-index: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
   width: 30%;
 }
 
 .about-us .container {
   position: relative;
-  z-index: 1; /* Garante que o conteúdo fique sobreposto */
+  z-index: 1;
   background-color: var(--color-yellow-pastel);
   padding: 20px;
   display: flex;
@@ -689,8 +709,8 @@ hr {
   position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Garante que a imagem cubra toda a área da div sem distorção */
-  object-position: center; /* Garante que a imagem fique centralizada dentro da div */
+  object-fit: cover;
+  object-position: center;
 }
 
 .about-us .content {
@@ -728,14 +748,13 @@ hr {
   transform: rotate(-15deg);
   z-index: 10;
   width: 20rem;
-  height: auto;
 }
 
 .about-us .quote p {
   font-family: var(--font-secondary);
   color: var(--color-red-medium);
-  position: absolute; /* Permite a sobreposição */
-  font-size: 2rem; /* Tamanho da fonte, ajuste conforme necessário */
+  position: absolute;
+  font-size: 2rem;
 }
 
 .about-us .container .content {
@@ -774,27 +793,26 @@ hr {
   width: 100%;
   padding: 0.8rem;
   font-size: 1rem;
-  border: 1px solid #ddd; /* Borda suave */
+  border: 1px solid #ddd;
   border-radius: 5px;
   transition: border-color 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: var(--color-red-medium); /* Cor da borda ao focar */
+  border-color: var(--color-red-medium);
   outline: none;
 }
 
 .form-group textarea {
-  resize: vertical; /* Permite redimensionar verticalmente */
+  resize: vertical;
 }
 
-/* Estilos gerais para a seção de contato */
+/* Seção de Contato */
 .contact {
   width: 100%;
 }
 
-/* Estilizando a seção de contato */
 .contact-content {
   display: flex;
   align-items: stretch;
@@ -858,7 +876,6 @@ hr {
   background-color: var(--color-red-medium);
 }
 
-/* Imagem ocupando todo o lado direito */
 .contact-image {
   flex: 3;
   position: relative;
@@ -887,7 +904,7 @@ hr {
   z-index: -1;
 }
 
-/* Footer - Linha Superior */
+/* Footer */
 footer {
   background-color: var(--color-coral);
   padding: 2rem;
@@ -930,15 +947,15 @@ footer {
 .footer .right {
   flex: 1;
   display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
+  justify-content: center;
+  align-items: center;
   text-align: center;
   height: 100%;
 }
 
 .footer .right img {
   width: 250px;
-  display: block; 
+  display: block;
 }
 
 .footer .left h4 {
@@ -957,12 +974,12 @@ footer {
   margin: 0;
 }
 
-/* Estilo do formulário de newsletter */
+/* Newsletter */
 .newsletter {
   flex: 3;
   display: flex;
-  flex-direction: column; /* Organiza os elementos na vertical */
-  align-items: flex-start; /* Alinha à esquerda */
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .newsletter h2 {
@@ -983,15 +1000,15 @@ footer {
 
 .newsletter .email-input {
   width: 100%;
-  max-width: 400px; /* Limita a largura máxima */
+  max-width: 400px;
   margin-bottom: 0.5rem;
   padding: 0.8rem;
   font-size: 1rem;
-  border: 1px solid var(--color-soft-white); /* Borda suave */
+  border: 1px solid var(--color-soft-white);
   border-radius: 5px;
   transition: border-color 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com 90% de transparência */
-  box-sizing: border-box; /* Garante que padding e borda sejam incluídos na largura */
+  background-color: rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
 }
 
 .newsletter .submit-btn {
@@ -1012,25 +1029,17 @@ footer {
 }
 
 .section-divider {
-  width: 80%; /* Define a largura */
-  margin: 3rem auto; /* Espaçamento acima e abaixo */
+  width: 80%;
+  margin: 3rem auto;
   border: none;
-  border-top: 2px solid rgba(234, 77, 73, 0.3); /* Cor e espessura da linha */
-  opacity: 0.7; /* Transparência */
+  border-top: 2px solid rgba(234, 77, 73, 0.3);
+  opacity: 0.7;
 }
 
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    padding: 1rem;
-  }
-
-  .nav ul {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
-  }
+/* Garante que o conteúdo do blog fique visível sobre o fundo */
+.pattern-background > * {
+  position: relative;
+  z-index: 1;
 }
 
 form label {
@@ -1038,10 +1047,265 @@ form label {
   margin-top: 1rem;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   width: 100%;
   padding: 0.5rem;
   margin-top: 0.5rem;
   border: 1px solid var(--gray-light);
   border-radius: 5px;
+}
+
+/* =====================================================
+   MEDIA QUERIES PARA TABLET E CELULAR – VERSÃO RESPONSIVA
+   (Não alteram a versão desktop)
+===================================================== */
+
+/* Ajustes para Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .header .container {
+    padding: 0rem;
+  }
+  /* Alinha o logo à esquerda e adiciona margem */
+  .header .logo {
+    margin-left: 1rem;
+  }
+  /* Alinha o ícone de sanduíche à direita com margem */
+  .hamburger {
+    display: flex !important;
+    margin-right: 2rem;
+  }
+  /* Ajusta o menu: esconde a lista e as redes sociais por padrão */
+  .nav ul,
+  .nav .social-icons {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  /* Exibe a lista de menu quando o checkbox estiver marcado */
+  #menu-toggle:checked + .hamburger + .nav ul {
+    display: flex;
+  }
+  /* Exibe também os links das redes sociais quando o menu estiver aberto */
+  #menu-toggle:checked + .hamburger + .nav .social-icons {
+    display: flex;
+  }
+  /* Cada seção ocupa a tela inteira */
+  section {
+    min-height: 100vh;
+  }
+  /* Ajustes de tipografia para melhor leitura */
+  .hero-content {
+    height: 95%;
+  }
+  .hero-content h2 {
+    font-size: 3rem;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+  .services h2 {
+    font-size: 2.5rem;
+  }
+  .destino-content h1 {
+    font-size: 4rem;
+  }
+  .about-us h2 {
+    font-size: 3rem;
+  }
+  .contact-form h2 {
+    font-size: 2.5rem;
+  }
+  /* Organiza elementos horizontais na vertical */
+  .services-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .blog-section .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Ajustes para Celular (max-width: 768px) */
+@media (max-width: 768px) {
+  .header .container {
+    padding: 0rem;
+  }
+  /* Alinha o logo à esquerda e adiciona margem */
+  .header .logo {
+    margin-left: 1rem;
+  }
+  /* Alinha o ícone de sanduíche à direita com margem */
+  .hamburger {
+    display: flex !important;
+    margin-right: 2rem;
+  }
+  /* Esconde o menu e as redes sociais por padrão */
+  .nav ul,
+  .nav .social-icons {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  /* Exibe ambos quando o checkbox está marcado */
+  #menu-toggle:checked + .hamburger + .nav ul {
+    display: flex;
+  }
+  #menu-toggle:checked + .hamburger + .nav .social-icons {
+    display: flex;
+  }
+  /* Cada seção ocupa a tela inteira */
+  section {
+    min-height: 100vh;
+  }
+  /* Ajustes de tipografia para melhor leitura */
+  .hero {
+    padding: 1rem;
+  }
+  .cta-hero {
+    flex-flow: column;
+  }
+  .cta-hero .divider {
+    display: none;
+  }
+  .hero-content {
+    height: 95%;
+  }
+  .hero-content h2 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .services {
+    padding: 1rem 0rem 0rem;
+    gap: 0rem;
+    text-align: left;
+  }
+  .services h2 {
+    margin: 1rem 1rem 0rem;
+    font-size: 2.5rem;
+    width: 90%;
+  }
+  .service-content h3 {
+    margin: 0rem;
+  }
+  .services p {
+    margin: 1rem;
+    width: 80%;
+  }
+  .service-item {
+    min-height: 100vh;
+    width: 100%;
+  }
+  .service-item.half {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0rem;
+  }
+  .services-row {
+    flex-direction: column;
+    gap: 0rem;
+  }
+  .service-item.full .service-content p {
+    margin: 1rem 0rem;
+    max-width: none;
+    width: 100%;
+  }
+  .service-item.half .service-content p {
+    margin: 1rem 0rem;
+    max-width: none;
+    width: 100%;
+  }
+  .destinos-titulo {
+    padding: 1rem 0rem;
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: var(--color-coral);
+  }
+  .destinos-titulo h3 {
+    margin: 0rem;
+    font-size: 2.5rem;
+    font-family: var(--font-tertiary);
+    color: var(--color-yellow-pastel);
+  }
+  .destino-content{
+    justify-items: center;
+  }
+  .destino-content h1 {
+    font-size: 5rem;
+    margin-bottom: 0;
+  }
+  .about-us {
+    padding: 1rem 1rem;
+  }
+  .about-us h2 {
+    top: 2rem;
+    font-size: 2.5rem;
+  }
+  .about-us .title {
+    position: relative;
+    left: 0rem;
+    width: 100%;
+    transform: none;
+  }
+  .about-us .container, .contact-content {
+    flex-flow: column;
+  }
+  .about-us .content {
+    padding: 0rem;
+  }
+  .destino-content p {
+    width: 60%;
+    font-size: 1rem;
+    margin-top: 0;
+  }
+  .contact-form h2 {
+    font-size: 2rem;
+  }
+  /* Reorganiza elementos horizontais para vertical */
+  .blog-section {
+    padding: 1rem 0rem;
+  }
+  .blog-section .container {
+    align-items: start;
+    padding: 0 1rem;
+  }
+  .blog-section .container .container-left {
+    width: 100%;
+  }
+  .blog-posts {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .view-more {
+    margin-top: 2rem;
+  }
+  .destino-item {
+    height: 100vh;
+  }
+  .post-title {
+    font-size: 1.2rem;
+  }
+  .post-content p {
+    width: 100%;
+  }
+  .post-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: revert;
+  }
+  .about-us .container,
+  .contact-content {
+    padding: 1rem;
+  }
+  .hero-content p,
+  .about-us p {
+    margin: 0.5rem 0;
+  }
 }
