@@ -77,7 +77,6 @@
 html, body {
   overflow-x: hidden;
   overflow-y: auto; /* Garante que a rolagem vertical esteja habilitada */
-  height: 100%;
   min-height: 100vh;
 }
 
@@ -176,6 +175,14 @@ body::-webkit-scrollbar {
 
 .menu-checkbox, .hamburger {
     display: none;
+}
+
+#nav-mobile {
+  display: none;
+}
+
+#nav-desktop {
+  display: inline-flex;
 }
 
 /* Menu */
@@ -1174,6 +1181,12 @@ form textarea {
     height: 100%;
     fill: var(--color-soft-white);
   }
+  #nav-mobile {
+    display: block;
+  }
+  #nav-desktop {
+    display: none;
+  }  
   /* Modificação para efeito de deslizamento:
      - Sempre exibe o menu (display: flex)
      - Oculta-o com transform: translateX(100%) (totalmente à direita)

@@ -1,5 +1,3 @@
-// Scripts para funcionalidades do site
-
 document.addEventListener('DOMContentLoaded', () => {
   // ==================================================
   // 1. Rolagem suave ao clicar nos links do menu
@@ -13,10 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 50, // Compensar o header
-          behavior: 'smooth',
-        });
+        console.log('ID do alvo:', targetId);
+        console.log('Elemento encontrado:', targetElement);
+
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   });
@@ -29,8 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault(); // Evita o envio padrão do formulário
-
-      // Simula o envio do formulário
       alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
       contactForm.reset(); // Limpa o formulário
     });
@@ -39,21 +35,28 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==================================================
   // 3. Header sólido ao rolar a página
   // ==================================================
-  const header = document.querySelector('.header');
-
-  // Função para adicionar/remover a classe "solid" ao header
-  function toggleHeaderSolid() {
-    if (window.scrollY > 50) { // Se o usuário rolar mais de 50px
-      header.classList.add('solid');
-    } else {
-      header.classList.remove('solid');
-    }
+  const header = document.querySelector(".header");
+  
+  if (!header) {
+    console.error("Elemento .header não encontrado!");
+    return;
   }
 
-  // Adiciona o listener de scroll
-  window.addEventListener('scroll', toggleHeaderSolid);
-
-  document.addEventListener('DOMContentLoaded', updateScrollButtons);
+  window.addEventListener("scroll", () => {
+    console.log("Rolagem detectada! ScrollY:", window.scrollY);
+    
+    if (window.scrollY > 50) {
+      if (!header.classList.contains("solid")) {
+        console.log("Adicionando classe .solid ao header");
+        header.classList.add("solid");
+      }
+    } else {
+      if (header.classList.contains("solid")) {
+        console.log("Removendo classe .solid do header");
+        header.classList.remove("solid");
+      }
+    }
+  });
 });
 
 function switchLanguage() {

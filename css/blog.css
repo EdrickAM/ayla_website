@@ -422,7 +422,7 @@ body {
     flex: none;
     display: inline-block;
     width: 80%;
-    max-width: 300px;
+    max-width: 500px;
     margin: 0 0.5rem; /* 1rem de margem em ambos os lados */
     scroll-snap-align: start;
   }
@@ -432,8 +432,12 @@ body {
   .blog-item, .blog-item-v {
     scroll-snap-align: start;
     scroll-margin: 0 1rem 0 1rem; /* margem de 1rem à esquerda e à direita */
+  }
+  .blog-item p, .blog-item-v p {
+    font-size: 0.8rem;
+    font-weight: 600;
   }  
   .footer-mobile {
     height: 80vh;
-}
+  }
 }
