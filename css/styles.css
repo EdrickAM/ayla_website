@@ -1195,20 +1195,21 @@ form textarea {
     position: fixed;
     top: 6rem;
     right: 0;
-    width: 50%;
+    width: 50%; /* Ocupa metade da tela */
     height: 100vh;
-    background: inherit;
+    background: inherit; /* Utilize a mesma cor de fundo do header ou outra desejada */
     flex-direction: column;
-    padding: 3rem;
+    padding: 3rem; /* Espaço para não sobrepor o header */
     list-style: none;
     margin: 0;
-    transform: translateX(100%);
-    transition: transform 0.4sease-in-out;
+    transform: translateX(100%); /* Começa fora da tela (à direita) */
+    transition: transform 0.4s ease-in-out;
     z-index: 1000;
     font-family: var(--font-primary);
     background-color: var(--color-coral);
     color: var(--color-yellow-pastel);
     font-size: 1.5rem;
+    display: flex;
   }
   #menu-toggle:checked ~ .nav .menu {
     transform: translateX(0);
