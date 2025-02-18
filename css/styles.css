@@ -1098,7 +1098,6 @@ form textarea {
   /* Alinha o ícone de sanduíche à direita com margem */
   .hamburger {
     display: flex !important;
-    margin-right: 2rem;
   }
   /* Ajusta o menu: esconde a lista e as redes sociais por padrão */
   .nav ul,
@@ -1153,6 +1152,7 @@ form textarea {
 @media (max-width: 768px) {
   .header .container {
     padding: 0rem;
+    gap: 1rem;
   }
   /* Alinha o logo à esquerda e adiciona margem */
   .header .logo {
@@ -1192,21 +1192,23 @@ form textarea {
      - Oculta-o com transform: translateX(100%) (totalmente à direita)
      - Quando o checkbox estiver marcado, transforma para translateX(0) */
   .nav .menu {
-    display: flex;
-    position: absolute;
-    top: 60px;
+    position: fixed;
+    top: 6rem;
     right: 0;
     width: 50%;
     height: 100vh;
-    background-color: var(--color-coral);
+    background: inherit;
     flex-direction: column;
-    text-align: left;
-    padding: 1.5rem 1.5rem;
+    padding: 3rem;
     list-style: none;
-    z-index: 999;
+    margin: 0;
     transform: translateX(100%);
-    transition: transform 0.4s ease-in-out;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4sease-in-out;
+    z-index: 1000;
+    font-family: var(--font-primary);
+    background-color: var(--color-coral);
+    color: var(--color-yellow-pastel);
+    font-size: 1.5rem;
   }
   #menu-toggle:checked ~ .nav .menu {
     transform: translateX(0);
@@ -1214,7 +1216,6 @@ form textarea {
   /* Estiliza os itens do menu */
   .nav .menu li {
     padding: 0rem;
-    color: var(--color-yellow-pastel);
     opacity: 0;
     transform: translateX(20px);
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -1225,13 +1226,14 @@ form textarea {
     transform: translateX(0);
   }
   .nav .menu a {
-    color: white;
-    font-size: 1.2rem;
+    color: var(--color-yellow-pastel);
+    font-size: 1.5rem;
     text-decoration: none;
     font-weight: bold;
     display: block;
     padding: 0rem;
     width: 100%;
+    gap: 0rem;
   }
   .nav .menu a:hover {
     background-color: rgba(255, 255, 255, 0.2);
@@ -1397,7 +1399,7 @@ form textarea {
     padding: 5px;
   }
   .destino-content p {
-    width: 60%;
+    width: 70%;
     font-size: 1rem;
     margin-top: 0;
   }
@@ -1507,7 +1509,7 @@ form textarea {
     padding: 1rem;
     text-align: center;
     position: relative;
-    height: auto;
+    height: 80vh;
   }
   .footer-mobile .linha1 {
     position: relative;

@@ -277,3 +277,210 @@ body {
 .next-post-content p {
   font-size: 1.2rem;
 }
+/* Ajustes para tornar o blog_post_1.html responsivo */
+@media (max-width: 1024px) {
+  .single-post {
+    padding: 4rem 1rem;
+    max-width: 100%;
+  }
+  .post-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .post-content .container {
+    padding: 0 2rem;
+  }
+  .horizontal {
+    flex-direction: column;
+    align-items: center;
+  }
+  .horizontal-content {
+    width: 100%;
+    text-align: center;
+  }
+  .horizontal-content-img {
+    width: 100%;
+  }
+  .horizontal img {
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  hr {
+    width: 80%;
+    margin-top: 2rem;
+    border-top: 2px solid rgba(234, 77, 73, 0.3);
+  }
+  .single-post {
+    padding: 7rem 1rem;
+    width: auto;
+    overflow-x: hidden;
+  }
+  .header.solid.white {
+    display: none;
+  }
+  #blog-header {
+    width: 100%;
+    background: inherit; /* Use a cor de fundo desejada ou herde do body */
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    font-family: var(--font-tertiary);
+    color: var(--color-coral);
+  }
+  .blog-header-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .blog-header-container .blog-logo {
+    margin-left: 1rem;
+    flex: 1;
+  }
+  .blog-header-container .blog-hamburger {
+    margin-right: 0rem;
+  }
+  .blog-nav .blog-menu li a {
+    text-decoration: none;
+    color: var(--color-yellow-pastel); /* Altere para a cor desejada */
+    font-weight: bold;
+  }
+  .blog-nav ul {
+    gap: 1.5rem;
+  }
+  /* Oculta o ícone hamburger e o checkbox no desktop */
+  .blog-hamburger,
+  .blog-menu-checkbox {
+    display: none;
+  }
+  /* Exibe o ícone hamburger no mobile */
+  .blog-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* opcional, para centralizar horizontalmente também */
+    height: 100%; /* Certifique-se de que o label tenha uma altura definida ou herde do pai */  
+  }
+  .social-icons {
+    gap: 1rem;
+  }
+  /* Oculta o menu padrão e posiciona o menu mobile */
+  .blog-nav .blog-menu {
+    position: fixed;
+    top: 6rem;
+    right: 0;
+    width: 50%; /* Ocupa metade da tela */
+    height: 100vh;
+    background: inherit; /* Utilize a mesma cor de fundo do header ou outra desejada */
+    flex-direction: column;
+    padding-top: 3rem; /* Espaço para não sobrepor o header */
+    list-style: none;
+    margin: 0;
+    transform: translateX(100%); /* Começa fora da tela (à direita) */
+    transition: transform 0.4s ease-in-out;
+    z-index: 1000;
+    font-family: var(--font-primary);
+    background-color: var(--color-coral);
+    color: var(--color-yellow-pastel);
+    font-size: 1.5rem;
+    display: flex;
+  }
+  /* Ao marcar o checkbox, o menu desliza para a esquerda e aparece */
+  #blog-menu-toggle:checked ~ .blog-nav .blog-menu {
+    transform: translateX(0);
+  }
+  /* Opcional: Efeito de fade e deslocamento para os itens do menu */
+  .blog-nav .blog-menu li {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  #blog-menu-toggle:checked ~ .blog-nav .blog-menu li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .header .container {
+    flex-direction: row;
+    align-items: center;
+    padding: 0rem 1rem;
+  }
+  .post-title {
+    font-size: 2rem;
+    text-align: left;
+  }
+  .post-meta {
+    flex-direction: row;
+    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .post-logo-date {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: column;
+  }
+  .post-hero-image {
+    height: 350px;
+  }
+  .post-content {
+    padding: 0rem;
+  }
+  .post-content p {
+    font-size: 0.9rem;
+  }
+  .post-content .container {
+    padding: 0 0.8rem;
+  }
+  .post-content img {
+    height: 350px
+  }
+  .post-content .container .horizontal {
+    flex-direction: column;
+  }
+  .post-content .container .horizontal.reverse {
+    flex-direction: column;
+  }
+  .post-content .horizontal p {
+    width: 100%;
+    text-align: left;
+  }
+  .post-content .horizontal.reverse p {
+    width: 100%;
+    text-align: left;
+  }
+  .post-content h2, .post-content h3 {
+    font-size: 1.4rem;
+    text-align: left;
+    width: 100%;
+  }
+  .post-hero .container {
+    justify-content: space-around;
+    min-height: 0;   
+  }
+  .post-content .container .horizontal img {
+    height: 350px;
+  }
+  .horizontal {
+    flex-direction: column;
+  }
+  .horizontal-content p {
+    text-align: center;
+  }
+  .next-post-content h3 {
+    font-size: 1.5rem;
+  }
+  .next-post-content p {
+    font-size: 1rem;
+  }
+  .footer-mobile {
+    height: 80vh;
+  }
+  hr {
+    margin: 2rem 0rem;
+  }
+}

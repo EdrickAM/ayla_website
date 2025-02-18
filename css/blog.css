@@ -333,7 +333,9 @@ body {
     color: var(--color-yellow-pastel); /* Altere para a cor desejada */
     font-weight: bold;
   }
-  
+  .blog-nav ul {
+    gap: 1.5rem;
+  }
   /* Oculta o ícone hamburger e o checkbox no desktop */
   .blog-hamburger,
   .blog-menu-checkbox {
@@ -368,6 +370,7 @@ body {
     background-color: var(--color-coral);
     color: var(--color-yellow-pastel);
     font-size: 1.5rem;
+    display: flex;
   }
   /* Ao marcar o checkbox, o menu desliza para a esquerda e aparece */
   #blog-menu-toggle:checked ~ .blog-nav .blog-menu {
