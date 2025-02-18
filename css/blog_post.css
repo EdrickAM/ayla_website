@@ -309,12 +309,11 @@ body {
 
 @media (max-width: 768px) {
   hr {
-    width: 80%;
-    margin-top: 2rem;
+    margin: 2rem 0rem;
     border-top: 2px solid rgba(234, 77, 73, 0.3);
   }
   .single-post {
-    padding: 7rem 1rem;
+    padding: 7rem 1rem 0rem;
     width: auto;
     overflow-x: hidden;
   }
@@ -471,16 +470,23 @@ body {
   .horizontal-content p {
     text-align: center;
   }
+  .next-post {
+    margin-top: 3rem;
+    height: 300px;
+  }
+  .next-post-content {
+    padding: 0rem;
+  }
   .next-post-content h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   .next-post-content p {
-    font-size: 1rem;
+    margin: 0rem;
+    font-size: 0.9rem;
+    font-family: var(--font-primary);
+    font-weight: 700;
   }
   .footer-mobile {
     height: 80vh;
-  }
-  hr {
-    margin: 2rem 0rem;
   }
 }
