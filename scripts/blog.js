@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
       "1": {
         title: "Viagem Cultural no Rio de Janeiro: Como Viver a Cidade Como um Carioca",
         date: "07 de fevereiro de 2025",
-        image: "assets/images/blog/post1/image1.jpg",
+        image: "../assets/images/blog/post1/image1.jpg",
         content: `
           <p>O Rio de Janeiro sempre me pareceu mais um estado de espírito do que uma cidade. Há algo na maneira como o sol abraça os morros, na cadência do samba que escapa de um bar qualquer, no jeito despreocupado e vibrante com que os cariocas ocupam as ruas. Para quem chega de fora, pode parecer difícil entender esse ritmo. Mas há um segredo: para viver o Rio como um verdadeiro carioca, é preciso sentir, antes de tudo, o pulsar da cidade.</p>
           
@@ -52,5 +52,44 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       article.innerHTML = "<h1>Post não encontrado</h1><p>Desculpe, esse artigo não está disponível.</p>";
     }
+
+    const blogGrid = document.querySelector(".blog-grid");
+    
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    blogGrid.addEventListener("mousedown", (e) => {
+      isDown = true;
+      startX = e.pageX - blogGrid.offsetLeft;
+      scrollLeft = blogGrid.scrollLeft;
+    });
+
+    blogGrid.addEventListener("mouseleave", () => {
+      isDown = false;
+    });
+
+    blogGrid.addEventListener("mouseup", () => {
+      isDown = false;
+    });
+
+    blogGrid.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - blogGrid.offsetLeft;
+      const walk = (x - startX) * 2; // Velocidade do scroll
+      blogGrid.scrollLeft = scrollLeft - walk;
+    });
+
+    blogGrid.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].pageX;
+      scrollLeft = blogGrid.scrollLeft;
+    });
+
+    blogGrid.addEventListener("touchmove", (e) => {
+      const x = e.touches[0].pageX;
+      const walk = (x - startX) * 2;
+      blogGrid.scrollLeft = scrollLeft - walk;
+    });
 });
   

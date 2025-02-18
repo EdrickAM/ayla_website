@@ -20,12 +20,28 @@
         <img src="../assets/logos/logo.svg" alt="Logo da Ayla"/>
       </div> 
 
-      <input type="checkbox" id="menu-toggle" />
-      <div for="menu-toggle" class="hamburger">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+      <input type="checkbox" id="menu-toggle" class="menu-checkbox" />
+      <label for="menu-toggle" class="hamburger">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
         </svg>
-      </div>
+      </label>
+      
+      <nav class="nav">
+        <ul class="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#destinos">Destinos</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#quem-somos">Quem Somos</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li class="language-switch">
+            <a href="javascript:void(0)" onclick="switchLanguage()">
+              <span class="flag-icon flag-icon-us"></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
       
       <nav class="nav">
         <ul>

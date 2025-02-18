@@ -174,6 +174,10 @@ body::-webkit-scrollbar {
   filter: brightness(0) invert(1);
 }
 
+.menu-checkbox, .hamburger {
+    display: none;
+}
+
 /* Menu */
 .nav {
   display: flex;
@@ -1069,6 +1073,7 @@ form textarea {
   border: 1px solid var(--gray-light);
   border-radius: 5px;
 }
+
 /* =====================================================
    MEDIA QUERIES PARA TABLET E CELULAR – VERSÃO RESPONSIVA
    (Não alteram a versão desktop)
@@ -1144,40 +1149,79 @@ form textarea {
   }
   /* Alinha o logo à esquerda e adiciona margem */
   .header .logo {
+    flex: 1;
     margin-left: 0rem;
   }
   .header .logo img {
     width: 3rem;
-    margin-left: 2rem;
+    margin-left: 1rem;
   }
+  /* Esconde o checkbox */
+  .menu-checkbox {
+    display: none;
+  }
+  /* Estiliza o botão do menu hambúrguer */
   .hamburger {
-    display: flex !important;
-    width: 2rem;
-    height: 2rem;
+    display: flex;
+    cursor: pointer;
     align-items: center;
-    color: var(--color-soft-white);
-    justify-content: flex-end;
-    margin-right: 1rem;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
   }
   .hamburger svg {
     width: 100%;
     height: 100%;
-    fill: currentColor;
+    fill: var(--color-soft-white);
   }
-  /* Esconde o menu e as redes sociais por padrão */
-  .nav ul,
-  .nav .social-icons {
-    display: none;
+  /* Modificação para efeito de deslizamento:
+     - Sempre exibe o menu (display: flex)
+     - Oculta-o com transform: translateX(100%) (totalmente à direita)
+     - Quando o checkbox estiver marcado, transforma para translateX(0) */
+  .nav .menu {
+    display: flex;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: var(--color-coral);
     flex-direction: column;
-    text-align: center;
-    margin-top: 1rem;
+    text-align: left;
+    padding: 1.5rem 1.5rem;
+    list-style: none;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
-  /* Exibe ambos quando o checkbox está marcado */
-  #menu-toggle:checked + .hamburger + .nav ul {
-    display: flex;
+  #menu-toggle:checked ~ .nav .menu {
+    transform: translateX(0);
   }
-  #menu-toggle:checked + .hamburger + .nav .social-icons {
-    display: flex;
+  /* Estiliza os itens do menu */
+  .nav .menu li {
+    padding: 0rem;
+    color: var(--color-yellow-pastel);
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    text-align: left;
+  }
+  #menu-toggle:checked ~ .nav .menu li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .nav .menu a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 0rem;
+    width: 100%;
+  }
+  .nav .menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
   }
   /* Cada seção ocupa a tela inteira */
   /* Ajustes de tipografia para melhor leitura */
@@ -1261,7 +1305,7 @@ form textarea {
   .service-content .btn {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
-    max-width: 200px;    
+    max-width: 200px;
   }
   .service-content.overlay {
     background-color: rgba(0, 0, 0, 0.6);
@@ -1305,8 +1349,8 @@ form textarea {
     width: 100%;
     transform: none;
     display: flex;
-    align-items: center; /* Alinhamento vertical */
-    justify-content: center; /* Alinhamento horizontal */
+    align-items: center;
+    justify-content: center;
   }
   .about-us .container, .contact-content {
     flex-flow: column;
@@ -1330,14 +1374,14 @@ form textarea {
     display: none;
   }
   .about-us .container .content .icon {
-    top: -102%;                /* Posicionado no topo */
-    left: 50%;             /* Centralizado horizontalmente */
+    top: -102%;
+    left: 50%;
     right: auto;
-    transform: translateX(-50%);  /* Centraliza o elemento */
-    width: 80px;           /* Tamanho reduzido */
+    transform: translateX(-50%);
+    width: 80px;
     height: 80px;
-    border: solid 10px var(--color-green-pastel); /* Borda menor */
-    padding: 5px;          /* Padding reduzido */
+    border: solid 10px var(--color-green-pastel);
+    padding: 5px;
   }
   .destino-content p {
     width: 60%;
@@ -1347,7 +1391,7 @@ form textarea {
   .destino-item img {
     filter: brightness(70%);
   }
-  .destino-item img:hover { 
+  .destino-item img:hover {
     transform: none;
   }
   /* Reorganiza elementos horizontais para vertical */
@@ -1368,9 +1412,9 @@ form textarea {
   .view-more {
     margin-top: 2rem;
   }
-  .view-more .btn{
+  .view-more .btn {
     width: 100%;
-    max-width: 300px; /* Define um limite máximo */
+    max-width: 300px;
     text-align: center;
   }
   .destino-item {
@@ -1388,7 +1432,6 @@ form textarea {
     object-fit: cover;
     object-position: revert;
   }
-  /* Força o container de contato a ser um bloco posicionado relativamente */
   .contact-content {
     position: relative;
     display: block !important;
@@ -1404,7 +1447,6 @@ form textarea {
   .contact-form label {
     color: var(--color-yellow-pastel-ligth);
   }
-  /* Posiciona a imagem como fundo cobrindo toda a área */
   .contact-image {
     position: absolute;
     top: 0;
@@ -1413,14 +1455,12 @@ form textarea {
     height: 100%;
     z-index: 1;
   }
-  /* Garante que a imagem ocupe 100% da área e seja coberta */
   .contact-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: brightness(0.60);
   }
-  /* Coloca o formulário sobre a imagem, com um fundo semitransparente para boa legibilidade */
   .contact-form {
     position: relative;
     z-index: 2;
@@ -1455,7 +1495,6 @@ form textarea {
     text-align: center;
     position: relative;
     height: auto;
-    /* Removido o min-height para que o footer se ajuste ao conteúdo */
   }
   .footer-mobile .linha1 {
     position: relative;
@@ -1494,7 +1533,6 @@ form textarea {
     text-align: left;
     margin-bottom: 1.33rem;
   }
-    /* Newsletter */
   .footer-mobile .linha2 .newsletter {
     flex: 3;
     display: flex;
@@ -1539,7 +1577,7 @@ form textarea {
     transition: background-color 0.3s ease;
     font-size: 0.8rem;
     font-weight: 700;
-    max-width: 200px;   
+    max-width: 200px;
   }
   .footer-mobile .linha2 .newsletter .submit-btn:hover {
     background-color: var(--color-red-strong);

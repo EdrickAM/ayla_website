@@ -245,3 +245,185 @@ body {
   margin: 0.5rem 1rem 1rem;
   font-weight: 500;
 }
+
+#blog-header {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .blog-home {
+    flex-direction: column;
+    padding: 4rem 1rem;
+  }
+  .menu {
+    flex: none;
+    width: 100%;
+    align-items: center;
+  }
+  .menu .container, .menu .content {
+    text-align: center;
+  }
+  .menu .content p {
+    width: 100%;
+  }
+  .featured-post {
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+  .featured-post img {
+    height: 300px;
+  }
+  .featured-content h2 {
+    font-size: 1.5rem;
+    width: 100%;
+  }
+  .featured-content p {
+    width: 100%;
+  }
+  .blog-grid {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .blog-item, .blog-item-v {
+    flex: none;
+    width: 100%;
+  }
+  .blog-item img, .blog-item-v img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  hr {
+    width: 80%;
+    margin-top: 2rem;
+    border-top: 2px solid rgba(234, 77, 73, 0.3);
+  }
+  .header.solid.white {
+    display: none;
+  }
+  #blog-header {
+    width: 100%;
+    background: inherit; /* Use a cor de fundo desejada ou herde do body */
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    font-family: var(--font-tertiary);
+    color: var(--color-coral);
+  }
+  .blog-header-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .blog-header-container .blog-logo {
+    margin-left: 1rem;
+    flex: 1;
+  }
+  .blog-header-container .blog-hamburger {
+    margin-right: 1rem;
+  }
+  .blog-nav .blog-menu li a {
+    text-decoration: none;
+    color: var(--color-yellow-pastel); /* Altere para a cor desejada */
+    font-weight: bold;
+  }
+  
+  /* Oculta o ícone hamburger e o checkbox no desktop */
+  .blog-hamburger,
+  .blog-menu-checkbox {
+    display: none;
+  }
+  /* Exibe o ícone hamburger no mobile */
+  .blog-hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  /* Oculta o menu padrão e posiciona o menu mobile */
+  .blog-nav .blog-menu {
+    position: fixed;
+    top: 6rem;
+    right: 0;
+    width: 50%; /* Ocupa metade da tela */
+    height: 100vh;
+    background: inherit; /* Utilize a mesma cor de fundo do header ou outra desejada */
+    flex-direction: column;
+    padding-top: 3rem; /* Espaço para não sobrepor o header */
+    list-style: none;
+    margin: 0;
+    transform: translateX(100%); /* Começa fora da tela (à direita) */
+    transition: transform 0.4s ease-in-out;
+    z-index: 1000;
+    font-family: var(--font-primary);
+    background-color: var(--color-coral);
+    color: var(--color-yellow-pastel);
+    font-size: 1.5rem;
+  }
+  /* Ao marcar o checkbox, o menu desliza para a esquerda e aparece */
+  #blog-menu-toggle:checked ~ .blog-nav .blog-menu {
+    transform: translateX(0);
+  }
+  /* Opcional: Efeito de fade e deslocamento para os itens do menu */
+  .blog-nav .blog-menu li {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  #blog-menu-toggle:checked ~ .blog-nav .blog-menu li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .header .container {
+    flex-direction: row;
+    align-items: center;
+    padding: 0rem 1rem;
+  }
+  .blog-home {
+    padding: 7rem 1rem 0rem;
+  }
+  .featured-post {
+    width: auto;
+  }
+  .featured-post img {
+    height: 200px;
+  }
+  .blog-item img, .blog-item-v img {
+    height: 200px;
+  }
+  .featured-content h2 {
+    font-size: 1.2rem;
+  }
+  .featured-content p {
+    font-size: 0.9rem;
+  }
+  .blog-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 0;
+    padding: 1.5rem 1rem; /* Garante espaçamento lateral */
+  }
+  .blog-item, .blog-item-v {
+    flex: none;
+    display: inline-block;
+    width: 80%;
+    max-width: 300px;
+    margin: 0 0.5rem; /* 1rem de margem em ambos os lados */
+    scroll-snap-align: start;
+  }
+  .blog-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .blog-item, .blog-item-v {
+    scroll-snap-align: start;
+    scroll-margin: 0 1rem 0 1rem; /* margem de 1rem à esquerda e à direita */
+  }  
+  .footer-mobile {
+    height: 80vh;
+}
+}

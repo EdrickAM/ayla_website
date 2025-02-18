@@ -8,17 +8,46 @@
     <meta property="og:description" content="Explore o mundo com sofisticação. Viagens exclusivas e experiências autênticas.">
     <meta property="og:image" content="https://seusite.com/assets/images/og-image.jpg">
     <title>Ayla - Viagens Autênticas</title>
-    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="../css/blog.css">
     <link href="https://fonts.googleapis.com/css2?family=Bigola:wght@400;700&family=Noka+Bold&family=Pacifico&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
   </head>
 <body>
+  <header class="header solid white" id="blog-header">
+    <div class="blog-header-container">
+      <!-- Logo à esquerda -->
+      <div class="blog-logo">
+        <h3>Be a local.</h3>  
+      </div>
+  
+      <!-- Checkbox para controle do menu (oculto) -->
+      <input type="checkbox" id="blog-menu-toggle" class="blog-menu-checkbox">
+  
+      <!-- Ícone do menu hamburger à direita -->
+      <label for="blog-menu-toggle" class="blog-hamburger">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+        </svg>
+      </label>
+  
+      <!-- Navegação (menu) -->
+      <nav class="blog-nav">
+        <ul class="blog-menu">
+          <li><a href="#destinos">Destinos</a></li>
+          <li><a href="#dicas">Dicas</a></li>
+          <li><a href="#historias">Histórias</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
   <header class="header solid white">
     <div class="container">
       <div class="logo">
         <h3>Be a local.</h3>
       </div> 
       <div class="logo">
-        <img src="assets/logos/logo.svg" alt="Logo da Ayla"/>
+        <img src="../assets/logos/logo.svg" alt="Logo da Ayla"/>
       </div> 
       <nav class="nav">
         <ul>
@@ -49,7 +78,7 @@
   <main class="blog-home">
     <div class="menu">
       <div class="container">
-        <img src="assets/logos/be_a_local.svg" alt="Logo da Be a Local"/>
+        <img src="../assets/logos/be_a_local.svg" alt="Logo da Be a Local"/>
       </div>
       <div class="content">
         <p id="p-first">
@@ -65,7 +94,7 @@
     </div>
     <section class="featured-post">
       <a href="blog-post.html?id=1">
-        <img src="assets/images/blog/post1/image1.jpg" alt="Cristo Redentor">
+        <img src="../assets/images/blog/post1/image1.jpg" alt="Cristo Redentor">
         <div class="featured-content">
           <h3>Viagem Cultural</h3>
           <h2>Rio de Janeiro: Como Viver a Cidade Como um Carioca</h2>
@@ -81,14 +110,14 @@
   <section class="blog-grid">
     <article class="blog-item">
       <a href="blog-post.html?id=2">
-        <img src="assets/images/blog/post2/image1.jpg" alt="Praia e Vôlei">
+        <img src="../assets/images/blog/post2/image1.jpg" alt="Praia e Vôlei">
         <h3>A Magia das Praias Cariocas</h3>
         <p>Saiba como aproveitar as praias do Rio como um local.</p>
       </a>
     </article>
     <article class="blog-item-v">
       <a href="blog-post.html?id=3">
-        <img src="assets/images/blog/post3/image1.jpg" alt="Bebida sendo servida">
+        <img src="../assets/images/blog/post3/image1.jpg" alt="Bebida sendo servida">
         <h4>Um dia em Chatuchak</h4>
         <h3>O labirinto vibrante de Bangkok</h3>
         <p>No coração de Bangkok, a Feira de Chatuchak se destaca como um verdadeiro microcosmo da cultura tailandesa. Um mercado gigante, repleto de cores, aromas e vozes, onde cada corredor leva a uma nova descoberta.</p>
@@ -96,7 +125,7 @@
     </article>
     <article class="blog-item-v">
       <a href="blog-post.html?id=4">
-        <img src="assets/images/blog/post4/image1.jpg" alt="Bondinho de Santa Teresa">
+        <img src="../assets/images/blog/post4/image1.jpg" alt="Bondinho de Santa Teresa">
         <h3>Santa Teresa e sua História</h3>
         <p>Explore o bairro mais artístico e boêmio do Rio.</p>
       </a>
@@ -104,7 +133,7 @@
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer class="footer-desktop">
     <div class="footer-container">
       <!-- Linha Superior -->
       <div class="footer">
@@ -128,8 +157,38 @@
           </div>  
         </div>
         <div class="right">
-          <img src="assets/logos/ayla_logo.svg" alt="Logo da Ayla"/>
+          <img src="../assets/logos/ayla_logo.svg" alt="Logo da Ayla">
         </div>
+      </div>
+    </div>
+  </footer>
+
+  <footer class="footer-mobile">
+    <div class="linha1">
+      <div class="be-a-local">
+        <h4>Be a local.</h4>
+      </div>
+      <div class="logo-ayla">
+        <img src="../assets/logos/ayla_logo.svg" alt="Logo da Ayla">
+      </div>
+    </div>
+    <div class="linha2">
+      <!-- Aqui pode vir o campo de newsletter -->
+      <div class="newsletter">
+        <h2>Assine nossa Newsletter</h2>
+        <p class="description">Receba as últimas novidades e ofertas diretamente no seu e-mail.</p>
+        <input type="email" class="email-input" placeholder="Seu e-mail">
+        <button class="submit-btn">Inscrever-se</button>
+      </div>
+    </div>
+    <div class="linha3">
+      <!-- Termos e condições -->
+      <div class="footer-info">
+        <p><a href="#termos">Termos & Condições</a> | <a href="#privacidade">Política de Privacidade</a></p>
+        <p>© 2025 Ayla Mundo. Todos os direitos reservados.</p>
+        <p>CNPJ: 57.751.142/0001-08</p>
+        <p>Endereço Brasil: Praça Tiradentes, 09, Sala 1104, Centro - </br> Rio de Janeiro, RJ, Brazil 20060-070</p>
+        <p>Endereço Índia: Ward No.9, Tejas Arcade, 1st Main Road / </br> Dr, 527/B, Dr Rajkumar Rd, Bengaluru, Karnataka, India 560010</p>
       </div>
     </div>
   </footer>
