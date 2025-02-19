@@ -104,6 +104,14 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+#social-icons-desktop {
+  display: inline-flex;
+}
+
+#social-icons-mobile {
+  display: none;
+}
+
 .hamburger {
   display: none;
   cursor: pointer;
@@ -204,8 +212,8 @@ body::-webkit-scrollbar {
 .nav a {
   text-decoration: none;
   color: var(--color-soft-white);
-  font-weight: bold;
   transition: color 0.3s ease;
+  font-size: medium;
 }
 
 .header.solid.white .nav a {
@@ -649,7 +657,8 @@ body::-webkit-scrollbar {
 
 /* Solid border */
 hr {
-  border-top: 10px solid var(--font-primary);
+  border-top: 2px solid rgba(234, 77, 73, 0.3);
+  margin: 1.5rem 0rem;
 }
 
 /* Garante que o conteúdo do blog fique visível sobre o fundo */
@@ -1150,6 +1159,12 @@ form textarea {
 
 /* Ajustes para Celular (max-width: 768px) */
 @media (max-width: 768px) {
+  #social-icons-desktop {
+    display: none;
+  }
+  #social-icons-mobile {
+    display: inline-flex;
+  }  
   .header .container {
     padding: 0rem;
     gap: 1rem;

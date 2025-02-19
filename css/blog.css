@@ -17,6 +17,11 @@ body {
   color: var(--color-coral);
 }
 
+.nav ul {
+  font-size: medium;
+  font-weight: 600;
+}
+
 .social-icons {
   display: flex;
   gap: 1.5rem;

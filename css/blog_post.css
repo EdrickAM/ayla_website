@@ -2,6 +2,10 @@
 
 /* Estilos específicos para o Blog */
 
+#blog-header-mobile {
+  display: none;
+}
+
 body {
   background-color: var(--color-yellow-pastel-ligth);
 }
@@ -15,6 +19,11 @@ body {
 .header .container h3 {
   font-family: var(--font-tertiary);
   color: var(--color-coral);
+}
+
+.nav ul {
+  font-size: medium;
+  font-weight: 600;
 }
 
 .social-icons {
@@ -49,7 +58,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center; /* Centraliza o conteúdo */
-  padding: 6rem 1.5rem; /* Ajustado para não ultrapassar a esquerda */
+  padding: 6rem 1.5rem 0.5rem; /* Ajustado para não ultrapassar a esquerda */
   max-width: 80%; /* Mantém o conteúdo contido */
   margin: 0 auto; /* Garante que fique centralizado */
 }
@@ -85,6 +94,10 @@ body {
   color: var(--color-red-medium);
   margin-bottom: 0.5rem;
   text-align: left; /* Mantém alinhado à esquerda */
+}
+
+.post-content {
+  padding: 0rem 1.5rem;
 }
 
 /* LOGO E DATA */
@@ -269,14 +282,17 @@ body {
 }
 
 .next-post-content h3 {
-  font-size: 2rem;
+  font-size: 4rem;
   font-family: var(--font-tertiary);
-  margin-bottom: 0.5rem;
+  margin: 0rem;
 }
 
 .next-post-content p {
   font-size: 1.2rem;
+  margin: 0rem;
+  font-family: var(--font-primarytertiary);
 }
+
 /* Ajustes para tornar o blog_post_1.html responsivo */
 @media (max-width: 1024px) {
   .single-post {
@@ -320,7 +336,7 @@ body {
   .header.solid.white {
     display: none;
   }
-  #blog-header {
+  #blog-header-mobile {
     width: 100%;
     background: inherit; /* Use a cor de fundo desejada ou herde do body */
     display: flex;
@@ -479,12 +495,12 @@ body {
   }
   .next-post-content h3 {
     font-size: 2rem;
+    margin: 0rem;
   }
   .next-post-content p {
     margin: 0rem;
     font-size: 0.9rem;
     font-family: var(--font-primary);
-    font-weight: 700;
   }
   .footer-mobile {
     height: 80vh;
