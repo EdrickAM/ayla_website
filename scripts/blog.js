@@ -92,4 +92,20 @@ document.addEventListener("DOMContentLoaded", function() {
       blogGrid.scrollLeft = scrollLeft - walk;
     });
 });
+
+function switchLanguage() {
+  const currentUrl = window.location.href;
+  if (currentUrl.includes('/pt/')) {
+    // Se estiver na versão em português, redireciona para a versão em inglês
+    const newUrl = currentUrl.replace('/pt/', '/en/');
+    window.location.href = newUrl;
+  } else if (currentUrl.includes('/en/')) {
+    // Se estiver na versão em inglês, redireciona para a versão em português
+    const newUrl = currentUrl.replace('/en/', '/pt/');
+    window.location.href = newUrl;
+  } else {
+    // Caso não esteja em nenhuma das pastas, define uma versão padrão (por exemplo, a em inglês)
+    window.location.href = '../en/blog.html';
+  }
+}
   
