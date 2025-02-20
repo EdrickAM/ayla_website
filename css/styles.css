@@ -1296,6 +1296,17 @@ form textarea {
   .about-us .container .content .icon {
     top: -135%;
   }
+  .about-us .container {
+    width: 60%;
+    justify-self: center;
+  }
+  .about-us .image img {
+    object-position: center !important;
+  }
+  .contact-form {
+    width: 60% !important;
+    justify-self: center !important;
+  }
   .footer-desktop {
     display: inline-block;
     height: auto;
