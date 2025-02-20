@@ -1418,6 +1418,7 @@ form textarea {
   }
   .footer-mobile {
     height: auto;
+    width: 100%;
   }
   .footer-desktop {
     display: none;
