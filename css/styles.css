@@ -1809,7 +1809,6 @@ form textarea {
   }
   .footer-mobile .linha2 .newsletter input {
     position: relative;
-    display: block;
     width: 100%;
     max-width: 400px;
     margin: 0rem 0.5rem 0.5rem 0rem;
