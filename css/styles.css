@@ -3,48 +3,56 @@
   font-family: 'Noka';
   src: url('../assets/fonts/Noka-Black.otf') format('opentype');
   font-weight: 900; /* Black */
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Noka';
   src: url('../assets/fonts/Noka-Bold.otf') format('opentype');
   font-weight: 700; /* Bold */
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Noka';
   src: url('../assets/fonts/Noka-Hairline.otf') format('opentype');
   font-weight: 100; /* Hairline */
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Noka';
   src: url('../assets/fonts/Noka-Light.otf') format('opentype');
   font-weight: 300; /* Light */
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Noka';
   src: url('../assets/fonts/Noka-Medium.otf') format('opentype');
   font-weight: 500; /* Medium */
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Noka';
   src: url('../assets/fonts/Noka-Semibold.otf') format('opentype');
   font-weight: 600; /* SemiBold */
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Bigola';
   src: url('../assets/fonts/Bigola-Regular.otf') format('opentype');
   font-weight: 400; /* Regular */
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Bigola';
   src: url('../assets/fonts/Bigola-Italic.otf') format('opentype');
   font-style: italic; /* Italic */
+  font-display: swap;
 }
 
 /* Variáveis de Cores e Fontes */
@@ -1490,6 +1498,7 @@ form textarea {
     color: var(--color-yellow-pastel);
     font-size: 1.5rem;
     display: flex;
+    overflow-y: auto; /* Habilita a rolagem vertical */
   }
   #menu-toggle:checked ~ .nav .menu {
     transform: translateX(0);
@@ -1519,6 +1528,17 @@ form textarea {
   .nav .menu a:hover {
     background-color: rgba(255, 255, 255, 0.2);
   }
+  /* Esconde a barra de rolagem em navegadores WebKit (Chrome, Safari) */
+  .nav .menu::-webkit-scrollbar {
+      width: 6px;
+  }
+  .nav .menu::-webkit-scrollbar-thumb {
+      background: var(--color-soft-black); /* Cor da barra */
+      border-radius: 6px;
+  }
+  .nav .menu::-webkit-scrollbar-track {
+      background: transparent;
+}
   /* Cada seção ocupa a tela inteira */
   /* Ajustes de tipografia para melhor leitura */
   .cta-hero {
