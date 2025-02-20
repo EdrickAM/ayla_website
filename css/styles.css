@@ -1526,9 +1526,6 @@ form textarea {
     width: 100%;
     gap: 0rem;
   }
-  .nav .menu a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
   /* Esconde a barra de rolagem em navegadores WebKit (Chrome, Safari) */
   .nav .menu::-webkit-scrollbar {
       width: 6px;
