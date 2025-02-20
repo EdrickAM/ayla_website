@@ -122,7 +122,7 @@ function switchLanguage() {
 
 document.addEventListener("click", function (event) {
   var checkbox = document.getElementById("menu-toggle");
-  var navMobile = document.getElementById("nav-mobile");
+  var menu = document.querySelector(".nav .menu");
   var hamburger = document.querySelector(".hamburger");
 
   // Se o menu estiver aberto e o clique NÃO ocorreu dentro do menu nem no hamburger, fecha o menu
@@ -130,5 +130,10 @@ document.addEventListener("click", function (event) {
       !navMobile.contains(e.target) && 
       !hamburger.contains(e.target)) {
     checkbox.checked = false;
+  }
+
+  // Verifica se o menu está aberto e se o clique foi fora dele
+  if (checkbox.checked && !menu.contains(event.target) && event.target !== checkbox) {
+      checkbox.checked = false;
   }
 });
