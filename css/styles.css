@@ -1752,7 +1752,7 @@ form textarea {
     position: relative;
     display: flex;
     flex-flow: row;
-    width: 100%;
+    width: 98vw;
     text-align: left;
     font-family: var(--font-tertiary);
     color: var(--color-yellow-pastel);
@@ -1782,7 +1782,7 @@ form textarea {
   .footer-mobile .linha2 {
     position: relative;
     display: block;
-    width: 100%;
+    width: 98vw;
     text-align: left;
     margin: 0rem 1rem 1.33rem 1rem;
   }
@@ -1839,7 +1839,7 @@ form textarea {
   .footer-mobile .linha3 {
     position: relative;
     display: block;
-    width: 100%;
+    width: 98vw;
     font-size: smaller;
     font-family: var(--font-primary);
     color: var(--color-red-dark);
