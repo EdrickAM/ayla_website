@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'ayla_db';
+$dbname = 'ayla';
 $user = 'root'; // Altere para o usuário do seu banco
 $pass = ''; // Altere para a senha do seu banco
 
