@@ -1,11 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  var checkbox = document.getElementById("menu-toggle");
-  var menu = document.querySelector(".nav .menu");
-
-  // Verifica se o menu está aberto e se o clique foi fora dele
-  if (checkbox.checked && !menu.contains(event.target) && event.target !== checkbox) {
-      checkbox.checked = false;
-  }
   // ==================================================
   // 1. Rolagem suave ao clicar nos links do menu
   // ==================================================
@@ -126,3 +119,13 @@ function switchLanguage() {
     window.location.href = '../en/index.html';
   }
 }
+
+document.addEventListener("click", function (event) {
+  var checkbox = document.getElementById("menu-toggle");
+  var menu = document.querySelector(".nav .menu");
+
+  // Verifica se o menu está aberto e se o clique foi fora dele
+  if (checkbox.checked && !menu.contains(event.target) && event.target !== checkbox) {
+      checkbox.checked = false;
+  }
+});
