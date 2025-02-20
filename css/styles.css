@@ -1761,7 +1761,7 @@ form textarea {
     align-items: center;
     align-content: left;
     justify-content: center;
-    margin: 0rem 0.5rem 0rem 0.5rem;
+    margin: 0rem 1rem 0rem 1rem;
   }
   .footer-mobile .linha1 .be-a-local {
     flex: 1;
@@ -1784,7 +1784,7 @@ form textarea {
     display: block;
     width: 98vw;
     text-align: left;
-    margin: 0rem 0.5rem 1.33rem 0.5rem;
+    margin: 0rem 1rem 1.33rem 1rem;
   }
   .footer-mobile .linha2 .newsletter {
     flex: 3;
@@ -1809,7 +1809,7 @@ form textarea {
   }
   .footer-mobile .linha2 .newsletter input {
     position: relative;
-    width: 94vw;
+    width: 90vw;
     max-width: 400px;
     margin: 0rem 0.5rem 0.5rem 0rem;
     padding: 0.8rem;
@@ -1845,7 +1845,7 @@ form textarea {
     font-family: var(--font-primary);
     color: var(--color-red-dark);
     text-align: left;
-    margin: 0rem 0.5rem 1.33rem 0.5rem;
+    margin: 0rem 1rem 1.33rem 1rem;
   }
   .footer-mobile .linha3 a {
     color: var(--color-red-dark);
