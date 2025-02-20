@@ -443,6 +443,6 @@ body {
   }  
   .footer-mobile {
     height: auto;
-    width: auto;
+    width: 100vw;
   }
 }

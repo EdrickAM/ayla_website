@@ -1742,7 +1742,7 @@ form textarea {
     text-align: left;
   }
   .footer-mobile {
-    width: auto;
+    width: 100vw;
     background-color: var(--color-coral);
     padding: 1rem 0rem;
     text-align: center;
