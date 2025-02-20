@@ -1512,6 +1512,10 @@ form textarea {
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     text-align: left;
   }
+  #menu-toggle:checked ~ .nav .menu li {
+    opacity: 1;
+    transform: translateX(0);
+  }
   .nav .menu a {
     color: var(--color-yellow-pastel);
     font-size: 1.5rem;
@@ -1521,6 +1525,9 @@ form textarea {
     padding: 0rem;
     width: 100%;
     gap: 0rem;
+  }
+  .nav .menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
   }
   /* Esconde a barra de rolagem em navegadores WebKit (Chrome, Safari) */
   .nav .menu::-webkit-scrollbar {
