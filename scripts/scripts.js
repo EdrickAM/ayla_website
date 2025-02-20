@@ -22,44 +22,61 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==================================================
   // 2. Mensagem de formulário enviado (simulação)
   // ==================================================
-  const contactForm = document.querySelector('#contact-form');
-
-  if (contactForm) {
-      contactForm.addEventListener('submit', (e) => {
-        const lang = getLanguage();
-        const messageElement = document.getElementById("mensagem");
-        
-        var email_sender = "São Paulo";
-
-        if (lang === "pt") {
-          email_sender = 'send_email_pt.php';
-        } else {
-          email_sender = 'send_email_en.php';
-        }
-        
-        e.preventDefault();
-
-        const formData = new FormData(contactForm);
-
-        fetch(email_sender, {
-            method: 'POST',
-            body: formData
-          })
-          .then(response => response.json())
-          .then(data => {
-            alert(data.message);
-            
-            if (data.status === "success") {
-              contactForm.reset();
-            }
-        })
-          .catch(error => {
-            console.error("Erro no envio:", error);
-            alert("Erro ao enviar mensagem.");
-        });
-      });
+  function getLanguage() {
+    return window.location.href.includes("/pt/") ? "pt" : "en";
   }
 
+  // Envio do formulário de contato
+  const contactForm = document.querySelector('#contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+      formData.append('lang', getLanguage());
+
+      fetch('process_contact.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message);
+        if (data.status === "success") {
+          contactForm.reset();
+        }
+      })
+      .catch(error => {
+        console.error("Erro no envio:", error);
+        alert(getLanguage() === "pt" ? "Erro ao enviar mensagem." : "Error sending message.");
+      });
+    });
+  }
+
+  // Envio do formulário da newsletter
+  const newsletterForm = document.querySelector('#newsletter-form');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(newsletterForm);
+      formData.append('lang', getLanguage());
+
+      fetch('process_newsletter.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message);
+        if (data.status === "success") {
+          newsletterForm.reset();
+        }
+      })
+      .catch(error => {
+        console.error("Erro ao se inscrever:", error);
+        alert(getLanguage() === "pt" ? "Erro ao se inscrever na newsletter." : "Error subscribing to the newsletter.");
+      });
+    });
+  }  
   // ==================================================
   // 3. Header sólido ao rolar a página
   // ==================================================
@@ -100,13 +117,5 @@ function switchLanguage() {
   } else {
     // Caso não esteja em nenhuma das pastas, define uma versão padrão (por exemplo, a em inglês)
     window.location.href = '../en/index.html';
-  }
-}
-
-function getLanguage() {
-  if (window.location.href.includes("/pt/")) {
-      return "pt";
-  } else {
-      return "en";
   }
 }
