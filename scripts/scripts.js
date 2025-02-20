@@ -123,6 +123,7 @@ function switchLanguage() {
 document.addEventListener("click", function (event) {
   var checkbox = document.getElementById("menu-toggle");
   var menu = document.querySelector(".nav .menu");
+  var navMobile = document.getElementById("nav-mobile");
   var hamburger = document.querySelector(".hamburger");
 
   // Se o menu estiver aberto e o clique NÃO ocorreu dentro do menu nem no hamburger, fecha o menu
