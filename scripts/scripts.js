@@ -22,14 +22,42 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==================================================
   // 2. Mensagem de formulário enviado (simulação)
   // ==================================================
-  const contactForm = document.querySelector('.contact-form');
+  const contactForm = document.querySelector('#contact-form');
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault(); // Evita o envio padrão do formulário
-      alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-      contactForm.reset(); // Limpa o formulário
-    });
+      contactForm.addEventListener('submit', (e) => {
+        const lang = getLanguage();
+        const messageElement = document.getElementById("mensagem");
+        
+        var email_sender = "São Paulo";
+
+        if (lang === "pt") {
+          email_sender = 'send_email_pt.php';
+        } else {
+          email_sender = 'send_email_en.php';
+        }
+        
+        e.preventDefault();
+
+        const formData = new FormData(contactForm);
+
+        fetch(email_sender, {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => response.json())
+          .then(data => {
+            alert(data.message);
+            
+            if (data.status === "success") {
+              contactForm.reset();
+            }
+        })
+          .catch(error => {
+            console.error("Erro no envio:", error);
+            alert("Erro ao enviar mensagem.");
+        });
+      });
   }
 
   // ==================================================
@@ -72,5 +100,13 @@ function switchLanguage() {
   } else {
     // Caso não esteja em nenhuma das pastas, define uma versão padrão (por exemplo, a em inglês)
     window.location.href = '../en/index.html';
+  }
+}
+
+function getLanguage() {
+  if (window.location.href.includes("/pt/")) {
+      return "pt";
+  } else {
+      return "en";
   }
 }
