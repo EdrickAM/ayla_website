@@ -230,7 +230,7 @@ body::-webkit-scrollbar {
 
 .social-icons {
   display: flex;
-  margin-left: 20px;
+  margin-right: 1rem;
   gap: 1rem;
   justify-content: center;
   align-items: center;
