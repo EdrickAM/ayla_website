@@ -15,18 +15,18 @@ document.addEventListener("DOMContentLoaded", function() {
           
           <h2>Santa Teresa: O Bairro das Artes e da Boemia</h2>
           <p>Santa Teresa é um dos bairros mais autênticos do Rio. Andar pelas ruas de paralelepípedos é como caminhar em uma tela impressionista, com casarões antigos, ateliês de artistas e pequenos cafés acolhedores...</p>
-          <img src="https://unsplash.com/pt-br/fotografias/fotografia-de-alto-angulo-do-teleferico-Q8KGwGdDsW8" alt="Bondinho de Santa Teresa">
+          <img loading="lazy" src="https://unsplash.com/pt-br/fotografias/fotografia-de-alto-angulo-do-teleferico-Q8KGwGdDsW8" alt="Bondinho de Santa Teresa">
           
           <h2>A Magia das Praias: Mais do que um Cartão-Postal</h2>
           <p>Cariocas têm uma relação quase sagrada com o mar. Mas esqueça o clichê de turistas deitados o dia inteiro em Copacabana. Para viver a praia como um carioca, vá à Praia do Leme no começo da manhã e veja a mágica de um dia no Rio de Janeiro acontecer...</p>
-          <img src="https://unsplash.com/pt-br/fotografias/mulher-nadando-na-fotografia-do-oceano-cCkheI30Jd4" alt="Mulher nadando no oceano">
+          <img loading="lazy" src="https://unsplash.com/pt-br/fotografias/mulher-nadando-na-fotografia-do-oceano-cCkheI30Jd4" alt="Mulher nadando no oceano">
           
           <h2>O Samba Como Linguagem da Alma</h2>
           <p>Nenhuma viagem cultural ao Rio estaria completa sem samba. Mas para viver essa experiência como um verdadeiro carioca, esqueça as grandes casas de show voltadas para turistas. Vá à Pedra do Sal em uma segunda-feira à noite e sinta o chão vibrar com a batida do tamborim...</p>
           
           <h2>A Gastronomia que Conta Histórias</h2>
           <p>Comer no Rio de Janeiro é viajar pelo mundo sem sair da cidade. Para viver essa experiência como um carioca, você precisa entender que comida não é só sabor; é memória, tradição, encontro...</p>
-          <img src="https://unsplash.com/pt-br/fotografias/uma-pessoa-esta-derramando-uma-bebida-em-um-copo-FwgRFkU8BAU" alt="Bebida sendo servida">
+          <img loading="lazy" src="https://unsplash.com/pt-br/fotografias/uma-pessoa-esta-derramando-uma-bebida-em-um-copo-FwgRFkU8BAU" alt="Bebida sendo servida">
           
           <h2>Bairros Menos Conhecidos, Mas Imperdíveis</h2>
           <p>Enquanto a maioria dos turistas se prende à Zona Sul, os cariocas sabem que o verdadeiro coração da cidade pulsa em outros cantos. Em Madureira, o berço do samba, você pode visitar a Portela e o Império Serrano...</p>
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
       article.innerHTML = `
         <h1>${posts[postId].title}</h1>
         <p>${posts[postId].date}</p>
-        <img src="${posts[postId].image}" alt="Imagem do Post">
+        <img loading="lazy" src="${posts[postId].image}" alt="Imagem do Post">
         <div>${posts[postId].content}</div>
       `;
     } else {

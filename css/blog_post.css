@@ -28,9 +28,10 @@ body {
 
 .social-icons {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
+  margin: 0rem 0rem 0rem 2rem;
 }
 
 .social-icons a {
@@ -340,7 +341,7 @@ body {
     font-weight: bold;
   }
   .blog-nav ul {
-    gap: 1.5rem;
+    gap: 1rem;
   }
   /* Oculta o ícone hamburger e o checkbox no desktop */
   .blog-hamburger,
@@ -476,6 +477,6 @@ body {
     font-family: var(--font-primary);
   }
   .footer-mobile {
-    height: 65vh;
+    height: auto;
   }
 }

@@ -82,6 +82,7 @@ html, body {
 
 a, u {
   text-decoration: none;
+  color: inherit; /* Usa a cor do elemento pai */
 }
 
 /* Estilos gerais */
@@ -203,7 +204,7 @@ body::-webkit-scrollbar {
 
 .nav ul {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1408,7 +1409,7 @@ form textarea {
     margin-top: 0;
   }
   .footer-mobile {
-    height: 65vh;
+    height: auto;
   }
   .footer-desktop {
     display: none;
@@ -1607,11 +1608,20 @@ form textarea {
   .about-us .container .content .icon {
     left: 50%;
     right: auto;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
     transform: translateX(-50%);
     width: 80px;
     height: 80px;
     border: solid 10px var(--color-green-pastel);
     padding: 5px;
+  }
+  .about-us .container .content .icon img {
+    position: relative;
+    width: 100%;
+    height: 100%;
   }
   .destino-item img {
     filter: brightness(70%);
