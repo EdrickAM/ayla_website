@@ -123,18 +123,16 @@ function switchLanguage() {
 document.addEventListener("click", function (event) {
   var checkbox = document.getElementById("menu-toggle");
   var menu = document.querySelector(".nav .menu");
-  var navMobile = document.getElementById("nav-mobile");
   var hamburger = document.querySelector(".hamburger");
-  
-  // Verifica se o menu está aberto e se o clique foi fora dele
-  if (checkbox.checked && !menu.contains(event.target) && event.target !== checkbox) {
-      checkbox.checked = false;
+
+  // Se o clique for no ícone do menu, alterna o estado do checkbox
+  if (event.target === checkbox || hamburger.contains(event.target)) {
+      checkbox.checked = !checkbox.checked;
+      return; // Sai da função para evitar fechar imediatamente
   }
-  
-  // Se o menu estiver aberto e o clique NÃO ocorreu dentro do menu nem no hamburger, fecha o menu
-  if (checkbox.checked && 
-    !navMobile.contains(e.target) && 
-    !hamburger.contains(e.target)) {
-    checkbox.checked = false;
+
+  // Se o menu estiver aberto e o clique for fora dele, fecha o menu
+  if (checkbox.checked && !menu.contains(event.target)) {
+      checkbox.checked = false;
   }
 });
