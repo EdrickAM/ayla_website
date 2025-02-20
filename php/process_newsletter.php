@@ -1,46 +1,50 @@
 <?php
 header('Content-Type: application/json');
-require 'config.php'; // Conexão com o banco de dados
-require 'send_email.php'; // Script para envio de e-mail
+require 'config.php';
+require 'send_email.php';
 
-$name = $_POST['name'] ?? '';
+$name  = $_POST['name']  ?? '';
 $email = $_POST['email'] ?? '';
-$lang = $_POST['lang'] ?? 'pt'; // Verifica o idioma (padrão: pt)
+$lang  = $_POST['lang']  ?? 'pt'; // padrão: português
 
 if (empty($name) || empty($email)) {
-    echo json_encode(['status' => 'error', 'message' => ($lang == 'pt') ? 'Preencha todos os campos.' : 'Please fill in all fields.']);
+    $msg = ($lang == 'pt') ? 'Preencha todos os campos.' : 'Please fill in all required fields.';
+    echo json_encode(['status' => 'error', 'message' => $msg]);
     exit;
 }
 
 try {
-    // Verificar se o e-mail já está cadastrado
+    // Verifica se o e-mail já está cadastrado na newsletter
     $stmt = $pdo->prepare("SELECT id FROM newsletter WHERE email = ?");
     $stmt->execute([$email]);
-
     if ($stmt->rowCount() > 0) {
-        echo json_encode(['status' => 'error', 'message' => ($lang == 'pt') ? 'Este e-mail já está inscrito na newsletter.' : 'This email is already subscribed to the newsletter.']);
+        $msg = ($lang == 'pt') ? 'Este e-mail já está inscrito na newsletter.' : 'This email is already subscribed to the newsletter.';
+        echo json_encode(['status' => 'error', 'message' => $msg]);
         exit;
     }
 
-    // Inserir novo registro
+    // Insere a inscrição na newsletter
     $stmt = $pdo->prepare("INSERT INTO newsletter (name, email) VALUES (?, ?)");
     $stmt->execute([$name, $email]);
 
-    // Definir conteúdo do e-mail baseado no idioma
+    // Define assunto e corpo do e-mail conforme o idioma
     if ($lang == 'pt') {
         $subject = "Bem-vindo à nossa Newsletter!";
-        $body = "Olá $name,\n\nObrigado por se inscrever em nossa newsletter. Fique atento às novidades e promoções exclusivas!";
+        $body    = "Olá $name,\n\nObrigado por se inscrever em nossa newsletter. Fique atento às novidades!";
     } else {
         $subject = "Welcome to our Newsletter!";
-        $body = "Hello $name,\n\nThank you for subscribing to our newsletter. Stay tuned for news and exclusive offers!";
+        $body    = "Hello $name,\n\nThank you for subscribing to our newsletter. Stay tuned for updates!";
     }
 
     if (sendEmail($email, $subject, $body)) {
-        echo json_encode(['status' => 'success', 'message' => ($lang == 'pt') ? 'Inscrição realizada com sucesso!' : 'Subscription successful!']);
+        $msg = ($lang == 'pt') ? 'Inscrição realizada com sucesso!' : 'Subscription successful!';
+        echo json_encode(['status' => 'success', 'message' => $msg]);
     } else {
-        echo json_encode(['status' => 'error', 'message' => ($lang == 'pt') ? 'Inscrição realizada, mas não foi possível enviar o e-mail.' : 'Subscription completed, but email could not be sent.']);
+        $msg = ($lang == 'pt') ? 'Inscrição salva, mas não foi possível enviar o e-mail.' : 'Subscription saved, but email could not be sent.';
+        echo json_encode(['status' => 'error', 'message' => $msg]);
     }
 } catch (Exception $e) {
-    echo json_encode(['status' => 'error', 'message' => ($lang == 'pt') ? 'Erro ao processar inscrição.' : 'Error processing subscription.']);
+    $msg = ($lang == 'pt') ? 'Erro ao processar a inscrição.' : 'Error processing subscription.';
+    echo json_encode(['status' => 'error', 'message' => $msg]);
 }
 ?>
