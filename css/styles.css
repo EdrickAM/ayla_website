@@ -1104,6 +1104,14 @@ form textarea {
   border-radius: 5px;
 }
 
+#video-dektop {
+  display: block;
+}
+
+#video-mobile {
+  display: none;
+}
+
 /* =====================================================
    MEDIA QUERIES PARA TABLET E CELULAR – VERSÃO RESPONSIVA
    (Não alteram a versão desktop)
@@ -1329,6 +1337,12 @@ form textarea {
   .footer-mobile {
     display: none;
   }
+  #video-dektop {
+    display: none;
+  }
+  #video-mobile {
+    display: block;
+  }  
 }
 
 @media (max-width: 768px) {
@@ -1426,6 +1440,12 @@ form textarea {
   .footer-mobile {
     display: inline-block;
   }
+  #video-dektop {
+    display: none;
+  }
+  #video-mobile {
+    display: block;
+  }  
 }
 
 /* Ajustes para Tablet (max-width: 1024px) */
