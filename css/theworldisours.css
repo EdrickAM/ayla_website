@@ -113,41 +113,8 @@ body {
   padding: 0rem 1.5rem;
 }
 
-/* LOGO E DATA */
-.theworld-post-meta {
-  display: flex;
-  flex-direction: row;
-  align-items: center; /* Centraliza abaixo do título */
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-  width: 100%;
-}
-
-.theworld-post-logo {
-  flex: 1;
-}
-
-.theworld-post-logo img {
-  width: auto;
-  height: 70px;
-}
-
-.theworld-post-logo-date {
-  flex: 15;
-  font-size: 1rem;
-  font-family: "Roboto Slab", serif;
-  color: var(--color-soft-black);
-}
-
-.theworld-post-logo-date img {
-  width: auto;
-  height: 30px;
-}
-
-.theworld-post-logo-date p {
-  margin: 0rem;
-  font-weight: 600;
-  color: var(--color-soft-black-ligth);
+.theworld-post-content p {
+  font-family: var();
 }
 
 /* IMAGEM DO theworld-post HERO */
@@ -178,7 +145,7 @@ body {
 }
 
 .theworld-post-content h2 {
-  width: 100%;  
+  width: 75%;  
   font-size: 2.5rem;
   font-family: var(--font-tertiary);
   color: var(--color-soft-black);
@@ -195,9 +162,10 @@ body {
 }
 
 .theworld-post-content p {
-  width: 100%;  
+  width: 75%;  
   color: var(--color-soft-black-ligth);
-  font-weight: 400;
+  font-family: var(--font-primary);
+  font-weight: 500;
   margin: 0.5rem 1rem 1rem 0rem;
   max-width: 850px;
 }
@@ -241,32 +209,65 @@ body {
 }
 
 .info-container {
-  max-width: 600px;
-  background: white;
+  background: var(--color-yellow-pastel);
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: solid 10px var(--color-green-pastel);
+}
+
+.info-container h2 {
+  color: var(--color-coral);
+}
+
+.info-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-container ul li {
+  background: var(--color-yellow-pastel-ligth);
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: var(--font-primary);
+}
+
+.info-container .container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-link {
+  background-color: var(--color-red-medium);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  border-radius: 5px;
+}
+
+.tab-link.active {
+  background-color: var(--color-red-strong);
+}
+
+.tab-content {
+  display: none;
+  background: var(--color-yellow-pastel-ligth);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-  color: #333;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-ul li {
-  background: #eee;
-  margin: 5px 0;
-  padding: 10px;
-  border-radius: 5px;
-}
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
+.tab-content.active {
+  display: block;
 }
 .day {
   background: white;
@@ -283,24 +284,24 @@ ul li {
   text-transform: uppercase;
   text-align: center;
 }
-.details {
+.day .details {
   padding: 15px;
 }
-.time {
+.day .time {
   font-weight: bold;
   color: #ff914d;
 }
-ul {
+.day ul {
   list-style: none;
   padding: 0;
 }
-ul li {
+.day ul li {
   background: #f0f0f0;
   margin: 5px 0;
   padding: 10px;
   border-radius: 5px;
 }
-h2 {
+.day h2 {
   font-size: 28px;
   color: #333;
   margin-bottom: 20px;
@@ -561,10 +562,10 @@ h2 {
   .theworld-post-content img {
     height: 350px
   }
-  .theworld-post-content .container .horizontal {
+  .theworld-post-content .horizontal {
     flex-direction: column;
   }
-  .theworld-post-content .container .horizontal.reverse {
+  .theworld-post-content .horizontal.reverse {
     flex-direction: column;
   }
   .theworld-post-content .horizontal p {
