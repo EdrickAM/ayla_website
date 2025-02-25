@@ -174,14 +174,14 @@ body {
   width: 75%;
 }
 
-.theworld-post-content .container .horizontal {
+.theworld-post-content .horizontal {
   flex: 1;
   display: flex;
   flex-flow: row;
   gap: 1.3rem;
 }
 
-.theworld-post-content .container .horizontal.reverse {
+.theworld-post-content .horizontal.reverse {
   flex-direction: row-reverse;
 }
 
@@ -189,22 +189,21 @@ body {
   width: 90%;
 }
 
-.theworld-post-content .container .horizontal .horizontal-content-img {
+.theworld-post-content .horizontal .horizontal-content-img {
   flex: 2;
 }
 
-.theworld-post-content .container .horizontal img {
-  width: 100%;
-  height: 400px;
+.theworld-post-content .horizontal img {
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
-.theworld-post-content .container .horizontal .horizontal-content {
+.theworld-post-content .horizontal .horizontal-content {
   flex: 3;
 }
 
-.theworld-post-content .container .horizontal.horizontal.reverse .horizontal-content {
+.theworld-post-content .horizontal.horizontal.reverse .horizontal-content {
   flex: 2;
 }
 
@@ -269,43 +268,12 @@ body {
 .tab-content.active {
   display: block;
 }
-.day {
-  background: white;
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-.day h2 {
-  background: #ff914d;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  text-transform: uppercase;
+
+.itinerary h2 {
+  width: 100%;
   text-align: center;
 }
-.day .details {
-  padding: 15px;
-}
-.day .time {
-  font-weight: bold;
-  color: #ff914d;
-}
-.day ul {
-  list-style: none;
-  padding: 0;
-}
-.day ul li {
-  background: #f0f0f0;
-  margin: 5px 0;
-  padding: 10px;
-  border-radius: 5px;
-}
-.day h2 {
-  font-size: 28px;
-  color: #333;
-  margin-bottom: 20px;
-}
+
 .highlights {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
