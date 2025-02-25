@@ -1,0 +1,600 @@
+@import url("styles.css");
+
+/* Estilos específicos para o theworld */
+
+#theworld-header-mobile {
+  display: none;
+}
+
+body {
+  background-color: var(--color-yellow-pastel-ligth);
+}
+
+/* SINGLE theworld-post - Padding e alinhamento */
+.single-theworld-post {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo */
+  padding: 6rem 1.5rem 0.5rem; /* Ajustado para não ultrapassar a esquerda */
+  max-width: 80%; /* Mantém o conteúdo contido */
+  margin: 0 auto; /* Garante que fique centralizado */
+}
+
+.theworldisours {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  background-color: var(--color-green-medium);
+}
+
+.theworldisours-titulo {
+  display: none;
+}
+
+.theworldisours-item {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.theworldisours-item img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  transition: transform 10s;
+  filter: brightness(80%);
+}
+
+.theworldisours-content {
+  position: relative;
+  z-index: 2;
+  align-items: center;
+}
+
+.theworldisours-content h1 {
+  color: var(--color-soft-white);
+  font-size: 6rem;
+  margin-bottom: 10px;
+  font-family: var(--font-tertiary);
+}
+
+.theworldisours-content p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-family: var(--font-primary);
+  margin-top: 0;
+  color: var(--color-soft-white);
+}
+
+.theworld-post-hero {
+  width: 100%;
+}
+
+/* CONTAINER DO HERO */
+.theworld-post-hero .container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Alinha verticalmente */
+  align-items: flex-start; /* Mantém alinhado à esquerda */
+  min-height: 350px;
+}
+
+/* TÍTULO DO theworld-post */
+.theworld-post-title {
+  font-size: 2.5rem;
+  font-family: "Roboto Slab", serif;
+  color: var(--color-red-strong);
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+/* TÍTULO DO theworld-post */
+.theworld-post-title {
+  font-size: 3.5rem;
+  font-family: var(--font-tertiary);
+  color: var(--color-red-medium);
+  margin-bottom: 0.5rem;
+  text-align: left; /* Mantém alinhado à esquerda */
+}
+
+.theworld-post-content {
+  padding: 0rem 1.5rem;
+}
+
+/* LOGO E DATA */
+.theworld-post-meta {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Centraliza abaixo do título */
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.theworld-post-logo {
+  flex: 1;
+}
+
+.theworld-post-logo img {
+  width: auto;
+  height: 70px;
+}
+
+.theworld-post-logo-date {
+  flex: 15;
+  font-size: 1rem;
+  font-family: "Roboto Slab", serif;
+  color: var(--color-soft-black);
+}
+
+.theworld-post-logo-date img {
+  width: auto;
+  height: 30px;
+}
+
+.theworld-post-logo-date p {
+  margin: 0rem;
+  font-weight: 600;
+  color: var(--color-soft-black-ligth);
+}
+
+/* IMAGEM DO theworld-post HERO */
+.theworld-post-hero-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* CONTEÚDO DO theworld-post */
+.theworld-post-content .container {
+  padding: 0 6rem; /* Ajustado para evitar ultrapassar a lateral */
+  display: flex;
+  flex-flow: column;
+}
+
+.theworld-post-content .container .section-divider {
+  width: 100%; /* Define a largura */
+}
+
+.theworld-post-content img {
+  width: 100%;
+  height: 500px;
+  margin: 0rem 0rem 1rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.theworld-post-content h2 {
+  width: 100%;  
+  font-size: 2.5rem;
+  font-family: var(--font-tertiary);
+  color: var(--color-soft-black);
+  margin-bottom: 0rem;
+}
+
+.theworld-post-content h3 {
+  width: 75%;
+  font-size: 1.5rem;
+  font-family: var(--font-tertiary);
+  color: var(--color-soft-black);
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.theworld-post-content p {
+  width: 100%;  
+  color: var(--color-soft-black-ligth);
+  font-weight: 400;
+  margin: 0.5rem 1rem 1rem 0rem;
+  max-width: 850px;
+}
+
+.theworld-post-content .horizontal p {
+  width: 75%;
+}
+
+.theworld-post-content .container .horizontal {
+  flex: 1;
+  display: flex;
+  flex-flow: row;
+  gap: 1.3rem;
+}
+
+.theworld-post-content .container .horizontal.reverse {
+  flex-direction: row-reverse;
+}
+
+.theworld-post-content .horizontal.reverse p {
+  width: 90%;
+}
+
+.theworld-post-content .container .horizontal .horizontal-content-img {
+  flex: 2;
+}
+
+.theworld-post-content .container .horizontal img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.theworld-post-content .container .horizontal .horizontal-content {
+  flex: 3;
+}
+
+.theworld-post-content .container .horizontal.horizontal.reverse .horizontal-content {
+  flex: 2;
+}
+
+.info-container {
+  max-width: 600px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background: #eee;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+.day {
+  background: white;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.day h2 {
+  background: #ff914d;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.details {
+  padding: 15px;
+}
+.time {
+  font-weight: bold;
+  color: #ff914d;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+ul li {
+  background: #f0f0f0;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.highlight-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.highlight-box:hover {
+  transform: translateY(-5px);
+}
+.icon {
+  font-size: 40px;
+  color: #ff914d;
+}
+.highlight-box h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+}
+.highlight-box p {
+  font-size: 14px;
+  color: #666;
+}
+h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+.inclusions {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 40%;
+  min-width: 300px;
+}
+.box h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #ff914d;
+}
+.box ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+.box ul li {
+  font-size: 16px;
+  color: #666;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+.box ul li::before {
+  content: "✔";
+  color: green;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.not-included ul li::before {
+  content: "✘";
+  color: red;
+}
+.pricing-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin-bottom: 20px;
+}
+.pricing-box h3 {
+  font-size: 22px;
+  color: #ff914d;
+  margin-bottom: 10px;
+}
+.pricing-box p {
+  font-size: 16px;
+  color: #666;
+  margin: 10px 0;
+}
+.highlight {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff914d;
+}
+.contact {
+  background: #ff914d;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.contact a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* Ajustes para tornar o theworld_theworld-post_1.html responsivo */
+@media (max-width: 1024px) {  
+  hr {
+    margin: 2rem 0rem;
+    border-top: 2px solid rgba(234, 77, 73, 0.3);
+  }
+  .single-theworld-post {
+    padding: 7rem 0rem 0rem;
+    width: auto;
+    overflow-x: hidden;
+    max-width: 100%; /* Mantém o conteúdo contido */
+    margin: 0 1rem; /* Garante que fique centralizado */
+  }
+  .theworldisours-titulo h3 {
+    margin: 0rem;
+    font-size: 3rem;
+    font-family: var(--font-tertiary);
+    color: var(--color-yellow-pastel);
+  }
+  .theworldisours-content {
+    justify-items: center;
+  }
+  .theworldisours-content h1 {
+    font-size: 8rem;
+    margin-bottom: 0;
+  }
+  .theworldisours-content p {
+    width: 70%;
+    font-size: 2rem;
+    margin-top: 0;
+  }
+  #theworld-header-mobile {
+    width: 100%;
+    background: inherit; /* Use a cor de fundo desejada ou herde do body */
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    font-family: var(--font-tertiary);
+    color: var(--color-coral);
+  }
+  .theworld-header-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .theworld-header-container .theworld-logo {
+    margin-left: 1rem;
+    flex: 1;
+  }
+  .theworld-header-container .theworld-hamburger {
+    margin-right: 0rem;
+  }
+  .theworld-nav .theworld-menu li a {
+    text-decoration: none;
+    color: var(--color-yellow-pastel); /* Altere para a cor desejada */
+    font-weight: bold;
+  }
+  .theworld-nav ul {
+    gap: 1rem;
+  }
+  /* Oculta o ícone hamburger e o checkbox no desktop */
+  .theworld-hamburger,
+  .theworld-menu-checkbox {
+    display: none;
+  }
+  /* Exibe o ícone hamburger no mobile */
+  .theworld-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* opcional, para centralizar horizontalmente também */
+    height: 100%; /* Certifique-se de que o label tenha uma altura definida ou herde do pai */  
+  }
+  /* Oculta o menu padrão e posiciona o menu mobile */
+  .theworld-nav .theworld-menu {
+    position: fixed;
+    top: 6rem;
+    right: 0;
+    width: 50%; /* Ocupa metade da tela */
+    height: 100vh;
+    background: inherit; /* Utilize a mesma cor de fundo do header ou outra desejada */
+    flex-direction: column;
+    padding-top: 3rem; /* Espaço para não sobrepor o header */
+    list-style: none;
+    margin: 0;
+    transform: translateX(100%); /* Começa fora da tela (à direita) */
+    transition: transform 0.4s ease-in-out;
+    z-index: 1000;
+    font-family: var(--font-primary);
+    background-color: var(--color-coral);
+    color: var(--color-yellow-pastel);
+    font-size: 1.5rem;
+    display: flex;
+  }
+  /* Ao marcar o checkbox, o menu desliza para a esquerda e aparece */
+  #theworld-menu-toggle:checked ~ .theworld-nav .theworld-menu {
+    transform: translateX(0);
+  }
+  /* Opcional: Efeito de fade e deslocamento para os itens do menu */
+  .theworld-nav .theworld-menu li {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  #theworld-menu-toggle:checked ~ .theworld-nav .theworld-menu li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .header .container {
+    flex-direction: row;
+    align-items: center;
+    padding: 0rem 1rem;
+  }
+  .theworld-post-title {
+    font-size: 2rem;
+    text-align: left;
+  }
+  .theworld-post-meta {
+    flex-direction: row;
+    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .theworld-post-logo-date {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: column;
+  }
+  .theworld-post-hero-image {
+    height: 350px;
+  }
+  .theworld-post-content {
+    padding: 0rem;
+  }
+  .theworld-post-content p {
+    font-size: 0.9rem;
+  }
+  .theworld-post-content .container {
+    padding: 0 0.8rem;
+  }
+  .theworld-post-content img {
+    height: 350px
+  }
+  .theworld-post-content .container .horizontal {
+    flex-direction: column;
+  }
+  .theworld-post-content .container .horizontal.reverse {
+    flex-direction: column;
+  }
+  .theworld-post-content .horizontal p {
+    width: 100%;
+    text-align: left;
+  }
+  .theworld-post-content .horizontal.reverse p {
+    width: 100%;
+    text-align: left;
+  }
+  .theworld-post-content h2, .theworld-post-content h3 {
+    font-size: 1.4rem;
+    text-align: left;
+    width: 100%;
+  }
+  .theworld-post-hero .container {
+    justify-content: space-around;
+    min-height: 0;   
+  }
+  .theworld-post-content .container .horizontal img {
+    height: 350px;
+  }
+  .horizontal {
+    flex-direction: column;
+  }
+  .horizontal-content p {
+    text-align: center;
+  }
+  .footer-mobile {
+    height: auto;
+    width: 100vw;
+  }
+}
