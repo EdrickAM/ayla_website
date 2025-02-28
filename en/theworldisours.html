@@ -89,7 +89,7 @@
   <!-- Hero Section -->
   <section id="theworldisours" class="theworldisours">
     <div class="theworldisours-item">
-      <img loading="lazy" src="../assets/images/lets-goa.jpg" alt="GOA">
+      <img loading="lazy" src="../assets/images/theworldisours/lets-goa.jpg" alt="LET'S GOA">
       <div class="theworldisours-content">
         <h1>Let's GOA!</h1>
         <p>With Diya</p>
@@ -100,7 +100,7 @@
   <section class="theworld-post-content">
     <div class="horizontal">
       <div class="horizontal-content-img">
-        <img loading="lazy" src="../assets/images/blog/post1/image3.jpg" alt="Santa Teresa Tram">
+        <img loading="lazy" src="../assets/images/theworldisours/getready.JPG" alt="Get ready">
       </div>
       <div class="horizontal-content">
         <h2>Get ready for a journey full of energy, laughter, and unforgettable memories!</h2>
@@ -128,26 +128,32 @@
           </section>           
         </div>
     </div>
+  </section>
+
+  <section class="itinerary">
+    <h2>Itinerary</h2>
+    <div class="tabs">
+      <button class="tab-link active" onclick="openDay(event, 'day1')">Day 1</button>
+      <button class="tab-link" onclick="openDay(event, 'day2')">Day 2</button>
+      <button class="tab-link" onclick="openDay(event, 'day3')">Day 3</button>
+      <button class="tab-link" onclick="openDay(event, 'day4')">Day 4</button>
+      <button class="tab-link" onclick="openDay(event, 'day5')">Day 5</button>
+    </div>
     
-    <hr class="section-divider">
-    
-    <section class="itinerary">
-      <h2>Itinerary</h2>
-      <div class="tabs">
-        <button class="tab-link active" onclick="openDay(event, 'day1')">Day 1</button>
-        <button class="tab-link" onclick="openDay(event, 'day2')">Day 2</button>
-        <button class="tab-link" onclick="openDay(event, 'day3')">Day 3</button>
-        <button class="tab-link" onclick="openDay(event, 'day4')">Day 4</button>
-        <button class="tab-link" onclick="openDay(event, 'day5')">Day 5</button>
-      </div>
-      
-      <div id="day1" class="tab-content active">
+    <div id="day1" class="tab-content active">
+      <div class="tab-content-left">
         <h3>Day 1: Hogona, Hogona! Train Time!</h3>
         <p>The adventure begins in our Namma Bengaluru! The group meets at <span class="time">3:00 PM</span> at Yeshwantpur Train Station (YPR), ready to board the comfortable 2A class train to Goa.</p>
         <p>This is not just a journey; it's the transition from routine to holiday mode. Relax, read a book, binge-watch your favorite series, or simply enjoy the scenery. A good chai and conversations with your new travel friends make it even more special.</p>
       </div>
-    
-      <div id="day2" class="tab-content">
+
+      <div class="tab-content-right">
+        <img loading="lazy" src="../assets/images/theworldisours/train-time.jpg" alt="Train time">
+      </div>
+    </div>
+  
+    <div id="day2" class="tab-content">
+      <div class="tab-content-left">
         <h3>Day 2: Arrival in Goa</h3>
           <div class="details">
             <p>We arrive in Goa in the morning and head straight to the resort, where a refreshing welcome drink awaits.</p>
@@ -163,8 +169,13 @@
             <p><span class="time">5:00 PM</span>: Village Exploration! A bicycle tour through Agonda, ending with a sunset on the beach.</p>
         </div>
       </div>
-    
-      <div id="day3" class="tab-content">
+      <div class="tab-content-right">
+        <img loading="lazy" src="../assets/images/theworldisours/arrivel-goa.jpg" alt="Arrival at Goa">
+      </div>
+    </div>
+  
+    <div id="day3" class="tab-content">
+      <div class="tab-content-left">
         <h3>Day 3: Exploring Agonda</h3>
         <div class="details">
           <p><span class="time">8:00 - 10:30 AM</span>: Slow mornings with a delicious breakfast.</p>
@@ -179,8 +190,13 @@
           <p>End the day watching the sunset at one of South Goa’s iconic beaches. Evening free for dinner and exploring.</p>
         </div>
       </div>
-    
-      <div id="day4" class="tab-content">
+      <div class="tab-content-right">
+        <img loading="lazy" src="../assets/images/theworldisours/exploring.jpg" alt="Explore">
+      </div>
+    </div>
+  
+    <div id="day4" class="tab-content">
+      <div class="tab-content-left">
         <h3>Day 4: Beach & Relaxation</h3>
         <div class="details">
           <p><span class="time">8:15 AM</span>: Optional morning workout to wake up the body and mind.</p>
@@ -195,54 +211,81 @@
           <p><span class="time">11:35 PM</span>: Board the train back to Bangalore. Expected arrival at <span class="time">7:00 AM</span> (subject to train schedule adjustments).</p>
         </div>
       </div>
-    
-      <div id="day5" class="tab-content">
+      <div class="tab-content-right">
+        <img loading="lazy" src="../assets/images/theworldisours/relaxation.jpg" alt="Relaxation">
+      </div>
+    </div>
+  
+    <div id="day5" class="tab-content">
+      <div class="tab-content-left">
         <h3>Day 5: Farewell Goa</h3>
         <div class="details">
           <p>Morning arrival in Bangalore with a heart full of memories and a phone full of photos.</p>
           <p>Let's Goa with Diya? Let's travel together again!</p>
         </div>
       </div>
-    </section>
-
-    <hr class="section-divider">        
-    
-    <div class="container">
-      <h2>Trip Highlights</h2>
-      <div class="highlights">
-          <div class="highlight-box">
-              <div class="icon">🚆</div>
-              <h3>Viagem de Trem 2A</h3>
-              <p>Experiência autêntica com paisagens deslumbrantes.</p>
-          </div>
-          <div class="highlight-box">
-              <div class="icon">🏨</div>
-              <h3>Resort 4 Estrelas</h3>
-              <p>Conforto garantido, piscina, spa, yoga e acesso direto à praia.</p>
-          </div>
-          <div class="highlight-box">
-              <div class="icon">🚴‍♂️</div>
-              <h3>Village Bike Tour</h3>
-              <p>Explore Agonda, suas ruas tranquilas e cultura local.</p>
-          </div>
-          <div class="highlight-box">
-              <div class="icon">🏛️</div>
-              <h3>City Tour</h3>
-              <p>Visita às atrações icônicas de South Goa.</p>
-          </div>
-          <div class="highlight-box">
-              <div class="icon">💆‍♀️</div>
-              <h3>Desconto no Spa</h3>
-              <p>15% para pagamentos em dinheiro.</p>
-          </div>
-          <div class="highlight-box">
-              <div class="icon">🌟</div>
-              <h3>Grupo Exclusivo</h3>
-              <p>Viaje com pessoas na mesma vibe!</p>
-          </div>
+      <div class="tab-content-right">
+        <img loading="lazy" src="../assets/images/theworldisours/bangalore.jpg" alt="Bangalore Train Station">
       </div>
     </div>
+  </section>
 
+  <section class="trip-highlights">
+    <div class="container">
+      <div class="text-content">
+        <h2>Trip Highlights</h2>
+        <p>Experiência autêntica e inesquecível com paisagens deslumbrantes e momentos únicos.</p>
+      </div>
+      <div class="highlights-wrapper">
+        <div class="highlights-grid">
+          <div class="highlight-box" style="background-image: url('../assets/images/theworldisours/highlight1.jpg');">
+            <div class="highlight-overlay"></div>
+            <div class="highlight-content">
+              <h3>Viagem de Trem 2A</h3>
+              <p>Experiência autêntica com </br> paisagens deslumbrantes.</p>
+            </div>
+          </div>
+          <div class="highlight-box" style="background-image: url('../assets/images/theworldisours/highlight2.jpg');">
+            <div class="highlight-overlay"></div>
+            <div class="highlight-content">
+              <h3>Resort 4 Estrelas</h3>
+              <p>Conforto garantido, piscina, </br> spa, yoga e acesso direto à praia.</p>
+            </div>
+          </div>
+          <div class="highlight-box" style="background-image: url('../assets/images/theworldisours/highlight3.jpg');">
+            <div class="highlight-overlay"></div>
+            <div class="highlight-content">
+              <h3>Village Bike Tour</h3>
+              <p>Explore Agonda, suas ruas </br> tranquilas e cultura local.</p>
+            </div>
+          </div>
+          <div class="highlight-box" style="background-image: url('../assets/images/theworldisours/highlight4.jpg');">
+            <div class="highlight-overlay"></div>
+            <div class="highlight-content">
+              <h3>City Tour</h3>
+              <p>Visita às atrações icônicas </br> de South Goa.</p>
+            </div>
+          </div>
+          <div class="highlight-box" style="background-image: url('../assets/images/theworldisours/highlight5.jpg');">
+            <div class="highlight-overlay"></div>
+            <div class="highlight-content">
+              <h3>Desconto no Spa</h3>
+              <p>15% para pagamentos em dinheiro.</p>
+            </div>
+          </div>
+          <div class="highlight-box" style="background-image: url('../assets/images/theworldisours/highlight6.JPG');">
+            <div class="highlight-overlay"></div>
+            <div class="highlight-content">
+              <h3>Grupo Exclusivo</h3>
+              <p>Viaje com pessoas na mesma vibe!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+  <section class="section-inclusions">
     <div class="container">
       <h2>O que está incluso?</h2>
       <div class="inclusions">
@@ -273,6 +316,7 @@
           </div>
       </div>
     </div>
+  </section>
 
     <div class="container">
       <h2>Pricing & Payment Options</h2>
@@ -309,11 +353,10 @@
         <p>If you're looking for intense partying, nightlife, or a focus on drinking, this might not be the right trip for you. Here, the goal is to relax, enjoy Goa’s beauty, share stories, and create genuine memories. Families, couples, solo travelers, and friends are all welcome—as long as the vibe is about respect, positivity, and good energy!</p>         
       </div>
     </div>
-  </section>
 
   <section id="theworldisours" class="theworldisours">
     <div class="theworldisours-item">
-      <img loading="lazy" src="../assets/images/lets-goa.jpg" alt="GOA">
+      <img loading="lazy" src="../assets/images/theworldisours/goa.jpg" alt="GOA">
       <div class="theworldisours-content">
         <h1>Vamos juntos criar memórias inesquecíveis em Goa! ❤️</h1>
       </div>
