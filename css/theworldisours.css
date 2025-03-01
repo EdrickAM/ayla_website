@@ -340,7 +340,7 @@ h2, h3 {
   display: none;
   gap: 1rem;
   background: var(--color-yellow-pastel-ligth);
-  padding: 1rem;
+  padding: 2rem;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 .tab-content-left {
@@ -386,10 +386,26 @@ h2, h3 {
 .itinerary p {
   width: 80%;
   text-align: left;
-  font-size: 1rem;
+  font-size: larger;
   color: var(--color-soft-black-ligth);
   font-family: var(--font-primary);
-  font-weight: 600;
+  font-weight: 400;
+}
+.itinerary ul {
+  list-style: none;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  color: var(--color-soft-black-ligth);
+  font-size: larger;
+}
+.itinerary ul li {
+  margin: 1rem 0rem;
+}
+.itinerary ul li::before {
+  content: "●"; /* Círculo preenchido */
+  color: var(--color-coral);
+  font-weight: bold;
+  margin-right: 10px;
 }
 .trip-highlights {
   background-color: var(--color-yellow-pastel);
@@ -402,7 +418,7 @@ h2, h3 {
   gap: 40px;
   max-width: 80%;
   margin: auto;
-  padding: 40px 20px;
+  padding: 2rem;
   background-color: var(--color-yellow-pastel-ligth);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
