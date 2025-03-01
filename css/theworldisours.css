@@ -14,6 +14,12 @@ h2, h3 {
   line-height: 1.3;
 }
 
+.divider {
+  width: 2px;
+  height: 70%;
+  background-color: var(--color-red-medium);
+}
+
 .book-now.btn {
   flex: 1;
   text-align: center;
@@ -274,7 +280,10 @@ h2, h3 {
 .theworld-post-content .horizontal.horizontal.reverse .horizontal-content {
   flex: 2;
 }
-
+.container-book-now-btn{
+  display: flex;
+  width: 165px;
+}
 .info-container {
   background: var(--color-yellow-pastel);
   padding: 20px;
@@ -351,7 +360,7 @@ h2, h3 {
   max-height: calc(30vw * 4 / 3); /* Garante a proporção de retrato */
   object-fit: cover;
   object-position: center;
-  border: solid 10px var(--color-green-pastel);
+  border: solid 10px var(--color-yellow-pastel);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 .itinerary {
@@ -363,7 +372,7 @@ h2, h3 {
   text-align: center;
   margin: 0rem;
   font-size: 5rem;
-  color: var(--color-green-medium);
+  color: var(--color-red-dark);
   font-family: var(--font-tertiary);
 }
 .itinerary h3 {
@@ -407,8 +416,14 @@ h2, h3 {
   font-size: 3rem;
   margin: 0rem;
 }
+.text-content h3 {
+  color: var(--color-coral);
+  font-family: var(--font-tertiary);
+  font-size: 1.25rem;
+  margin-bottom: 0rem;
+}
 .text-content p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--color-soft-black-ligth);
   font-weight: 500;
   width: 90%;
@@ -483,7 +498,7 @@ h2, h3 {
   font-weight: 400;
 }
 .section-inclusions {
-  background-color: var(--color-green-medium);
+  background-color: var(--color-yellow-pastel-ligth);
   display: flex;
   flex-flow: column;
   justify-content: space-between;
@@ -500,7 +515,7 @@ h2, h3 {
 .section-inclusions h2 {
   font-size: 3rem;
   margin: 0rem;
-  color: var(--color-green-pastel);
+  color: var(--color-soft-black-ligth);
   font-family: var(--font-tertiary);
   text-align: center;
 }
@@ -626,20 +641,28 @@ p.highlight {
   flex: 1;
   font-size: 5rem;
   font-family: var(--font-tertiary);
+  align-content: center;
 }
 .general-information .container {
   flex: 5;
   position: relative;
   z-index: 1;
   background-color: var(--color-yellow-pastel);
-  padding: 20px;
+  padding: 1rem;
   display: flex;
-  flex-flow: column;
+  flex-flow: row;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   width: 50%;
   margin-left: 2rem;
   border: 10px solid var(--color-coral);
   justify-content: center;
+  gap: 1rem;
+}
+.general-information .container .container-left {
+  flex: 1;
+}
+.general-information .container .container-rigth {
+  flex: 1;
 }
 .general-information h2 {
   color: var(--color-red-dark);
@@ -653,6 +676,10 @@ p.highlight {
   font-family: var(--font-primary);
   color: var(--color-soft-black-ligth);
   margin: 0.5rem;
+}
+.general-information p strong {
+  font-family: var(--font-tertiary);
+  color: var(--color-red-medium);
 }
 /* Ajustes para tornar o theworld_theworld-post_1.html responsivo */
 @media (max-width: 1024px) {  
@@ -809,6 +836,7 @@ p.highlight {
   .theworld-post-content .horizontal p {
     width: 100%;
     text-align: left;
+    font-size: larger;
   }
   .theworld-post-content .horizontal.reverse p {
     width: 100%;
