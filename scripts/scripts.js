@@ -102,6 +102,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const answer = button.nextElementSibling;
+      const isActive = button.classList.contains('active');
+
+      document.querySelectorAll('.faq-answer').forEach(item => item.style.display = 'none');
+      document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+
+      if (!isActive) {
+        answer.style.display = 'block';
+        button.classList.add('active');
+      }
+    });
+  });
 });
 
 function switchLanguage() {

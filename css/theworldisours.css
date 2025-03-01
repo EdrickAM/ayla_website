@@ -139,6 +139,14 @@ h2, h3 {
   line-height: 1;
 }
 
+.theworldisours-content.final h1 {
+  font-size: 4rem;
+  margin: 2rem 0rem;
+  width: 80%;
+  justify-self: center;
+  line-height: 1.25;
+}
+
 .theworldisours-content p {
   font-size: 1rem;
   line-height: 1.5;
@@ -240,11 +248,9 @@ h2, h3 {
   margin: 0.5rem 1rem 1rem 0rem;
   max-width: 850px;
 }
-
 .theworld-post-content .horizontal p {
   width: 75%;
 }
-
 .theworld-post-content .horizontal {
   flex: 1;
   display: flex;
@@ -253,30 +259,24 @@ h2, h3 {
   height: 590px;
   margin: 2rem 0rem;
 }
-
 .theworld-post-content .horizontal.reverse {
   flex-direction: row-reverse;
 }
-
 .theworld-post-content .horizontal.reverse p {
   width: 90%;
 }
-
 .theworld-post-content .horizontal .horizontal-content-img {
-  flex: 3;
+  flex: 2;
   border: solid 10px var(--color-soft-white);
 }
-
 .theworld-post-content .horizontal img {
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
-
 .theworld-post-content .horizontal .horizontal-content {
   flex: 3;
 }
-
 .theworld-post-content .horizontal.horizontal.reverse .horizontal-content {
   flex: 2;
 }
@@ -354,9 +354,9 @@ h2, h3 {
   flex-flow: row;
 }
 .tab-content img {
-  width: 90%;
+  width: 500px;
   margin-left: 5%;
-  height: auto; /* Mantém a proporção original da imagem */
+  height: 700px; /* Mantém a proporção original da imagem */
   max-height: calc(30vw * 4 / 3); /* Garante a proporção de retrato */
   object-fit: cover;
   object-position: center;
@@ -370,7 +370,7 @@ h2, h3 {
 .itinerary h2 {
   width: 100%;
   text-align: center;
-  margin: 0rem;
+  margin: 0rem 0rem 1rem;
   font-size: 5rem;
   color: var(--color-red-dark);
   font-family: var(--font-tertiary);
@@ -381,6 +381,14 @@ h2, h3 {
   margin: 0rem;
   font-size: 3rem;
   color: var(--color-red-strong);
+  font-family: var(--font-tertiary);
+}
+.itinerary h4 {
+  width: 100%;
+  text-align: left;
+  margin: 0rem;
+  font-size: 1.5rem;
+  color: var(--color-red-dark);
   font-family: var(--font-tertiary);
 }
 .itinerary p {
@@ -399,7 +407,7 @@ h2, h3 {
   font-size: larger;
 }
 .itinerary ul li {
-  margin: 1rem 0rem;
+  margin: 0.2rem 0rem;
 }
 .itinerary ul li::before {
   content: "●"; /* Círculo preenchido */
@@ -502,7 +510,6 @@ h2, h3 {
   text-overflow: ellipsis;
   white-space: nowrap;
 } 
-
 .highlight-box p {
   text-align: left;
   font-family: var(--font-primary);
@@ -530,7 +537,7 @@ h2, h3 {
 }
 .section-inclusions h2 {
   font-size: 3rem;
-  margin: 0rem;
+  margin: 0rem 0rem 1rem;
   color: var(--color-soft-black-ligth);
   font-family: var(--font-tertiary);
   text-align: center;
@@ -580,6 +587,7 @@ h2, h3 {
 .pricing {
   background-color: var(--color-yellow-pastel);
   width: 100%;
+  padding: 1rem;
 }
 .pricing-content {
   display: flex;
@@ -597,7 +605,6 @@ h2, h3 {
 }
 .pricing-form {
   flex: 2;
-  padding: 0rem 2rem;
   text-align: left;
   background-color: var(--color-yellow-pastel);
 }
@@ -645,6 +652,43 @@ p.highlight {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+.pricing {
+  width: auto;
+}
+.pricing .horizontal p {
+  width: 75%;
+}
+.pricing .horizontal {
+  flex: 1;
+  display: flex;
+  flex-flow: row;
+  align-content: space-around;
+  gap: 1.3rem;
+}
+.pricing .horizontal.reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.pricing .horizontal.reverse p {
+  width: 90%;
+}
+.pricing .horizontal .horizontal-content-img {
+  flex: 2;
+}
+.pricing .horizontal img {
+  height: auto;
+  width: 70%;
+  justify-self: center;
+  object-fit: cover;
+  object-position: center;
+  border: solid 10px var(--color-soft-white);
+}
+.pricing .horizontal .horizontal-content {
+  flex: 3;
+}
+.pricing .horizontal.horizontal.reverse .horizontal-content {
+  flex: 2;
 }
 .general-information {
   position: relative;
@@ -696,6 +740,49 @@ p.highlight {
 .general-information p strong {
   font-family: var(--font-tertiary);
   color: var(--color-red-medium);
+}
+.faq-container {
+  width: 65%;
+  padding: 1rem;
+  margin: 2rem auto;
+}
+.faq-container h2 {
+  margin-bottom: 2rem;
+}
+.faq-item {
+  border-bottom: 1px solid rgba(82, 82, 82, 0.7);
+}
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 15px;
+  font-size: larger;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s;
+  font-family: var(--font-tertiary);
+  color: var(--color-soft-black-ligth);
+}
+.faq-answer {
+  padding: 0 15px 15px 15px;
+  font-size: medium;
+  display: none;
+  color: var(--color-soft-black-ligth);
+  line-height: 1.6;
+  font-family: var(--font-primary);
+}
+.faq-question.active {
+  color: var(--color-coral);
+}
+.faq-section {
+  margin-bottom: 15px;
+}
+.faq-section strong {
+  display: block;
+  margin-bottom: 5px;
 }
 /* Ajustes para tornar o theworld_theworld-post_1.html responsivo */
 @media (max-width: 1024px) {  
