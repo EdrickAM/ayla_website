@@ -934,6 +934,9 @@ p.highlight {
   .tab-content-left {
     padding: 1rem;
   }
+  .tab-content-right {
+    padding: 1rem;
+  }
   .tab-content {
     flex-flow: column;
   }
@@ -1026,8 +1029,12 @@ p.highlight {
     height: auto;
     width: 100%;
   }
+  .pricing .horizontal .horizontal-content-img {
+    padding: 1rem;
+  }
   .theworldisours-content.final h1 {
     font-size: 3rem;
+    width: 100%;
   }
   .theworld-post-content .horizontal.reverse {
     flex-direction: column-reverse;
