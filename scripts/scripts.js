@@ -117,6 +117,54 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  const highlightsWrapper = document.querySelector(".highlights-wrapper");
+
+  if (highlightsWrapper) {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    highlightsWrapper.addEventListener("mousedown", (e) => {
+      isDown = true;
+      highlightsWrapper.classList.add("active");
+      startX = e.pageX - highlightsWrapper.offsetLeft;
+      scrollLeft = highlightsWrapper.scrollLeft;
+    });
+
+    highlightsWrapper.addEventListener("mouseleave", () => {
+      isDown = false;
+      highlightsWrapper.classList.remove("active");
+    });
+
+    highlightsWrapper.addEventListener("mouseup", () => {
+      isDown = false;
+      highlightsWrapper.classList.remove("active");
+    });
+
+    highlightsWrapper.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - highlightsWrapper.offsetLeft;
+      const walk = (x - startX) * 2; // Velocidade do arraste
+      highlightsWrapper.scrollLeft = scrollLeft - walk;
+    });
+
+    // Adicionando suporte ao toque (mobile)
+    let touchStartX = 0;
+    let touchScrollLeft = 0;
+
+    highlightsWrapper.addEventListener("touchstart", (e) => {
+      touchStartX = e.touches[0].pageX;
+      touchScrollLeft = highlightsWrapper.scrollLeft;
+    });
+
+    highlightsWrapper.addEventListener("touchmove", (e) => {
+      const touchMoveX = e.touches[0].pageX;
+      const moveDistance = touchMoveX - touchStartX;
+      highlightsWrapper.scrollLeft = touchScrollLeft - moveDistance;
+    });
+  }
 });
 
 function switchLanguage() {
