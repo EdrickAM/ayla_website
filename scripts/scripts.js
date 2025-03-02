@@ -155,14 +155,30 @@ document.addEventListener("click", function (event) {
 function openDay(evt, dayName) {
   let i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tab-content");
+
+  // Obtém a referência correta ao elemento da aba selecionada
+  let targetTab = document.getElementById(dayName);
+
+  // Captura o valor atual de flex-direction (se houver)
+  let computedStyle = window.getComputedStyle(targetTab);
+  let currentFlexDirection = computedStyle.getPropertyValue("flex-direction") || "row"; // Default para "row"
+
+  // Esconde todas as abas
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
+
+  // Remove a classe ativa de todos os botões
   tablinks = document.getElementsByClassName("tab-link");
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    tablinks[i].classList.remove("active");
   }
-  document.getElementById(dayName).style.display = "flex";
-  evt.currentTarget.className += " active";
+
+  // Mostra a aba correta e reaplica o flex-direction
+  targetTab.style.display = "flex";
+  targetTab.style.flexDirection = currentFlexDirection;
+
+  // Marca o botão atual como ativo
+  evt.currentTarget.classList.add("active");
 }
 

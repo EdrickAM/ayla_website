@@ -189,15 +189,7 @@ h2, h3 {
 }
 
 .theworld-post-content {
-  padding: 2rem 2rem;
-}
-
-.theworld-post-content .horizontal.horizontal .horizontal-content {
-  align-content: center;
-}
-
-.theworld-post-content .horizontal.horizontal.reverse .horizontal-content {
-  align-content: center;
+  padding: 0rem 1.5rem;
 }
 
 /* IMAGEM DO theworld-post HERO */
@@ -229,10 +221,10 @@ h2, h3 {
 
 .theworld-post-content h2 {
   width: 75%;  
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-family: var(--font-tertiary);
   color: var(--color-green-medium);
-  margin: 0rem 0rem 1rem;
+  margin-top: 0rem;
 }
 
 .theworld-post-content.final h2 {
@@ -594,7 +586,7 @@ h2, h3 {
 .pricing {
   background-color: var(--color-yellow-pastel);
   width: 100%;
-  padding: 2rem;
+  padding: 1rem;
 }
 .pricing-content {
   display: flex;
@@ -677,7 +669,6 @@ p.highlight {
 .pricing .horizontal.reverse {
   display: flex;
   flex-direction: row-reverse;
-  align-items: center;
 }
 .pricing .horizontal.reverse p {
   width: 90%;
@@ -686,8 +677,8 @@ p.highlight {
   flex: 2;
 }
 .pricing .horizontal img {
-  height: 90%;
-  width: 100%;
+  height: 98%;
+  width: 70%;
   justify-self: center;
   object-fit: cover;
   object-position: center;
@@ -801,8 +792,8 @@ p.highlight {
 }
 /* ======= ESTILOS RESPONSIVOS ======= */
 
-/* Mobile Portrait (até 768px) */
-@media (max-width: 768px) {
+/* Mobile Portrait (até 480px) */
+@media only screen and (max-width: 480px) {
   /* Ajustes no header e navegação */
   .header .container {
     padding: 0 1rem;
@@ -822,18 +813,16 @@ p.highlight {
   #social-icons-mobile {
     display: flex;
   }
-  .theworldisours-content {
-    align-self: end;
-  }
   /* Ajustes no container do theworldisours */
   .theworldisours-item {
     height: 90vh;
     padding: 2rem 0;
   }
+  
   /* Tipografia – redução dos tamanhos */
   .theworldisours-content h1 {
     font-size: 4rem;
-    margin: 0rem;
+    margin: 1rem 0;
   }
   .theworldisours-content h4 {
     font-size: 1.2rem;
@@ -841,11 +830,10 @@ p.highlight {
   .theworld-post-title {
     font-size: 2rem;
   }
-  .theworldisours-content p {
-    font-size: 1.25rem;
-  }
-  .book-now-white.btn {
-    font-size: 1rem;
+  .theworld-post-content h2,
+  .theworld-post-content h3,
+  .theworld-post-content p {
+    width: 90%;
   }
   .container-book-now-btn {
     width: 100%;
@@ -865,15 +853,7 @@ p.highlight {
     padding: 0 0.8rem;
   }
   .theworld-post-content img {
-    height: 350px;
-    margin: 0rem;
-  }
-  .theworld-post-content .horizontal .horizontal-content-img {
-    height: 350px;
-    flex: 350px;
-  }
-  .theworld-post-content .horizontal img {
-    height: 350px;
+    height: 350px
   }
   .theworld-post-content .container .horizontal {
     flex-direction: column;
@@ -906,7 +886,6 @@ p.highlight {
   .general-information {
     padding: 1rem;
     gap: 1rem;
-    flex-flow: column;
   }
   .general-information .title {
     display: flex;
@@ -994,10 +973,7 @@ p.highlight {
   .faq-container {
     width: auto;
     padding: 0rem;
-    margin: 0rem 0.5rem;
-  }
-  .pricing {
-    padding: 1rem;
+    margin: 1rem;
   }
   .pricing .horizontal {
     gap: 0rem;
@@ -1030,22 +1006,5 @@ p.highlight {
   }
   .theworld-post-content .horizontal.reverse {
     flex-direction: column-reverse;
-  }
-  .theworld-post-content h2 {
-    font-size: 2.5rem;
-  }
-}
-
-/* Tablet Landscape (768px a 1024px, orientação landscape) */
-@media (max-width: 1024px)  and (orientation: landscape) {
-  .tab-content img {
-    height: 300px;
-  }
-  .inclusion-box {
-    width: 100%;
-  }
-  .pricing .horizontal img {
-    height: 300px;
-    width: 92vw;
   }
 }

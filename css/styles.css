@@ -230,7 +230,7 @@ body::-webkit-scrollbar {
 }
 
 .nav a:hover {
-  color: var(--color-coral);
+  color: var(--color-yellow-pastel);
 }
 
 .header.solid.white .nav a:hover {
