@@ -976,8 +976,27 @@ p.highlight {
     margin: 0.5rem 0rem;
     text-align: left;
   }
+  .highlights-wrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 10px;
+    scrollbar-width: none; /* Esconde scrollbar no Firefox */
+    -ms-overflow-style: none; /* Esconde scrollbar no IE e Edge */
+  }
+  .highlights-wrapper::-webkit-scrollbar {
+    display: none; /* Esconde scrollbar no Chrome e Safari */
+  }
+  .highlights-grid {
+    display: flex;
+    flex-wrap: nowrap; /* Impede quebra de linha */
+    gap: 1rem;
+  }
   .highlight-box {
-    width: auto;
+    flex: 0 0 auto;
+    width: 300px; /* Define uma largura fixa para os itens */
+    height: 400px;
   }
   .section-inclusions {
     padding: 1rem;
