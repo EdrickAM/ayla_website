@@ -929,6 +929,7 @@ p.highlight {
   }
   .tab-content {
     width: 100%;
+    padding: 0rem;
   }
   .tab-content-left {
     padding: 1rem;
