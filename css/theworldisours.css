@@ -619,7 +619,7 @@ h2, h3 {
   text-align: left;
   color: var(--color-soft-black-ligth);
   font-family: var(--font-tertiary);
-  margin: 0;
+  margin: 0rem 0rem 0.5rem;
 }
 .pricing-form p {
   font-size: 1rem;
@@ -691,6 +691,9 @@ p.highlight {
   flex: 2;
 }
 #discount {
+  color: var(--color-coral);
+}
+#link {
   color: var(--color-coral);
 }
 .general-information {
