@@ -824,6 +824,7 @@ p.highlight {
   }
   .theworldisours-content {
     align-self: end;
+    margin-bottom: 2rem;
   }
   /* Ajustes no container do theworldisours */
   .theworldisours-item {
@@ -855,7 +856,7 @@ p.highlight {
     padding: 1rem;
   }
   .theworld-post-content p {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
   .theworld-post-content .horizontal {
     flex-direction: column;
