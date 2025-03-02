@@ -940,6 +940,11 @@ p.highlight {
   .tab-content.active {
     flex-flow: column;
   }
+  .tab-content img {
+    width: 90%;
+    height: 350px;
+    margin-left: 2.5%;
+  }
   .itinerary h2 {
     font-size: 3rem;
   }
@@ -952,15 +957,10 @@ p.highlight {
   }
   .itinerary p {
     width: 90%;
-    font-size: smaller;
-  }
-  .tab-content img {
-    width: 95%;
-    margin: 0rem;
-    height: auto;
+    font-size: 1.1rem;
   }
   .itinerary ul {
-    font-size: smaller;
+    font-size: 1.1rem;
   }
   .trip-highlights .container {
     max-width: 100%;
