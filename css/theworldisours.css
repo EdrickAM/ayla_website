@@ -617,7 +617,7 @@ h2, h3 {
 .pricing-form h3 {
   font-size: 1.5rem;
   text-align: left;
-  color: var(--color-green-pastel);
+  color: var(--color-soft-black-ligth);
   font-family: var(--font-tertiary);
   margin: 0;
 }
@@ -626,13 +626,14 @@ h2, h3 {
   text-align: left;
   color: var(--color-soft-black-ligth);
   font-family: var(--font-primary);
+  margin-top: 0rem;
 }
 p.highlight {
   font-size: 1.5rem;
   font-family: var(--font-primary);
   color: var(--color-green-medium);
   font-weight: 600;
-  margin-bottom: 0rem;
+  margin: 0rem;
 }
 .pricing-form .btn:hover {
   background-color: var(--color-red-medium);
@@ -676,7 +677,7 @@ p.highlight {
   flex: 2;
 }
 .pricing .horizontal img {
-  height: auto;
+  height: 98%;
   width: 70%;
   justify-self: center;
   object-fit: cover;
@@ -688,6 +689,9 @@ p.highlight {
 }
 .pricing .horizontal.horizontal.reverse .horizontal-content {
   flex: 2;
+}
+#discount {
+  color: var(--color-coral);
 }
 .general-information {
   position: relative;
