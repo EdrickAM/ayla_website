@@ -943,7 +943,7 @@ p.highlight {
   .tab-content img {
     width: 90%;
     height: 350px;
-    margin-left: 2.5%;
+    margin: 0;
   }
   .itinerary h2 {
     font-size: 3rem;
