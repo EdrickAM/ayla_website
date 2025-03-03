@@ -667,7 +667,6 @@ body::-webkit-scrollbar {
 /* Solid border */
 hr {
   border-top: 2px solid rgba(234, 77, 73, 0.3);
-  margin: 1.5rem 0rem;
 }
 
 /* Garante que o conteúdo do blog fique visível sobre o fundo */

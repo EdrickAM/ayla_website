@@ -430,7 +430,7 @@ h2, h3 {
   display: flex;
   align-items: start;
   justify-content: space-between;
-  gap: 40px;
+  gap: 1rem;
   max-width: 80%;
   margin: auto;
   padding: 2rem;
@@ -439,7 +439,6 @@ h2, h3 {
 }
 .text-content {
   flex: 1;
-  max-width: 500px;
 }
 .text-content h2 {
   color: var(--color-red-strong);
@@ -460,24 +459,18 @@ h2, h3 {
   width: 90%;
   font-family: var(--font-primary);
 }
-.highlights-wrapper {
-  flex: 3;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding-bottom: 10px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
 .highlights-grid {
-  display: flex;
+  flex: 3;
+  display: flex !important;
+  flex-direction: row !important;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
   gap: 1rem;
 }
-.highlights-grid::-webkit-scrollbar {
-  display: none;
-}
 .highlight-box {
-  width: 350px;
   height: 500px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
   background-size: cover;
   background-position: center;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -485,7 +478,7 @@ h2, h3 {
   flex-direction: column;
   justify-content: flex-start;
   padding: 20px;
-  color: white;
+  color: var(--color-soft-white);
   text-align: center;
   font-weight: bold;
   position: relative;

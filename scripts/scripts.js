@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const highlightsWrapper = document.querySelector(".highlights-wrapper");
+  const highlightsWrapper = document.querySelector(".highlights-grid");
 
   if (highlightsWrapper) {
     let isDown = false;
