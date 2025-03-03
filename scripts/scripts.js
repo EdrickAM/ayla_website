@@ -118,53 +118,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const highlightsWrapper = document.querySelector(".highlights-grid");
 
-  if (highlightsWrapper) {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+  const blogGrid = document.querySelector(".highlights-grid");
+    
+  let isDown = false;
+  let startX;
+  let scrollLeft;
 
-    highlightsWrapper.addEventListener("mousedown", (e) => {
-      isDown = true;
-      highlightsWrapper.classList.add("active");
-      startX = e.pageX - highlightsWrapper.offsetLeft;
-      scrollLeft = highlightsWrapper.scrollLeft;
-    });
+  blogGrid.addEventListener("mousedown", (e) => {
+    isDown = true;
+    startX = e.pageX - blogGrid.offsetLeft;
+    scrollLeft = blogGrid.scrollLeft;
+  });
 
-    highlightsWrapper.addEventListener("mouseleave", () => {
-      isDown = false;
-      highlightsWrapper.classList.remove("active");
-    });
+  blogGrid.addEventListener("mouseleave", () => {
+    isDown = false;
+  });
 
-    highlightsWrapper.addEventListener("mouseup", () => {
-      isDown = false;
-      highlightsWrapper.classList.remove("active");
-    });
+  blogGrid.addEventListener("mouseup", () => {
+    isDown = false;
+  });
 
-    highlightsWrapper.addEventListener("mousemove", (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - highlightsWrapper.offsetLeft;
-      const walk = (x - startX) * 2; // Velocidade do arraste
-      highlightsWrapper.scrollLeft = scrollLeft - walk;
-    });
+  blogGrid.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - blogGrid.offsetLeft;
+    const walk = (x - startX) * 2; // Velocidade do scroll
+    blogGrid.scrollLeft = scrollLeft - walk;
+  });
 
-    // Adicionando suporte ao toque (mobile)
-    let touchStartX = 0;
-    let touchScrollLeft = 0;
+  blogGrid.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].pageX;
+    scrollLeft = blogGrid.scrollLeft;
+  });
 
-    highlightsWrapper.addEventListener("touchstart", (e) => {
-      touchStartX = e.touches[0].pageX;
-      touchScrollLeft = highlightsWrapper.scrollLeft;
-    });
+  blogGrid.addEventListener("touchmove", (e) => {
+    const x = e.touches[0].pageX;
+    const walk = (x - startX) * 2;
+    blogGrid.scrollLeft = scrollLeft - walk;
+  });
 
-    highlightsWrapper.addEventListener("touchmove", (e) => {
-      const touchMoveX = e.touches[0].pageX;
-      const moveDistance = touchMoveX - touchStartX;
-      highlightsWrapper.scrollLeft = touchScrollLeft - moveDistance;
-    });
-  }
 });
 
 function switchLanguage() {

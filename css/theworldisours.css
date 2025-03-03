@@ -6,6 +6,11 @@
   display: none;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   background-color: var(--color-yellow-pastel-ligth);
 }
@@ -463,9 +468,10 @@ h2, h3 {
   flex: 3;
   display: flex !important;
   flex-direction: row !important;
-  overflow-x: hidden;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
   gap: 1rem;
+  white-space: nowrap; /* Evita quebra de linha */
 }
 .highlight-box {
   height: 500px;
@@ -484,6 +490,8 @@ h2, h3 {
   position: relative;
   flex-shrink: 0;
   border: solid 10px var(--color-yellow-pastel);
+  scroll-snap-align: start;
+  scroll-margin: 0 1rem 0 1rem;
 }
 .highlight-overlay {
   position: absolute;
