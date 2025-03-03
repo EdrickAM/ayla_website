@@ -1455,6 +1455,31 @@ form textarea {
     font-size: 0.8rem;
     max-width: 200px;
   }
+  .next-trip {
+    gap: 1rem;
+    padding: 1rem;
+    flex-flow: column;
+  }
+  .next-trip .title {
+    font-size: 3rem;
+  }
+  .next-trip .title h2 {
+    text-align: center;
+    margin: 0rem;
+    line-height: 1.2;
+  }
+  .next-trip .container {
+    flex-wrap: nowrap;
+  }
+  .next-trip .container h1 {
+    font-size: 2.75rem;
+  }
+  .next-trip-content h4 {
+    font-size: 1rem;
+  }
+  .next-trip .container img {
+    height: 500px;
+  }
   .services h2 {
     margin: 1rem 1rem 0rem;
     font-size: 1.5rem;
