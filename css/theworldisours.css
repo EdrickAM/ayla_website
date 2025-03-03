@@ -720,6 +720,9 @@ p.highlight {
 #discount {
   color: var(--color-coral);
 }
+#second-group {
+  color: var(--color-coral);
+}
 #link {
   color: var(--color-coral);
 }
