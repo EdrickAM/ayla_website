@@ -1777,7 +1777,7 @@ form textarea {
     position: relative;
     display: flex;
     flex-flow: row;
-    width: 98vw;
+    width: 90%;
     text-align: left;
     font-family: var(--font-tertiary);
     color: var(--color-yellow-pastel);

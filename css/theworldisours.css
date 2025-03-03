@@ -1013,7 +1013,7 @@ p.highlight {
     flex-direction: column-reverse;
   }
   .pricing-form h2 {
-    font-size: 2.6rem;
+    font-size: 2.5rem;
     margin: 0rem; 
   }
   .pricing .horizontal.reverse p {
@@ -1027,13 +1027,13 @@ p.highlight {
   }
   .pricing .horizontal img {
     height: auto;
-    width: calc(100% - 20px);
+    width: 100%;
   }
   .pricing .horizontal .horizontal-content-img {
     padding: 1rem;
   }
   .theworldisours-content.final h1 {
-    font-size: 3rem;
+    font-size: 2.6rem;
     width: 100%;
   }
   .theworld-post-content .horizontal.reverse {
