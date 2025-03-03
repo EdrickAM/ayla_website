@@ -457,7 +457,7 @@ h2, h3 {
 .text-content h3 {
   color: var(--color-coral);
   font-family: var(--font-tertiary);
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin-bottom: 0rem;
   margin-top: 0.75rem;
 }
