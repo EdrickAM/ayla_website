@@ -633,12 +633,13 @@ h2, h3 {
   text-align: left;
   background-color: var(--color-yellow-pastel);
 }
-.pricing-form h2 {
+.pricing h2 {
   font-size: 2.5rem;
   text-align: left;
   color: var(--color-green-medium);
   font-family: var(--font-tertiary);
-  margin: 1rem;
+  margin: 2rem;
+  text-align: center;
 }
 .pricing-form h3 {
   font-size: 1.5rem;
@@ -669,15 +670,12 @@ p.highlight {
   position: relative;
   width: 100%;
   height: 100%;
-}
-.pricing-image img {
-  object-position: bottom;
-}
-.pricing-image-fade {
-  width: 100%;
-  height: 100%;
+  display: flex;
   object-fit: cover;
-  display: block;
+  justify-self: center;
+  object-fit: cover;
+  object-position: center;
+  border: solid 10px var(--color-soft-white);
 }
 .pricing {
   width: auto;
@@ -703,14 +701,6 @@ p.highlight {
 .pricing .horizontal .horizontal-content-img {
   flex: 2;
 }
-.pricing .horizontal img {
-  height: 90%;
-  width: 100%;
-  justify-self: center;
-  object-fit: cover;
-  object-position: center;
-  border: solid 10px var(--color-soft-white);
-}
 .pricing .horizontal .horizontal-content {
   flex: 3;
 }
@@ -721,7 +711,7 @@ p.highlight {
   color: var(--color-coral);
 }
 #second-group {
-  color: var(--color-coral);
+  color: var(--color-red-dark);
 }
 #link {
   color: var(--color-coral);
@@ -819,6 +809,29 @@ p.highlight {
 .faq-section strong {
   display: block;
   margin-bottom: 5px;
+}
+.next-steps {
+  background-color: var(--color-coral);
+  padding: 2rem;
+}
+.next-steps-box {
+  position: relative; 
+  text-align: center;
+}
+.next-steps-box h3 {
+  font-size: 3rem;
+  font-family: var(--font-tertiary);
+  color: var(--color-yellow-pastel);
+  margin: 0rem;
+}
+.next-steps-box p {
+  font-size: 1.5rem;
+  font-family: var(--font-primary);
+  color: var(--color-yellow-pastel);
+  margin: 0rem;
+}
+.pricing .horizontal.reverse {
+  align-items: start;
 }
 /* ======= ESTILOS RESPONSIVOS ======= */
 
@@ -1032,7 +1045,7 @@ p.highlight {
   .pricing .horizontal.reverse {
     flex-direction: column-reverse;
   }
-  .pricing-form h2 {
+  .pricing h2 {
     font-size: 2.5rem;
     margin: 0rem; 
   }
@@ -1051,6 +1064,10 @@ p.highlight {
   }
   .pricing .horizontal .horizontal-content-img {
     padding: 1rem;
+  }
+  .next-steps-box p {
+    font-size: 1.25rem;
+    margin-top: 1rem;
   }
   .theworldisours-content.final h1 {
     font-size: 2.6rem;
