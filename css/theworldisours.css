@@ -90,6 +90,9 @@ h2, h3 {
   margin: 0 auto; /* Garante que fique centralizado */
 }
 
+.video-background {
+  z-index: 0;
+}
 .theworldisours {
   width: 100%;
   overflow: hidden;
