@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const formData = new FormData(contactForm);
       formData.append('lang', getLanguage());
 
-      fetch('process_contact.php', {
+      fetch('../php/process_contact.php', {
         method: 'POST',
         body: formData
       })
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const formData = new FormData(newsletterForm);
       formData.append('lang', getLanguage());
 
-      fetch('process_newsletter.php', {
+      fetch('../php/process_newsletter.php', {
         method: 'POST',
         body: formData
       })
