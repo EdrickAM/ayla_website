@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Envio do formulário da newsletter
   const newsletterForm = document.querySelector('#newsletter-form');
+
   if (newsletterForm) {
     newsletterForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -64,19 +65,31 @@ document.addEventListener('DOMContentLoaded', () => {
         method: 'POST',
         body: formData
       })
-      .then(response => response.json())
-      .then(data => {
-        alert(data.message);
-        if (data.status === "success") {
-          newsletterForm.reset();
+      .then(response => response.text()) // Primeiro obtém a resposta como texto
+      .then(text => {
+        try {
+          const data = JSON.parse(text); // Tenta converter para JSON
+          if (data.status === "success") {
+            alert(data.message);
+            newsletterForm.reset();
+          } else {
+            alert(data.message || "Erro inesperado.");
+          }
+        } catch (error) {
+          console.error("A resposta não é um JSON válido:", text);
+          alert(getLanguage() === "pt" 
+            ? "Erro inesperado ao processar a resposta do servidor." 
+            : "Unexpected error processing server response.");
         }
       })
       .catch(error => {
         console.error("Erro ao se inscrever:", error);
-        alert(getLanguage() === "pt" ? "Erro ao se inscrever na newsletter." : "Error subscribing to the newsletter.");
+        alert(getLanguage() === "pt" 
+          ? "Erro ao se inscrever na newsletter." 
+          : "Error subscribing to the newsletter.");
       });
     });
-  }  
+  }
   // ==================================================
   // 3. Header sólido ao rolar a página
   // ==================================================
