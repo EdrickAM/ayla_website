@@ -21,23 +21,39 @@ function sendEmail($to, $subject, $body) {
         $mail->SMTPAuth   = true;
         $mail->Username   = $_ENV['SMTP_USER'];
         $mail->Password   = $_ENV['SMTP_PASS'];
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // ou PHPMailer::ENCRYPTION_SMTPS, conforme o servidor
-        $mail->Port       = $_ENV['SMTP_PORT'];
         
+        // Define a criptografia correta (TLS ou SSL)
+        if ($_ENV['SMTP_SECURE'] === 'ssl') {
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail->Port       = 465;
+        } else {
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = 587;
+        }
+
         // Configuração do remetente e destinatário
         $mail->setFrom($_ENV['SMTP_FROM_EMAIL'], $_ENV['SMTP_FROM_NAME']);
         $mail->addAddress($to);
         
         // Conteúdo do e-mail
-        $mail->isHTML(false);
+        $mail->isHTML(true);
         $mail->Subject = $subject;
         $mail->Body    = $body;
-        
-        return $mail->send();
+
+        // Implementação de reenvio automático em caso de falha
+        $tentativas = 3;
+        while ($tentativas > 0) {
+            if ($mail->send()) {
+                return json_encode(['status' => 'success', 'message' => 'E-mail enviado com sucesso.']);
+            } else {
+                $tentativas--;
+                sleep(5); // Espera 5 segundos antes de tentar novamente
+            }
+        }
+
     } catch (Exception $e) {
-        error_log("Mailer Error: " . $mail->ErrorInfo, 3, 'errors.log'); // Log do erro
-        echo json_encode(['status' => 'error', 'message' => 'Error sending e-mail.']);
-        return false;
+        error_log("Erro ao enviar e-mail: " . $mail->ErrorInfo, 3, 'errors.log'); // Log detalhado
+        return json_encode(['status' => 'error', 'message' => 'Erro ao enviar e-mail.', 'error' => $mail->ErrorInfo]);
     }
 }
 ?>
