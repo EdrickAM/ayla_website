@@ -32,8 +32,7 @@ function sendEmail($to, $subject, $body) {
         return $mail->send();
     } catch (Exception $e) {
         error_log("Mailer Error: " . $mail->ErrorInfo, 3, 'errors.log'); // Log do erro
-        $msg = ($lang == 'pt') ? 'Erro ao enviar e-amil.' : 'Error sending e-mail.';
-        echo json_encode(['status' => 'error', 'message' => $msg]);
+        echo json_encode(['status' => 'error', 'message' => 'Error sending e-mail.']);
         return false;
     }
 }
