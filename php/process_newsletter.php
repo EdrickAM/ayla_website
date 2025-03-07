@@ -27,8 +27,9 @@ try {
     }
 
     // Insere a inscrição na newsletter
-    $stmt = $pdo->prepare("INSERT INTO newsletter (name, email) VALUES (?, ?)");
-    $stmt->execute([$name, $email]);
+    $subscription_date = date('Y-m-d H:i:s'); // Obtém a data atual
+    $stmt = $pdo->prepare("INSERT INTO newsletter (name, email, subscription_date) VALUES (?, ?, ?)");
+    $stmt->execute([$name, $email, $subscription_date]);
 
     // Define assunto e corpo do e-mail conforme o idioma
     if ($lang == 'pt') {

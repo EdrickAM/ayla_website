@@ -26,8 +26,9 @@ try {
     }
 
     // Insere o novo contato no banco de dados
-    $stmt = $pdo->prepare("INSERT INTO contacts (name, email, phone, message) VALUES (?, ?, ?, ?)");
-    $stmt->execute([$name, $email, $phone, $message]);
+    $send_date = date('Y-m-d H:i:s'); // Obtém a data atual
+    $stmt = $pdo->prepare("INSERT INTO contacts (name, email, phone, message, send_date) VALUES (?, ?, ?, ?, ?)");
+    $stmt->execute([$name, $email, $phone, $message, $send_date]);
 
     // Define assunto e corpo do e-mail conforme o idioma
     if ($lang == 'pt') {
