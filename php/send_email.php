@@ -31,7 +31,7 @@ function sendEmail($to, $subject, $body) {
         
         return $mail->send();
     } catch (Exception $e) {
-        error_log("Mailer Error: " . $mail->ErrorInfo, 3, 'errors.log'); // Log do erro
+        error_log("Mailer Error: " . $mail->ErrorInfo . $_ENV, 3, 'errors.log'); // Log do erro
         echo json_encode(['status' => 'error', 'message' => 'Error sending e-mail.']);
         return false;
     }
