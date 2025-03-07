@@ -7,6 +7,10 @@ require_once __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
+// Log das variáveis de ambiente para depuração
+$env_log = print_r($_ENV, true);
+error_log("ENV Variables: " . $env_log, 3, 'errors.log');
+
 function sendEmail($to, $subject, $body) {
     $mail = new PHPMailer(true);
     
@@ -31,7 +35,7 @@ function sendEmail($to, $subject, $body) {
         
         return $mail->send();
     } catch (Exception $e) {
-        error_log("Mailer Error: " . $mail->ErrorInfo . $_ENV, 3, 'errors.log'); // Log do erro
+        error_log("Mailer Error: " . $mail->ErrorInfo, 3, 'errors.log'); // Log do erro
         echo json_encode(['status' => 'error', 'message' => 'Error sending e-mail.']);
         return false;
     }
