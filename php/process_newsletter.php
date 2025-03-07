@@ -47,6 +47,7 @@ try {
         echo json_encode(['status' => 'error', 'message' => $msg]);
     }
 } catch (Exception $e) {
+    error_log($e->getMessage(), 3, 'errors.log'); // Log do erro
     $msg = ($lang == 'pt') ? 'Erro ao processar a inscrição.' : 'Error processing subscription.';
     echo json_encode(['status' => 'error', 'message' => $msg]);
 }
