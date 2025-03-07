@@ -25,9 +25,82 @@ document.addEventListener('DOMContentLoaded', () => {
   function getLanguage() {
     return window.location.href.includes("/pt/") ? "pt" : "en";
   }
+  function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function validateName(name) {
+    return name.trim().length >= 2;
+  }
+
+  function validatePhone(phone) {
+    return /^\+?[1-9]\d{1,14}$/.test(phone.replace(/\D/g, ''));
+  }
+
+  function applyPhoneMask(input) {
+    input.addEventListener('input', (e) => {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.startsWith('55')) {
+        value = `+${value.slice(0, 2)} ${value.slice(2, 7)}-${value.slice(7, 11)}`;
+      } else {
+        value = `+${value}`;
+      }
+      e.target.value = value;
+    });
+  }
+
+  function showError(input, message) {
+    const error = document.createElement('span');
+    error.classList.add('error-message');
+    error.textContent = message;
+    input.parentNode.appendChild(error);
+    setTimeout(() => error.remove(), 3000);
+  }
+
+  function clearErrors(form) {
+    form.querySelectorAll('.error-message').forEach(el => el.remove());
+  }
+
+  // Validação do formulário de contato
+  const contactForm = document.querySelector('#contact-form');
+  
+  if (contactForm) {  
+    const phoneInput = contactForm.querySelector('input[name="phone"]');
+
+    if (phoneInput) applyPhoneMask(phoneInput);
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      clearErrors(contactForm);
+      
+      const name = contactForm.querySelector('input[name="name"]');
+      const email = contactForm.querySelector('input[name="email"]');
+      const phone = contactForm.querySelector('input[name="phone"]');
+      const message = contactForm.querySelector('textarea[name="message"]');
+      
+      let valid = true;
+      if (!validateName(name.value)) {
+        showError(name, getLanguage() === "pt" ? "Nome deve ter pelo menos 2 caracteres." : "Name must have at least 2 characters.");
+        valid = false;
+      }
+      if (!validateEmail(email.value)) {
+        showError(email, getLanguage() === "pt" ? "Email inválido." : "Invalid email.");
+        valid = false;
+      }
+      if (phone && !validatePhone(phone.value)) {
+        showError(phone, getLanguage() === "pt" ? "Número de telefone inválido. Use formato internacional." : "Invalid phone number. Use international format.");
+        valid = false;
+      }
+      if (message.value.trim().length < 10) {
+        showError(message, getLanguage() === "pt" ? "Mensagem deve ter pelo menos 10 caracteres." : "Message must have at least 10 characters.");
+        valid = false;
+      }
+      
+      if (valid) contactForm.submit();
+    });
+  }
 
   // Envio do formulário de contato
-  const contactForm = document.querySelector('#contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -54,6 +127,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Envio do formulário da newsletter
   const newsletterForm = document.querySelector('#newsletter-form');
+
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      clearErrors(newsletterForm);
+      
+      const name = newsletterForm.querySelector('input[name="name"]');
+      const email = newsletterForm.querySelector('input[name="email"]');
+      
+      let valid = true;
+      if (!validateName(name.value)) {
+        showError(name, getLanguage() === "pt" ? "Nome deve ter pelo menos 2 caracteres." : "Name must have at least 2 characters.");
+        valid = false;
+      }
+      if (!validateEmail(email.value)) {
+        showError(email, getLanguage() === "pt" ? "Email inválido." : "Invalid email.");
+        valid = false;
+      }
+      
+      if (valid) newsletterForm.submit();
+    });
+  }
 
   if (newsletterForm) {
     newsletterForm.addEventListener('submit', (e) => {
