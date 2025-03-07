@@ -18,18 +18,18 @@ if (empty($name) || empty($email)) {
 
 try {
     // Verifica se o e-mail já está cadastrado na newsletter
-    $stmt = $pdo->prepare("SELECT id FROM newsletter WHERE email = ?");
+    $stmt = $pdo->prepare("SELECT id, name FROM newsletter WHERE email = ?");
     $stmt->execute([$email]);
+    
     if ($stmt->rowCount() > 0) {
-        $msg = ($lang == 'pt') ? 'Este e-mail já está inscrito na newsletter.' : 'This email is already subscribed to the newsletter.';
-        echo json_encode(['status' => 'error', 'message' => $msg]);
-        exit;
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $name = $row['name']; // Usa o nome já cadastrado
+    } else {
+        // Insere a inscrição na newsletter
+        $subscription_date = date('Y-m-d H:i:s'); // Obtém a data atual
+        $stmt = $pdo->prepare("INSERT INTO newsletter (name, email, subscription_date) VALUES (?, ?, ?)");
+        $stmt->execute([$name, $email, $subscription_date]);
     }
-
-    // Insere a inscrição na newsletter
-    $subscription_date = date('Y-m-d H:i:s'); // Obtém a data atual
-    $stmt = $pdo->prepare("INSERT INTO newsletter (name, email, subscription_date) VALUES (?, ?, ?)");
-    $stmt->execute([$name, $email, $subscription_date]);
 
     // Define assunto e corpo do e-mail conforme o idioma
     if ($lang == 'pt') {
@@ -41,15 +41,15 @@ try {
     }
 
     if (sendEmail($email, $subject, $body)) {
-        $msg = ($lang == 'pt') ? 'Inscrição realizada com sucesso!' : 'Subscription successful!';
+        $msg = ($lang == 'pt') ? 'E-mail enviado com sucesso!' : 'Email sent successfully!';
         echo json_encode(['status' => 'success', 'message' => $msg]);
     } else {
-        $msg = ($lang == 'pt') ? 'Inscrição salva, mas não foi possível enviar o e-mail.' : 'Subscription saved, but email could not be sent.';
+        $msg = ($lang == 'pt') ? 'Não foi possível enviar o e-mail.' : 'Could not send the email.';
         echo json_encode(['status' => 'error', 'message' => $msg]);
     }
 } catch (Exception $e) {
     error_log($e->getMessage(), 3, 'errors.log'); // Log do erro
-    $msg = ($lang == 'pt') ? 'Erro ao processar a inscrição.' : 'Error processing subscription.';
+    $msg = ($lang == 'pt') ? 'Erro ao processar a solicitação.' : 'Error processing request.';
     echo json_encode(['status' => 'error', 'message' => $msg]);
 }
 ?>
