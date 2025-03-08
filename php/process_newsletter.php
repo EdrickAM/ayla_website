@@ -30,17 +30,21 @@ try {
         $stmt = $pdo->prepare("INSERT INTO newsletter (name, email, subscription_date) VALUES (?, ?, ?)");
         $stmt->execute([$name, $email, $subscription_date]);
     }
-
+    
     // Define assunto e corpo do e-mail conforme o idioma
     if ($lang == 'pt') {
+        // Carregar o template HTML do e-mail
+        $template = file_get_contents('../pt/newsletter_template.html');
         $subject = "Bem-vindo à nossa Newsletter!";
-        $body    = "Olá $name,\n\nObrigado por se inscrever em nossa newsletter. Fique atento às novidades!";
     } else {
+        // Carregar o template HTML do e-mail
+        $template = file_get_contents('../en/newsletter_template.html');
         $subject = "Welcome to our Newsletter!";
-        $body    = "Hello $name,\n\nThank you for subscribing to our newsletter. Stay tuned for updates!";
     }
+    
+    $template = str_replace('{{name}}', htmlspecialchars($name), $template);
 
-    if (sendEmail($email, $subject, $body)) {
+    if (sendEmail($email, $subject, $template)) {
         $msg = ($lang == 'pt') ? 'E-mail enviado com sucesso!' : 'Email sent successfully!';
         echo json_encode(['status' => 'success', 'message' => $msg]);
     } else {

@@ -39,14 +39,10 @@ function sendEmail($to, $subject, $body) {
         $mail->CharSet = 'UTF-8';
         $mail->Encoding = 'base64';
 
-        // Carregar o template HTML do e-mail
-        $template = file_get_contents(__DIR__ . '/email_template.html');
-        $template = str_replace('{{name}}', htmlspecialchars($name), $template);
-
-        // Define o corpo do e-mail
+        // Conteúdo do e-mail
         $mail->isHTML(true);
         $mail->Subject = $subject;
-        $mail->Body = $template;
+        $mail->Body = $body;
 
         // Implementação de reenvio automático em caso de falha
         $tentativas = 3;
