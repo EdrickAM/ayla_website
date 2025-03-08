@@ -35,6 +35,10 @@ function sendEmail($to, $subject, $body) {
         $mail->setFrom($_ENV['SMTP_FROM_EMAIL'], $_ENV['SMTP_FROM_NAME']);
         $mail->addAddress($to);
         
+        // **Corrige os problemas de caracteres**
+        $mail->CharSet = 'UTF-8';
+        $mail->Encoding = 'base64';
+
         // Conteúdo do e-mail
         $mail->isHTML(true);
         $mail->Subject = $subject;
