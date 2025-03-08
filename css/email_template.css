@@ -1,0 +1,58 @@
+@import url("styles.css");
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7d4;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  width: 100%;
+  cellpadding: 0;
+  cellspacing: 0;
+}
+
+.container {
+  width: 600px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.header img {
+  width: 80px;
+  padding: 20px 0;
+}
+
+h1 {
+  color: #b42521;
+  font-size: 24px;
+}
+
+p {
+  color: #333333;
+  font-size: 16px;
+}
+
+.button {
+  background-color: #3fc892;
+  color: #ffffff;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  display: inline-block;
+  margin: 20px 0;
+}
+
+.footer {
+  padding: 20px 0;
+  color: #7c2220;
+  font-size: 14px;
+}
+
+.footer a {
+  color: #b42521;
+  text-decoration: none;
+}
