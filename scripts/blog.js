@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
       "1": {
         title: "Viagem Cultural no Rio de Janeiro: Como Viver a Cidade Como um Carioca",
         date: "07 de fevereiro de 2025",
-        image: "../assets/images/blog/post1/image1.jpg",
+        image: "../assets/images/blog/post1/image1.webp",
         content: `
           <p>O Rio de Janeiro sempre me pareceu mais um estado de espírito do que uma cidade. Há algo na maneira como o sol abraça os morros, na cadência do samba que escapa de um bar qualquer, no jeito despreocupado e vibrante com que os cariocas ocupam as ruas. Para quem chega de fora, pode parecer difícil entender esse ritmo. Mas há um segredo: para viver o Rio como um verdadeiro carioca, é preciso sentir, antes de tudo, o pulsar da cidade.</p>
           

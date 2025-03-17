@@ -6,12 +6,25 @@
   <meta name="description" content="Ayla offers authentic cultural travel experiences, transformative journeys, and personalized travel consulting for travelers.">
   <meta property="og:title" content="Ayla - Authentic Travels">
   <meta property="og:description" content="Explore the world with sophistication. Exclusive trips and authentic experiences.">
-  <meta property="og:image" content="https://seusite.com/assets/images/og-image.jpg">
+  <meta property="og:image" content="https://seusite.com/assets/images/og-image.webp">
   <title>Ayla - The world is ours!</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Bigola:wght@400;700&family=Noka+Bold&family=Pacifico&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS crítico inline (Acelera o carregamento inicial) -->
+  <style>
+    body { font-family: 'Roboto Slab', serif; background-color: #f9f9f9; }
+    .header { position: fixed; top: 0; width: 100%; background: white; }
+  </style>
+
+  <!-- Adicionando preload para fontes externas -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bigola:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bigola:wght@400;700&display=swap"></noscript>
+  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icon-css/css/flag-icon.min.css">
   <link rel="icon" type="image/svg+xml" href="../assets/logos/logo.svg">
+
+  <!-- Adiando carregamento do CSS não essencial -->
+  <link rel="preload" as="style" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.onload=null;this.removeAttribute('media');">
 
   <!-- Google Tag Manager -->
   <script>
@@ -164,12 +177,12 @@
   </section>
 
   <!-- Next Trip -->
-  <section id="next-trip" class="next-trip">
+  <!--section id="next-trip" class="next-trip">
     <div class="title">
       <h2>Next Trip</h2>
     </div>
     <div class="container">
-      <img loading="lazy" src="../assets/images/theworldisours/goa.jpg" alt="GOA">
+      <img loading="lazy" src="../assets/images/theworldisours/goa.webp" alt="GOA">
       <div class="next-trip-content">
         <h1>Let's GOA!</h1>
         <h4>With Diya • Agonda Beach, Goa</h4>
@@ -180,7 +193,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section-->
   
   <!-- Services Section -->
   <section id="servicos" class="services">
@@ -188,7 +201,7 @@
     <p>Discover the experiences that will make your next trip unforgettable!</p>
     <!-- First Service - Full Width -->
     <div class="service-item full">
-      <img loading="lazy" src="../assets/images/servico1.jpg" class="service-item-img" alt="Service 1">
+      <img loading="lazy" src="../assets/images/servico1.webp" class="service-item-img" alt="Service 1">
       <div class="service-content overlay">
         <h4>Ayla Private Trips</h4>
         <h3>Custom Trip for You</h3>
@@ -200,7 +213,7 @@
     <!-- Second and Third Service - Half Width Each -->
     <div class="services-row">
       <div class="service-item half">
-        <img loading="lazy" src="../assets/images/servico2.jpg" class="service-item-img" alt="Service 2">
+        <img loading="lazy" src="../assets/images/servico2.webp" class="service-item-img" alt="Service 2">
         <div class="service-content overlay">
           <h4>Ayla Group Travel</h4>
           <h3>Group Travel with Us</h3>
@@ -209,7 +222,7 @@
         </div>
       </div>
       <div class="service-item half">
-        <img loading="lazy" src="../assets/images/servico3.jpg" class="service-item-img" alt="Service 3">
+        <img loading="lazy" src="../assets/images/servico3.webp" class="service-item-img" alt="Service 3">
         <div class="service-content overlay">
           <h4>Ask Ayla</h4>
           <h3>Personalized Consulting for Your Trip</h3>
@@ -221,7 +234,7 @@
     
     <!-- Fourth Service - Full Width -->
     <div class="service-item full">
-      <img loading="lazy" src="../assets/images/servico4.jpg" class="service-item-img" alt="Service 4">
+      <img loading="lazy" src="../assets/images/servico4.webp" class="service-item-img" alt="Service 4">
       <div class="service-content overlay">
         <h4>Ayla Community Travels</h4>
         <h3>Travel with Your Digital Community</h3>
@@ -237,21 +250,21 @@
       <h3>Our Destinations</h3>
     </div>
     <div class="destino-item">
-      <img loading="lazy" src="../assets/images/destino1.jpg" alt="Brazil">
+      <img loading="lazy" src="../assets/images/destino1.webp" alt="Brazil">
       <div class="destino-content">
         <h1>Brazil</h1>
         <p>Experience the unique energy and cultural diversity of Brazil.</p>
       </div>
     </div>
     <div class="destino-item">
-      <img loading="lazy" src="../assets/images/destino2.jpg" alt="India">
+      <img loading="lazy" src="../assets/images/destino2.webp" alt="India">
       <div class="destino-content">
         <h1>India</h1>
         <p>Discover India, a land of vivid colors, vibrant culture, and rich mysteries.</p>
       </div>
     </div>
     <div class="destino-item">
-      <img loading="lazy" src="../assets/images/destino3.jpg" alt="Thailand">
+      <img loading="lazy" src="../assets/images/destino3.webp" alt="Thailand">
       <div class="destino-content">
         <h1>Thailand</h1>
         <p>Explore the exotic, lively, and unforgettable beauty of Thailand.</p>
@@ -274,7 +287,7 @@
       <div class="blog-posts">
         <div class="post-item">
           <a href="blog_post_1.html">
-            <img loading="lazy" src="../assets/images/blog/post1/image1.jpg" alt="Christ the Redeemer" class="post-image">
+            <img loading="lazy" src="../assets/images/blog/post1/image1.webp" alt="Christ the Redeemer" class="post-image">
             <div class="post-content">
               <h4 class="post-sub-title">Cultural Trip</h4>
               <h3 class="post-title">Cultural Trip in Rio de Janeiro: How to Experience the City Like a Local</h3>
@@ -295,7 +308,7 @@
     </div>
     <div class="container">
       <div class="image">
-          <img loading="lazy" src="../assets/images/sobrenos.jpg" alt="Rickshaw">
+          <img loading="lazy" src="../assets/images/sobrenos.webp" alt="Rickshaw">
       </div>
       <div class="content">
           <h1>We Are Ayla!</h1>
@@ -344,7 +357,7 @@
           </form>        
         </div>
         <div class="contact-image">
-          <img loading="lazy" src="../assets/images/contato.jpg" alt="Contact Image" class="contact-image-fade">
+          <img loading="lazy" src="../assets/images/contato.webp" alt="Contact Image" class="contact-image-fade">
         </div>
     </div>
   </section>

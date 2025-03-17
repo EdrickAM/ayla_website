@@ -6,12 +6,25 @@
   <meta name="description" content="A Ayla oferece viagens culturais autênticas, experiências transformadoras e consultoria personalizada para viajantes.">
   <meta property="og:title" content="Ayla - Viagens Autênticas">
   <meta property="og:description" content="Explore o mundo com sofisticação. Viagens exclusivas e experiências autênticas.">
-  <meta property="og:image" content="https://seusite.com/assets/images/og-image.jpg">
+  <meta property="og:image" content="https://seusite.com/assets/images/og-image.webp">
   <title>Ayla - O mundão é nosso!</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Bigola:wght@400;700&family=Noka+Bold&family=Pacifico&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS crítico inline (Acelera o carregamento inicial) -->
+  <style>
+    body { font-family: 'Roboto Slab', serif; background-color: #f9f9f9; }
+    .header { position: fixed; top: 0; width: 100%; background: white; }
+  </style>
+
+  <!-- Adicionando preload para fontes externas -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bigola:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bigola:wght@400;700&display=swap"></noscript>
+  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icon-css/css/flag-icon.min.css">
   <link rel="icon" type="image/svg+xml" href="../assets/logos/logo.svg">
+
+  <!-- Adiando carregamento do CSS não essencial -->
+  <link rel="preload" as="style" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.onload=null;this.removeAttribute('media');">
 
   <!-- Google Tag Manager -->
   <script>
@@ -170,7 +183,7 @@
       <h2>Próxima Viagem</h2>
     </div>
     <div class="container">
-      <img loading="lazy" src="../assets/images/theworldisours/goa.jpg" alt="GOA">
+      <img loading="lazy" src="../assets/images/theworldisours/goa.webp" alt="GOA">
       <div class="next-trip-content">
         <h1>Let's GOA!</h1>
         <h4>With Diya • Agonda Beach, Goa</h4>
@@ -188,7 +201,7 @@
     <p>Conheça as experiências que tornarão sua próxima viagem inesquecível!</p>
     <!-- Primeiro Serviço - Ocupa toda a linha -->
     <div class="service-item full">
-      <img loading="lazy" src="../assets/images/servico1.jpg" class="service-item-img" alt="Serviço 1">
+      <img loading="lazy" src="../assets/images/servico1.webp" class="service-item-img" alt="Serviço 1">
       <div class="service-content overlay">
         <h4>Ayla Private Trips</h4>
         <h3>Viagem sob medida para você</h3>
@@ -201,7 +214,7 @@
     <!-- Segundo e Terceiro Serviço - Ocupam metade da tela cada -->
     <div class="services-row">
       <div class="service-item half">
-        <img loading="lazy" src="../assets/images/servico2.jpg" class="service-item-img" alt="Serviço 2">
+        <img loading="lazy" src="../assets/images/servico2.webp" class="service-item-img" alt="Serviço 2">
         <div class="service-content overlay">
           <h4>Ayla Group Travel</h4>
           <h3>Viaje em grupo conosco</h3>
@@ -211,7 +224,7 @@
         </div>
       </div>
       <div class="service-item half">
-        <img loading="lazy" src="../assets/images/servico3.jpg" class="service-item-img" alt="Serviço 3">
+        <img loading="lazy" src="../assets/images/servico3.webp" class="service-item-img" alt="Serviço 3">
         <div class="service-content overlay">
           <h4>Ask Ayla</h4>
           <h3>Consultoria personalizada </br> para sua viagem</h3>
@@ -224,7 +237,7 @@
     
     <!-- Último Serviço - Ocupa toda a linha -->
     <div class="service-item full">
-      <img loading="lazy" src="../assets/images/servico4.jpg" class="service-item-img" alt="Serviço 4">
+      <img loading="lazy" src="../assets/images/servico4.webp" class="service-item-img" alt="Serviço 4">
       <div class="service-content overlay">
         <h4>Ayla Community Travels</h4>
         <h3>Viaje com sua comunidade digital</h3>
@@ -242,21 +255,21 @@
       <h3>Nossos Destinos</h3>
     </div>
     <div class="destino-item">
-      <img loading="lazy" src="../assets/images/destino1.jpg" alt="Brasil">
+      <img loading="lazy" src="../assets/images/destino1.webp" alt="Brasil">
       <div class="destino-content">
         <h1>Brasil</h1>
         <p>Viva a energia única e a diversidade cultural do Brasil.</p>
       </div>
     </div>
     <div class="destino-item">
-      <img loading="lazy" src="../assets/images/destino2.jpg" alt="Índia">
+      <img loading="lazy" src="../assets/images/destino2.webp" alt="Índia">
       <div class="destino-content">
         <h1>Índia</h1>
         <p>Conheça a Índia, um lugar de cores intensas, cultura vibrante e cheia de mistérios.</p>
       </div>
     </div>
     <div class="destino-item">
-      <img loading="lazy" src="../assets/images/destino3.jpg" alt="Tailândia">
+      <img loading="lazy" src="../assets/images/destino3.webp" alt="Tailândia">
       <div class="destino-content">
         <h1>Tailândia</h1>
         <p>Explore a beleza exótica, agitada e inesquecível da Tailândia.</p>
@@ -279,7 +292,7 @@
       <div class="blog-posts">
         <div class="post-item">
           <a href="blog_post_1.html">
-            <img loading="lazy" src="../assets/images/blog/post1/image1.jpg" alt="Cristo Redentor" class="post-image">
+            <img loading="lazy" src="../assets/images/blog/post1/image1.webp" alt="Cristo Redentor" class="post-image">
             <div class="post-content">
               <h4 class="post-sub-title">Viagem Cultural</h4>
               <h3 class="post-title">Viagem Cultural no Rio de Janeiro: Como Viver a Cidade Como um Carioca</h3>
@@ -300,7 +313,7 @@
     </div>
     <div class="container">
       <div class="image">
-          <img loading="lazy" src="../assets/images/sobrenos.jpg" alt="Auto rickshaw">
+          <img loading="lazy" src="../assets/images/sobrenos.webp" alt="Auto rickshaw">
       </div>
       <div class="content">
           <h1>Somos a Ayla!</h1>
@@ -352,7 +365,7 @@
           </form>        
         </div>
         <div class="contact-image">
-          <img loading="lazy" src="../assets/images/contato.jpg" alt="Imagem de contato" class="contact-image-fade">
+          <img loading="lazy" src="../assets/images/contato.webp" alt="Imagem de contato" class="contact-image-fade">
         </div>
     </div>
   </section>
@@ -423,6 +436,7 @@
       </div>
     </div>
   </footer>
+
   <script defer src="../scripts/scripts.js"></script>
 </body>
 </html>
