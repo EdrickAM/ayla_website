@@ -25,45 +25,6 @@
   <!-- Adiando carregamento do CSS não essencial -->
   <link rel="preload" as="style" href="../css/styles.css">
   <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.onload=null;this.removeAttribute('media');">
-
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MTJQZ9BH');
-  </script>
-  <!-- End Google Tag Manager -->
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EHTNLLGXW6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-EHTNLLGXW6');
-  </script>
-  <!-- End Google tag (gtag.js) -->
-
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1332662901397904');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1332662901397904&ev=PageView&noscript=1"
-    /></noscript>
-  <!-- End Meta Pixel Code -->
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -428,5 +389,48 @@
   </footer>
 
   <script defer src="../scripts/scripts.js"></script>
+
+  <script>
+    function loadTrackingScripts() {
+      if (window.trackingLoaded) return; // Evita carregamento duplo
+      window.trackingLoaded = true;
+
+      // Adiciona Google Tag Manager
+      var gtmScript = document.createElement('script');
+      gtmScript.src = "https://www.googletagmanager.com/gtm.js?id=GTM-MTJQZ9BH";
+      gtmScript.async = true;
+      document.head.appendChild(gtmScript);
+
+      // Adiciona Google Analytics
+      var gaScript = document.createElement('script');
+      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-EHTNLLGXW6";
+      gaScript.async = true;
+      document.head.appendChild(gaScript);
+
+      gaScript.onload = function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-EHTNLLGXW6');
+      };
+
+      // Adiciona Facebook Pixel
+      var fbScript = document.createElement('script');
+      fbScript.src = "https://connect.facebook.net/en_US/fbevents.js";
+      fbScript.async = true;
+      document.head.appendChild(fbScript);
+
+      fbScript.onload = function() {
+        fbq('init', '1332662901397904');
+        fbq('track', 'PageView');
+      };
+    }
+
+    // Carrega os rastreadores na primeira rolagem
+    window.addEventListener('scroll', function onceScrolled() {
+      loadTrackingScripts();
+      window.removeEventListener('scroll', onceScrolled);
+    }, { once: true });
+  </script>
 </body>
 </html>
